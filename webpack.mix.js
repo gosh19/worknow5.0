@@ -14,6 +14,7 @@ require("laravel-mix-tailwind");
  */
 
 mix.js("resources/js/app.js", "public/js/app.js")
+    .react()
     .sass("resources/sass/app.scss", "public/css/app.css")
     .tailwind("./tailwind.config.js")
     .sourceMaps();
@@ -21,3 +22,7 @@ mix.js("resources/js/app.js", "public/js/app.js")
 if (mix.inProduction()) {
     mix.version();
 }
+
+require("@babel/core").transformSync("code", {
+    presets: ["@babel/preset-react"],
+  });

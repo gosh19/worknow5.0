@@ -24,36 +24,17 @@ class PaginasController extends Controller
       return view('auth.login');
     }
 
-    public function preIntro()
-    {
-
-      return view('preIntro.index');
-    }
-
-    public function intro($country = null)
+    public function intro()
     {
       if (Auth::check()) {
         return redirect('/User/'.Auth::id());
       }
       $courses = \App\Course::all();
       $categorias = \App\Categoria::orderBy('order','asc')->get();
-      //\App\User::getDataIp();
-      if ($country == null) {
-        $country = "LAT";
-      }
+      \App\User::getDataIp();
 
-      session()->forget('country');
-      session(['country'=>$country]);
-      //return session('country');
       /**cambiamo0ps a la vista inicio q es el nuevo maquetado */
-      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country]);
-    }
-
-    public function coursesView()
-    {
-      $categorias = \App\Categoria::orderBy('order','asc')->get();
-      
-      return view('intro.courses-view',['categorias'=> $categorias]);
+      return view('intro.index',['courses'=> $courses, 'categorias'=> $categorias,'country'=>session('country')]);
     }
     
     public function addCourse(\App\Course $Course)
@@ -71,11 +52,13 @@ class PaginasController extends Controller
 
     public function inscripcionTemprana(Request $request)
     {
-      
+      $request->session()->forget('id');
+      $user = User::where('id', '>','0')->orderBy('id','DESC')->take(1)->get();
+      $request->session()->put('id',$user[0]['id']+1);
+      \App\User::getDataIp();
 
-      session(['email'=>$request->email,'password'=>$request->password]);
 
-      return view('intro.register', ['request'=>$request]);
+      return view('intro.inscripcion', ['user' => $user, 'country'=> session('country')]);
     }
 
     public function showCourse(\App\Course $Course, $origin=null)
@@ -88,7 +71,7 @@ class PaginasController extends Controller
                             ->orWhere('nombre','LIKE','%electrod%')
                             ->orWhere('nombre','LIKE','%pc%')
                             ->get();
-      //\App\User::getDataIp();
+      \App\User::getDataIp();
 
       $canSelect = true;
       if (session()->has('selected')) {

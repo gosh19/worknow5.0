@@ -69,6 +69,7 @@ class UserController extends Controller
      */
     public function show($id, Request $request, $case = null)
     {
+
       $id = Auth::user()->id;
       $user = User::find($id);
       $cursos = User::find($id)->courses;
@@ -163,16 +164,17 @@ class UserController extends Controller
             'cursos' => $user->courses,
           ]);
        
-    } 
+      } 
       /**FUNCION RECURSIVA DE GET RANDDOM VCOURSE
        * EJECUTA HASTA ENCONTRAR UNO Q NO TENGA. sE VA A RE COLGAR CUANDO TENGA TODOS XD
        */
-      function getRand($intento){
+      function getRand($intento,$user){
         $data = \App\Course::inRandomOrder()->first();
         if ($intento > 5) {
           return $data;
         }
-        foreach (Auth::user()->courses as $k => $cur) {
+        
+        foreach ($user->courses as $k => $cur) {
           if($cur->id == $data->id){
             $cant = $intento; //AGARRO EL NUMERO DE INTENTO
             $data = getRand($cant+1); //LE PASO EL PARAMETRO CON UNA UNIDAD MAS
@@ -180,7 +182,8 @@ class UserController extends Controller
         }
         return $data;
       }
-      $randomCourse = getRand(0);
+
+      $randomCourse = getRand(0,$user);
 
       
       return view('user.user',[
