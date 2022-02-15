@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextField, Grid, FormControl, InputLabel, Select, MenuItem, Button, IconButton, Collapse, Grow, CircularProgress } from '@mui/material';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

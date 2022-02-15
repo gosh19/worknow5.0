@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, withStyles } from '@mui/material/styles';
+import { makeStyles, withStyles } from '@mui/styles';
 import clsx from 'clsx';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -152,9 +152,11 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    justifyContent: 'center',
   },
   button: {
     marginRight: theme.spacing(1),
@@ -209,7 +211,7 @@ export default function CustomizedSteppers(props) {
   },[]);
 
   return (
-    <Grid container direction="column" justify="center" className={classes.root}>
+    <Grid container direction="column" className={classes.root}>
       <h5 style={{color:'#000'}}>{props.title}</h5>
       <Grid item>
 
@@ -286,10 +288,9 @@ function AlertDialog(props) {
 
   if (confirm) {
     return (
-      <Grid item>
-        <Grid container direction="row" justify="center">
-          <h3 className={classes.txtConfirmed+ " flex"}>Datos Confirmados <img className="ml-3" src="/img/checked.png" alt="" srcset=""/></h3>
-        </Grid>
+      <Grid item className='w-full'>
+
+            <h3 className={classes.txtConfirmed+ " justify-center flex"}>Datos Confirmados <img className="ml-3" src="/img/checked.png" alt=""/></h3>
       </Grid>
     );
   }

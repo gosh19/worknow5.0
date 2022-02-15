@@ -1,13 +1,17 @@
 import React from 'react';
-import  ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Grid, CircularProgress, Button, Modal, } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import MediaCard from './MediaCard';
 import InfoEnvio from './InfoEnvio';
 
+const theme = createTheme();
 
-class ListCoursesBox extends React.Component{
-    constructor(props){
+
+
+class ListCoursesBox extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             cursos: [],
@@ -23,17 +27,19 @@ class ListCoursesBox extends React.Component{
         this.handleClose = this.handleClose.bind(this);
     }
 
-    recargarFetch(){        
-        this.setState({msjError: <CircularProgress />});
+    
+
+    recargarFetch() {
+        this.setState({ msjError: <CircularProgress /> });
         this.setCursos();
     }
-    
-    setCursos(){
-        
-            fetch('/get-cursos')
+
+    setCursos() {
+
+        fetch('/get-cursos')
             .then(response => response.json())
-            .then(responseCursos => {    
-                            
+            .then(responseCursos => {
+
                 if (responseCursos.length != 0) {
                     let egresadoValue = false;
 
@@ -42,9 +48,9 @@ class ListCoursesBox extends React.Component{
                             if (responseCursos[index].diploma.visto == 0) {
                                 egresadoValue = true;
                             }
-                            
+
                         }
-                        
+
                     }
 
                     this.setState((state, props) => {
@@ -54,7 +60,7 @@ class ListCoursesBox extends React.Component{
                             egresado: egresadoValue,
                         }
                     })
-                }else{
+                } else {
                     this.setState((state, props) => {
                         return {
                             msjError: <h1>No hay cursos cargados...</h1>,
@@ -64,56 +70,57 @@ class ListCoursesBox extends React.Component{
             }
             )
             .catch(error => {
-                this.setState({msjError: 
-                <Grid
-                    container   
-                    className="alert alert-danger p-3 text-center"
-                    style={{
-                        justifyContent: "center",
-                    }}
-                >
-                    <h3 className="mr-3">{"Pareciera que tu internet tiene una demora mayor a la esperada"}</h3>                    
+                this.setState({
+                    msjError:
+                        <Grid
+                            container
+                            className="alert alert-danger p-3 text-center"
+                            style={{
+                                justifyContent: "center",
+                            }}
+                        >
+                            <h3 className="mr-3">{"Pareciera que tu internet tiene una demora mayor a la esperada"}</h3>
 
-                    <h3>
-                        <p>
+                            <h3>
+                                <p>
 
-                        En caso de no poder ver sus cursos diponibles presione en el siguiente boton para ir a una version mas liviana
-                        </p>
-                        <a className="btn btn-danger btn-block font-weight-bolder" href="/User/1/1"> Ir a la version Lite </a> 
-                    </h3>
-                </Grid>
+                                    En caso de no poder ver sus cursos diponibles presione en el siguiente boton para ir a una version mas liviana
+                                </p>
+                                <a className="btn btn-danger btn-block font-weight-bolder" href="/User/1/1"> Ir a la version Lite </a>
+                            </h3>
+                        </Grid>
                 });
             });
     }
 
-    setInfoKit(){
+    setInfoKit() {
         fetch('/get-info-kit')
-        .then(response => response.json())
-        .then(info => {
-            
-            if (info.estado) {
-                this.setState(() =>{return {kitInfo:info.kit}});
-            }
-        });
+            .then(response => response.json())
+            .then(info => {
+
+                if (info.estado) {
+                    this.setState(() => { return { kitInfo: info.kit } });
+                }
+            });
     }
 
-    handleClose(){
-        this.setState({egresado:false});
+    handleClose() {
+        this.setState({ egresado: false });
     }
 
-    renderModalEgresado(){
+    renderModalEgresado() {
         if (!this.state.egresado) {
             return null;
         }
-        const modalEgresado = 
+        const modalEgresado =
             <Modal open={this.state.egresado} onClose={this.handleClose} >
                 <Grid
                     container
-                    justify="center"  
+                    justify="center"
                     alignItems="baseline"
-                    
+
                 >
-                    <Grid style={{width:"50%"}} item>
+                    <Grid style={{ width: "50%" }} item>
 
                         <img width="100%" src="https://media0.giphy.com/media/h3pE4DxsatJWFoSMUu/giphy.gif?cid=ecf05e4750a8ea55f588c7095577dcb4a7df6aeaa89bd942&rid=giphy.gif" />
                     </Grid>
@@ -123,39 +130,44 @@ class ListCoursesBox extends React.Component{
         return modalEgresado;
     }
 
-    renderInfoKit(){
+    renderInfoKit() {
         if (this.state.kitInfo != null) {
-            
-            return(
-                    <Grid
-                        container
-                        justify="center"
-                        style={{
-                            padding:10,
-                            border: '1px solid #C7C7C7',
-                            borderRadius:10,
-                            color:'#FFF',
-                            marginBottom: 20,
-                        }}
-                    >
-                        <InfoEnvio title="Kit de herramientas" info={this.state.kitInfo} numEnvio={this.state.kitInfo.codigo_seguimiento} />
-                    </Grid>
+
+            return (
+                <Grid
+                    container
+                    justify="center"
+                    style={{
+                        padding: 10,
+                        border: '1px solid #C7C7C7',
+                        borderRadius: 10,
+                        color: '#FFF',
+                        marginBottom: 20,
+                    }}
+                >
+                    <ThemeProvider theme={theme}>
+                        <InfoEnvio title="Kit de herramientas" 
+                                    info={this.state.kitInfo} 
+                                    numEnvio={this.state.kitInfo.codigo_seguimiento}
+                        />
+                    </ThemeProvider>
+                </Grid>
             );
         }
         return null;
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.setCursos();
         this.setInfoKit();
     }
 
-    render(){
-        
-        
-        return(
+    render() {
+
+
+        return (
             <div>
-                <h1 style={{fontSize:"35px"}} className="text-center cocogose text-red mb-3">Cursos disponibles</h1>
+                <h1 style={{ fontSize: "35px" }} className="text-center cocogose text-red mb-3">Cursos disponibles</h1>
                 {this.renderInfoKit()}
                 {this.renderModalEgresado()}
                 <Grid
@@ -164,23 +176,23 @@ class ListCoursesBox extends React.Component{
                 >
                     <Grid item>
 
-                        
+
                     </Grid>
                 </Grid>
                 <Grid
                     container
                     justify="center"
                 >
-                    {this.state.cursos.map((curso,index) => {
+                    {this.state.cursos.map((curso, index) => {
                         return (
                             <Grid item>
 
-                            <MediaCard 
-                                key={index}
-                                notification={curso.notification}
-                                curso={curso}
+                                <MediaCard
+                                    key={index}
+                                    notification={curso.notification}
+                                    curso={curso}
                                 />
-                                </Grid>
+                            </Grid>
                         )
                     })}
                     {this.state.msjError}

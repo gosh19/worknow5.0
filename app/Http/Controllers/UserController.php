@@ -168,13 +168,13 @@ class UserController extends Controller
       /**FUNCION RECURSIVA DE GET RANDDOM VCOURSE
        * EJECUTA HASTA ENCONTRAR UNO Q NO TENGA. sE VA A RE COLGAR CUANDO TENGA TODOS XD
        */
-      function getRand($intento,$user){
+      function getRand($intento){
         $data = \App\Course::inRandomOrder()->first();
         if ($intento > 5) {
           return $data;
         }
         
-        foreach ($user->courses as $k => $cur) {
+        foreach (Auth::user()->courses as $k => $cur) {
           if($cur->id == $data->id){
             $cant = $intento; //AGARRO EL NUMERO DE INTENTO
             $data = getRand($cant+1); //LE PASO EL PARAMETRO CON UNA UNIDAD MAS
@@ -183,7 +183,7 @@ class UserController extends Controller
         return $data;
       }
 
-      $randomCourse = getRand(0,$user);
+      $randomCourse = getRand(0);
 
       
       return view('user.user',[

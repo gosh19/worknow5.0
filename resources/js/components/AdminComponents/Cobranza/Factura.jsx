@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { Button, Input, CircularProgress } from '@mui/material';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';

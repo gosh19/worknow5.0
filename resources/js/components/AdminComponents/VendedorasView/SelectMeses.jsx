@@ -1,5 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
 const useStyles = makeStyles(theme => ({

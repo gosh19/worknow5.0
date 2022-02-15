@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardActions from '@mui/material/CardActions';
@@ -74,10 +74,10 @@ export default function MediaCard(props) {
     if (props.curso.notification != 0) {
       setNotification(
         <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="flex-start"
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
         >
           <Badge anchorOrigin={{ vertical: 'bottom', horizontal: 'left',}} badgeContent={props.curso.notification} color="secondary">
             <NotificationsIcon style={{fontSize:40}} color="secondary" />
@@ -133,7 +133,7 @@ export default function MediaCard(props) {
         justify="center"
         alignItems="center"
       >
-        <h5 className="mb-2">Promedio actual: <strong style={{color: '#000'}}> {props.curso.promedio.toFixed(1)} </strong></h5>
+        <h5 className="mb-2 ml-2">Promedio actual: <strong style={{color: '#000'}}> {props.curso.promedio.toFixed(1)} </strong></h5>
       </Grid>
       {notification}
       {diploma}

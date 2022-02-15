@@ -1,5 +1,6 @@
 import React from 'react';
-import { TableRow, TableCell, makeStyles, Button } from '@mui/material';
+import { TableRow, TableCell, Button } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
