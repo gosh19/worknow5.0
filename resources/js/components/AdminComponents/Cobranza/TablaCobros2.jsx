@@ -11,12 +11,13 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Paper from '@mui/material/Paper';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import {  Button } from '@mui/material';
+import { Button } from '@mui/material';
 import BuildIcon from '@mui/icons-material/Build';
 import RowTableCobros from './RowTableCobros';
 
+
 function createData(id, name, fecha_sig_cobro, monto, tarjeta, cargarCobro, date, fondos, conFondos) {
-  
+
   return { id, name, fecha_sig_cobro, monto, tarjeta, cargarCobro, date, fondos, conFondos };
 }
 
@@ -59,7 +60,7 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-  const { classes,  order, orderBy, onRequestSort } = props;
+  const { classes, order, orderBy, onRequestSort } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -70,7 +71,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'left' : 'right' }
+            align={headCell.numeric ? 'left' : 'right'}
             padding={headCell.disablePadding ? 'none' : 'default'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -125,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
     width: 1,
   },
   filaSinFondo: {
-      background: '#FE2E2E'
+    background: '#FE2E2E'
   }
 }));
 
@@ -140,75 +141,75 @@ export default function TablaCobros2(props) {
   const [rows, setRows] = React.useState([]);
   const [cobros, setCobros] = React.useState([]);
 
-  function getCobros(){
+  function getCobros() {
 
     if (cobros.length == 0) {
-        setRows([]);
+      setRows([]);
     }
-    else{
-      
+    else {
+
       setRows(cobros.map((cobro, index) => {
-        
+
         if (cobro.datos_user == null) {
-          cobro.datos_user = {'tarjeta': 'sin cargar'}
+          cobro.datos_user = { 'tarjeta': 'sin cargar' }
         }
         let date = new Date(cobro.updated_at);
-        date = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
+        date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
-        const cargarCobro =  <Button 
-                                variant="contained" 
-                                color="primary"
-                                onClick={() => props.setUser(cobro.user_id, index, cobro)}
-                              >Cargar cobro</Button> ;
-        const fondos =  <Button 
-                            variant="contained" 
-                            color="secondary"
-                            onClick={() => props.modificarFondos(cobro.user_id, props.selectedMonth)}
-                        >Fondos <br/> <small> {date} </small></Button> 
-        
-        let monto =cobro.monto_cuota;
+        const cargarCobro = <Button
+          variant="contained"
+          color="primary"
+          onClick={() => props.setUser(cobro.user_id, index, cobro)}
+        >Cargar cobro</Button>;
+        const fondos = <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => props.modificarFondos(cobro.user_id, props.selectedMonth)}
+        >Fondos <br /> <small> {date} </small></Button>
+
+        let monto = cobro.monto_cuota;
         if (cobro.user.kit) {
           let infoKit = null;
           if (cobro.user.datos_kit != null) {
             if (cobro.user.datos_kit.kit_type != null) {
-              
-              infoKit = cobro.user.datos_kit.kit_type.name+" ($"+ cobro.user.datos_kit.kit_type.precio+" )";
-            }else{
+
+              infoKit = cobro.user.datos_kit.kit_type.name + " ($" + cobro.user.datos_kit.kit_type.precio + " )";
+            } else {
               infoKit = "sin informacion de tipo de kit";
             }
 
           }
-          monto =<div>  {cobro.monto_cuota}  <BuildIcon color="primary" /> {infoKit}</div>  ;
+          monto = <div>  {cobro.monto_cuota}  <BuildIcon color="primary" /> {infoKit}</div>;
         }
         let data = createData(
-                                cobro.user_id,
-                                cobro.user.name,
-                                cobro.fecha_sig_cobro,
-                                monto,
-                                cobro.datos_user.tarjeta,
-                                cargarCobro,
-                                date,
-                                fondos,
-                                cobro.fondos
-                            );
+          cobro.user_id,
+          cobro.user.name,
+          cobro.fecha_sig_cobro,
+          monto,
+          cobro.datos_user.tarjeta,
+          cargarCobro,
+          date,
+          fondos,
+          cobro.fondos
+        );
         return data;
 
-        }));
+      }));
     }
   }
 
-  React.useEffect(() => {   
+  React.useEffect(() => {
 
-    setCobros(props.cobros);     
-    },
+    setCobros(props.cobros);
+  },
     [props.cobros]);
 
   React.useEffect(() => {
-    
-    getCobros();
-  },[cobros]);
 
-  
+    getCobros();
+  }, [cobros]);
+
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -222,14 +223,14 @@ export default function TablaCobros2(props) {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   const handleChangeFondos = (index) => {
-    
+
     let aux = cobros;
     aux[index].conFondos = !cobros[index].conFondos;
-    
+
     setCobros(aux);
     getCobros();
   }
-  
+
 
   return (
     <div className={classes.root}>
@@ -253,7 +254,7 @@ export default function TablaCobros2(props) {
               {stableSort(rows, getComparator(order, orderBy))
                 .map((row, index) => {
                   const labelId = `enhanced-table-checkbox-${index}`;
-                  return(
+                  return (
                     <RowTableCobros key={index} row={row} index={index} changeFondos={() => handleChangeFondos(index)} />
                   );
 

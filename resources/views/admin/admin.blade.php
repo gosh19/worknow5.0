@@ -23,7 +23,7 @@
                                 <h3 class="text-center text-2xl">{{count($ventasMes)}}</h3>
                               </div>
                               <div class="d-flex align-items-center">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#ModalVentas">Ver Ventas</button>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalVentas">Ver Ventas</button>
                               </div>
                             </div>
                           </li>
@@ -256,7 +256,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ventas del mes</h5>
         <a href={{ route('Admin.verVentasMes') }} class="btn btn-primary ml-3">Ver mas...</a>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

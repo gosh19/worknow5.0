@@ -165,7 +165,7 @@
                         <br>
                         <strong style="color:#ff5100">Web tienda :  </strong><strong> <a href="https://worknowshop.mitiendanube.com/">https://worknowshop.mitiendanube.com/</a> </strong> <i style="color:#af4d0b" class="fas fa-splotch fa-2x"></i>
                         <hr class="mb-3 mt-3">
-                        <button class="btn btn-primary font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseNumeros" aria-expanded="false" aria-controls="collapseNumeros">
+                        <button class="btn btn-primary font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNumeros" aria-expanded="false" aria-controls="collapseNumeros">
                             Numeros asesoras <i style="color:#380c72" class="fas fa-phone fa-1x"></i>
                         </button>
                         <div class="collapse mt-2" id="collapseNumeros">
@@ -185,7 +185,7 @@
                         <strong style="color:#8904B1">Pagina oficial :  </strong><strong> www.worknowcursos.com</strong>
                         <img src={{ asset('img/web.png') }}  class="h-10">
                     </li>
-                    <button class="btn btn-primary font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseKit" aria-expanded="false" aria-controls="collapseKit">
+                    <button class="btn btn-primary font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKit" aria-expanded="false" aria-controls="collapseKit">
                          Seguimientos de envios <i style="color:#380c72" class="fas fa-truck fa-1x"></i>
                     </button>
                     <div class="collapse" id="collapseKit">

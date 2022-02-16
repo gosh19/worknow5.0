@@ -21,7 +21,7 @@
 
                         <p class="font-weight-bolder">Datos de venta</p>
                         
-                        <button class="btn btn-dark" data-toggle="collapse" href="#cajaVenta">+</button>
+                        <button class="btn btn-dark" data-bs-toggle="collapse" href="#cajaVenta">+</button>
                     </div>
                 </div>
                 <div class="collapse" id="cajaVenta">

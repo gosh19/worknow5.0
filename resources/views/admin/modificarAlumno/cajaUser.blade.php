@@ -15,7 +15,7 @@
 
                 Cursando desde hace  <strong> {{$mesesCursados}} </strong>{{$mesesCursados == 1 ? 'mes' :'meses' }}
             </div>
-            <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#dataModal">
+            <button type="button" class="btn btn-outline-primary " data-bs-toggle="modal" data-bs-target="#dataModal">
                 Editar datos
             </button>
         </li>
@@ -61,7 +61,7 @@
             </div>
         </li>    
         <li class="list-group-item text-center h-25 bg-dark">
-            <button class="btn btn-primary btn-block btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary btn-block btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 +
             </button>
         </li>     
@@ -76,7 +76,7 @@
                 <li class="list-group-item"><strong class="mr-3 text-dark">Tarjeta : </strong> {{$user->datosUser->tarjeta}}</li>
             @endif
             <li class="list-group-item d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-danger " data-toggle="modal" data-target="#dataUserModal">
+                <button type="button" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#dataUserModal">
                     Editar datos
                 </button>
             </li>
@@ -90,7 +90,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edicion de datos</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -140,7 +140,7 @@
             
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -153,7 +153,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edicion de datos</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -193,7 +193,7 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

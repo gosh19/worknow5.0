@@ -22,7 +22,7 @@
       <td>{{$user->venta->datosVendedor->name ?? ''}} </td>
       <!-- Button trigger modal -->
       <td>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id{{$user->id}}">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#id{{$user->id}}">
         Habilitar
       </button>
       </td>
@@ -37,7 +37,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cargar informacion de facturacion para {{$user->name}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

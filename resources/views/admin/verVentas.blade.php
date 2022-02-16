@@ -32,14 +32,14 @@
 <hr class="mb-3">
 <div class="flex justify-around">
 
-  <button data-toggle="collapse" data-target="#cursos" class="bg-blue-600 text-white p-2">Ver cursos</button>
-  <button data-toggle="collapse" data-target="#provincias" class="bg-red-600 text-white p-2">Ver Provincias</button>
-  <button data-toggle="collapse" data-target="#vendedoras" class="bg-purple-600 text-white p-2">Ver Vendedoras</button>
+  <button data-bs-toggle="collapse" data-bs-target="#cursos" class="bg-blue-600 text-white p-2">Ver cursos</button>
+  <button data-bs-toggle="collapse" data-bs-target="#provincias" class="bg-red-600 text-white p-2">Ver Provincias</button>
+  <button data-bs-toggle="collapse" data-bs-target="#vendedoras" class="bg-purple-600 text-white p-2">Ver Vendedoras</button>
 
 </div>
 <div class="flex flex-wrap collapse" id="cursos">
   @foreach ($valores as $key => $item)
-      <div class="p-2 bg-red-500 font-bold w-40 mr-2 border-2 text-white border-black tracking-wider">
+      <div class="p-2 bg-blue-500 font-bold w-40 mr-2 border-2 text-white border-black tracking-wider">
         <p>{{$key}} : <span class="text-xl">{{$item}}</span></p>
       </div>
   @endforeach
@@ -47,7 +47,7 @@
 <hr class="mb-3">
 <div class="flex flex-wrap collapse" id="provincias">
   @foreach ($provincias as $item)
-      <div class="p-2 bg-blue-500 font-bold w-40 mr-2 border-2 text-white border-black tracking-wider">
+      <div class="p-2 bg-red-500 font-bold w-40 mr-2 border-2 text-white border-black tracking-wider">
         <p>{{$item['provincia']}} : <span class="text-xl">{{$item['cant']}}</span></p>
       </div>
   @endforeach

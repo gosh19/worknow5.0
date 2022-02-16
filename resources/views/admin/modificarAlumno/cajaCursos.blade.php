@@ -3,14 +3,14 @@
       Informacion de cursos
     </div>
     <div class="card-body p-1">
-      <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalCorreccion">Ver entregas</button>
+      <button type="button" class="btn btn-block btn-dark" data-bs-toggle="modal" data-bs-target="#modalCorreccion">Ver entregas</button>
         {{--INICIO MODAL CORRECCION--}}
         <div class="modal fade  " id="modalCorreccion" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog mw-100 w-70 mr-3 ml-3" role="document">
             <div class="modal-content ">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Correcciones pendientes</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -106,8 +106,7 @@
               </table>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -274,7 +273,7 @@
                 </li>
             @endforeach{{--FOREACH DE CURSOS--}}
             <li class="list-group-item">
-              <button type="button" class="btn btn-outline-primary btn-block" data-toggle="collapse" data-target="#collapseCursos">Agregar Cursos</button>
+              <button type="button" class="btn btn-outline-primary btn-block" data-bs-toggle="collapse" data-bs-target="#collapseCursos">Agregar Cursos</button>
             </li>
             
         </ul>
