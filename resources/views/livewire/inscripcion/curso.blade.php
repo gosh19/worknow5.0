@@ -32,7 +32,6 @@
         <h2 class="text-xl font-bold mb-3">{{$course->nombre}}</h2>
         <div wire:ignore class="grid grid-cols-2 mb-3">
           <div class="col-span-1">
-
             <h5 class="text-md text-gray-500 mb-4">Certificacion oficial <i class="fas fa-certificate text-blue-500"></i></h5>
             <div class="flex">
               <p class="text-md text-gray-600 mr-4 flex-1 self-end"><i class="fas fa-user-friends text-red-900"></i>{{$course->info == null ? rand(1500,5000):($course->info->people == null?rand(1500,5000): $course->info->people)}}</p>
@@ -73,10 +72,10 @@
             <button wire:click="add()" class="py-1 px-2 mr-2 border-2 border-red-700 hover:bg-red-700 text-red-700 hover:text-white transition-all duration-500" ><i class="fas fa-plus "></i></button>
             
             @else
-            <button class="py-1 px-2 mr-2 border-2 border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition-all duration-500" ><i class="fas fa-check"></i></button>
+            <button wire:click="add()" class="py-1 px-2 mr-2 border-2 border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition-all duration-500" ><i class="fas fa-check"></i></button>
             @endif
           <a class="py-1 bg-gray-200 px-2 border-2 text-decoration-none border-red-700 text-red-700 hover:bg-red-700 hover:text-white transition-all duration-500 w-full font-bold text-center" 
-            href="/show-course/{{$course}}">Ver mas</a>
+            href="{{route('Intro.ShowCourse',['Course'=> $course])}}">Ver mas</a>
 
         </div>
       </div>

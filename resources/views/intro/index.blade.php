@@ -90,7 +90,7 @@
     </div>
   </div>
 </div>
-<hr class="border-4 border-red-600">
+<div class="w-full h-6 bg-red-700"></div>
 <div class="bg-gray-100 p-3">
   <h1 class=" text-5xl font-bold text-red-900">Nuestras capacitaciones</h1>
   <hr class="border-2 border-red-800 mb-3">
@@ -103,8 +103,8 @@
       </h2>
       <hr class="border-4 border-orange-600 mb-3">
       <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-20">
-        @foreach ($cat->courses as $curso)
-        @livewire('inscripcion.curso',['curso'=> $curso,'country'=> $country] , key($curso->id))
+        @foreach ($cat->courses as $course)
+        @livewire('inscripcion.curso',['course'=> $course,'country'=> $country] , key($course->id))
       
         @endforeach
       </div>

@@ -19,11 +19,11 @@ class Curso extends Component
     public function mount(\App\Course $course)
     {
         $this->course = $course;
-        $this->country = session('country')==null ? 'SD':session('country');
+        $this->country = session('country') == null ? 'SD':session('country');
 
         if (session('courses')) {
-            foreach (session('courses') as $key => $selected) {
-                if ($selected == $this->course->id) {
+            foreach (session('courses') as $key => $idCourseSelected) {
+                if ($idCourseSelected == $this->course->id) {
                     $this->selected = true;
                     $this->btnText = 'Quitar';
                 }
@@ -45,7 +45,6 @@ class Curso extends Component
 
     public function add()
     {
-        
         if ($this->selected) {
             $aux = session()->pull('courses',[]);
             $key = array_search($this->course->id, $aux);
@@ -59,7 +58,7 @@ class Curso extends Component
         $this->selected = !$this->selected;
         $this->selected? $this->btnText='Quitar':$this->btnText='Agregar';
 
-        $this->emit('refreshCourseList');
+        $this->emit('addCourse', $this->course->id);
     }
     
     public function render()

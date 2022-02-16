@@ -73,7 +73,7 @@
               <s class="text-md text-gray-500 font-bold"> $ {{(($country == 'AR')||($country == 'ARG'))?$course->info->peso:($country == 'PY' ?number_format(($course->info->dolar*(session('conversion')?? 7045)),2,',','.'):$course->info->dolar)}} {{(($country == 'AR')||($country == 'ARG'))? 'ARS':($country == 'PY' ?'PYG':'USD')}}</s>
               @endif
             @endif
-            <p class="text-xl text-orange-700 ">
+            <p class="text-xl text-white-700 ">
               <strong>
                 $
                 @if ($course->info != null)
@@ -199,22 +199,22 @@
     @if (session('platform'))
         <input type="hidden" name="platform" value="{{session('platform')}}">
     @endif
-    <div class="grid grid-rows-1 gap-5 p-4 border-2 text-white border-red-300 rounded w-full md:w-1/2">
+    <div class="grid grid-rows-1 gap-5 p-4 border-2 text-black border-red-300 rounded w-full md:w-1/2">
       <div class="mb-3 relative h-5">
         <div class=" w-full absolute z-50">
-          <input type="text" name="name" required placeholder="Nombre" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-orange-400 focus:bg-orange-500">
+          <input type="text" name="name" required placeholder="Nombre" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-white focus:bg-white-500">
         </div>
         <div class="h-10 bg-red-600 w-full absolute top-2 right-2 z-40"></div>
       </div>
       <div class="mb-3 relative h-5">
         <div class=" w-full absolute z-50">
-          <input type="number" name="phone" required placeholder="Telefono" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-orange-400 focus:bg-orange-500">
+          <input type="number" name="phone" required placeholder="Telefono" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-white-400 focus:bg-white-500">
         </div>
         <div class="h-10 bg-red-600 w-full absolute top-2 right-2 z-40"></div>
       </div>
       <div class="mb-3 relative h-5">
         <div class=" w-full absolute z-50">
-          <input type="text" name="email" placeholder="E-mail" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-orange-400 focus:bg-orange-500">
+          <input type="text" name="email" placeholder="E-mail" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-white-400 focus:bg-white-500">
         </div>
         <div class="h-10 bg-red-600 w-full absolute top-2 right-2 z-40"></div>
       </div>
@@ -222,7 +222,7 @@
         <div class="h-10 bg-red-600 w-full absolute top-3 right-2 z-40"></div>
         <div class=" w-full absolute z-50">
 
-          <select name="horario" class="bg-orange-400 focus:bg-orange-500 text-lg w-full p-2 text-black font-bold">
+          <select name="horario" class="bg-white-400 focus:bg-white-500 text-lg w-full p-2 text-black font-bold">
             <option value="10:00hs_a_12:00hs">10:00hs_a_12:00hs</option>
             <option value="12:00hs_a_14:00hs">12:00hs_a_14:00hs</option>
             <option value="14:00hs_a_16:00hs">14:00hs_a_16:00hs</option>
@@ -238,7 +238,7 @@
 
 <hr class="my-3 mx-3 md:w-3/4">
 <div class="my-4 mx-3">
-  <a class="py-2 px-5 bg-orange-500 font-bold rounded text-white tracking-wider" href="{{route('inscripcionTemprana')}}">
+  <a class="py-2 px-5 bg-white-500 font-bold rounded text-white tracking-wider" href="{{route('inscripcionTemprana')}}">
     <i class="fas fa-backward"></i> Volver al registro
   </a>
 </div>
@@ -251,7 +251,7 @@
         <div class="flex h-full">
             <i class="flex self-center fas fa-tag fa-2x mr-2 text-red-600"></i>
             <h1 class="flex self-center text-2xl font-bold mb-2 ">
-              <a class="hover:no-underline hover:text-orange-600 transition-all duration-200" href="{{route('Intro.ShowCourse',['Course'=> $item])}}">
+              <a class="hover:no-underline hover:text-white-600 transition-all duration-200" href="{{route('Intro.ShowCourse',['Course'=> $item])}}">
                 {{$item->nombre}}
               </a>
             </h1>

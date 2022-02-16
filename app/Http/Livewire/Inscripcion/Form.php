@@ -24,12 +24,26 @@ class Form extends Component
         $this->cursos = \App\Course::orderBy('nombre','asc')->get();
         $this->categorias = \App\Categoria::orderBy('order','asc')->get();
         $this->country = $country;
+        
+        foreach (session('courses') as $key => $courseId) {
+            $aux = \App\Course::find($courseId);
+            $this->selected[]= $aux->nombre;
+        }
     }
 
 
-    public function addCourse()
+    public function addCourse($id)
     {
-        //
+        $exist = false;
+        $course = \App\Course::find($id);
+
+        $index = array_search($course->nombre, $this->selected);
+
+        if ($index === false) {
+            $this->selected[] = $course->nombre;
+        }else{
+            unset($this->selected[$index]);
+        }
     }
 
     public function campos()
@@ -57,10 +71,10 @@ class Form extends Component
         }else if($this->password != $this->confpassword ){
             $this->emit('password');
             return 0;
-        }else if(!session()->has('selected')){
+        }else if(!session('courses')){
             $this->emit('cursos');
             return 0;
-        }else if(count(session('selected')) == 0){
+        }else if(count(session('courses')) == 0){
             $this->emit('cursos');
             return 0;
         }
@@ -93,9 +107,9 @@ class Form extends Component
         $userTest->user_id = $user->id;
         $userTest->save();
 
-        foreach (session('selected') as $curso) {
+        foreach (session('courses') as $curso) {
             if ($curso != null) {
-                $user->courses()->attach($curso['id']);
+                $user->courses()->attach($curso);
             }
         }
         foreach ($user->courses as  $course) {
@@ -111,14 +125,6 @@ class Form extends Component
         return redirect()->to('/intro');
     }
 
-    public function deleteCourse($index)
-    {
-        if (session()->has('selected.'.$index)) {
-            $this->emit('unSelect',session('selected.'.$index.'.id'));
-            session()->forget('selected.'.$index);
-        }
-
-    }
 
     public function render()
     {
