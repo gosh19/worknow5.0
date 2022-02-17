@@ -25,9 +25,11 @@ class Form extends Component
         $this->categorias = \App\Categoria::orderBy('order','asc')->get();
         $this->country = $country;
         
-        foreach (session('courses') as $key => $courseId) {
-            $aux = \App\Course::find($courseId);
-            $this->selected[]= $aux->nombre;
+        if (session('courses')) {
+            foreach (session('courses') as $key => $courseId) {
+                $aux = \App\Course::find($courseId);
+                $this->selected[]= $aux->nombre;
+            }
         }
     }
 
