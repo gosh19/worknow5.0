@@ -111,7 +111,7 @@ class RegisterController extends Controller
       }
 
       try {
-        Mail::to($user->email)->queue(new AlumnosMail($user, 'altaEstudiante'));
+        //Mail::to($user->email)->queue(new AlumnosMail($user, 'altaEstudiante'));
       } catch (\Throwable $th) {
         //throw $th;
         return "error al enviar el correo <h2>SACA UNA CAPTURA PARA EVALUAR EL ERROR Y PRESIONE </h2>
@@ -182,7 +182,7 @@ class RegisterController extends Controller
         }
 
         try {
-            Mail::to($user->email)->queue(new AlumnosMail($user, 'altaEstudiante'));
+            //Mail::to($user->email)->queue(new AlumnosMail($user, 'altaEstudiante'));
         } catch (\Throwable $th) {
             //throw $th;
             return "error al enviar el correo <h2>SACA UNA CAPTURA PARA EVALUAR EL ERROR Y PRESIONE </h2>

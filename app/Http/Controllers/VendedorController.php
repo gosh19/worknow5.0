@@ -153,7 +153,7 @@ class VendedorController extends Controller
 
         try {
             
-            Mail::to($request->email)->queue(new VendedorMail($request));
+            //Mail::to($request->email)->queue(new VendedorMail($request));
 
             return redirect('/vendedor')->with('msg', 'success');
         } catch (\Throwable $th) {

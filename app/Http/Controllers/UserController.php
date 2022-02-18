@@ -455,7 +455,7 @@ class UserController extends Controller
           $infoFac->cobrable = 0;
           $infoFac->save();
         }
-        Mail::to($user->email)->send(new \App\Mail\BloqueoMail($user));
+        //Mail::to($user->email)->send(new \App\Mail\BloqueoMail($user));
         //ENVIO DE MAIL DE AVISO DE BLOQUEO
       }
 
@@ -505,7 +505,7 @@ class UserController extends Controller
   {
     $user = User::find($id);
     try {
-      Mail::to($user->email)->queue(new AlumnosMail($user, 'altaEstudiante', null));
+      //Mail::to($user->email)->queue(new AlumnosMail($user, 'altaEstudiante', null));
       return redirect()->back()->with('alta','success');
     } catch (\Throwable $th) {
       //throw $th;

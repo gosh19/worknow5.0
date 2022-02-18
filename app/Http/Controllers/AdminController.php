@@ -252,7 +252,7 @@ class AdminController extends Controller
                 if ($request->has('unidad_id')) {
                     try {
                         if (($user->habilitado == 1)&&($user->tipo_pago != 'test')) {
-                            Mail::to($user->email)->queue(new CadenaMail($request));
+                            //Mail::to($user->email)->queue(new CadenaMail($request));
                         }
                     } catch (\Throwable $th) {
                         echo $th->getMessage();
@@ -263,7 +263,7 @@ class AdminController extends Controller
                             $data = null;
                             $data['msj'] = $request->texto;
                             $data['subject'] = $request->subject;
-                            Mail::to($user->email)->queue(new AlumnosMail($user,'cadenaMail' ,$data));
+                            //Mail::to($user->email)->queue(new AlumnosMail($user,'cadenaMail' ,$data));
                         }
                     } catch (\Throwable $th) {
                         //throw $th

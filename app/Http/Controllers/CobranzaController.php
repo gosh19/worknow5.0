@@ -268,7 +268,7 @@ class CobranzaController extends Controller
         $fecha->day = $fecha->day +5;
 
         try {
-            Mail::to($user->email)->send(new CuotaAlumnoMail($user,$cupon,$fecha));
+            //Mail::to($user->email)->send(new CuotaAlumnoMail($user,$cupon,$fecha));
             if ($case == 'react') {
                 return ['estado' => 1];
             }

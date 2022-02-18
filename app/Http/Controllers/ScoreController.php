@@ -74,7 +74,7 @@ class ScoreController extends Controller
 
         try {
 
-            Mail::to($user->email)->send(new AlumnosMail($user  ,$case,$request));
+            //Mail::to($user->email)->send(new AlumnosMail($user  ,$case,$request));
         } catch (\Throwable $th) {
             //throw $th;
             return "<h1>Error al envier el mail de actividades, la nota fue cargada con exito de todas formas</h1> <br><br>"
@@ -119,7 +119,7 @@ class ScoreController extends Controller
         }
 
       try {
-            Mail::to($user->email)->send(new AlumnosMail($user, 'tpDesaprobado'));
+            //Mail::to($user->email)->send(new AlumnosMail($user, 'tpDesaprobado'));
         } catch (\Throwable $th) {
             //throw $th;
             return "<h1>Error al envier el mail de actividades, la nota fue cargada con exito de todas formas</h1> <br><br>".$th;
