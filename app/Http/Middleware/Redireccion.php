@@ -44,7 +44,7 @@ class Redireccion
             break;
         }
       }else {
-        return redirect()->route('intro');
+        return redirect()->route('PreIntro');
       }
 
   }

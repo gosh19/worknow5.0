@@ -24,17 +24,35 @@ class PaginasController extends Controller
       return view('auth.login');
     }
 
-    public function intro()
+    public function preIntro()
+    {
+
+      return view('preIntro.index');
+    }
+
+    public function intro($country = null)
     {
       if (Auth::check()) {
         return redirect('/User/'.Auth::id());
       }
       $courses = \App\Course::all();
       $categorias = \App\Categoria::orderBy('order','asc')->get();
-      \App\User::getDataIp();
+      //\App\User::getDataIp();
+      if ($country == null) {
+        $country = "LAT";
+      }
 
+      session()->forget('country');
+      session(['country'=>$country]);
+      //return session('country');
       /**cambiamo0ps a la vista inicio q es el nuevo maquetado */
-      return view('intro.index',['courses'=> $courses, 'categorias'=> $categorias,'country'=>session('country')]);
+      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country]);
+    }
+    public function coursesView()
+    {
+      $categorias = \App\Categoria::orderBy('order','asc')->get();
+      
+      return view('intro.courses-view',['categorias'=> $categorias]);
     }
     
     public function addCourse(\App\Course $Course)
@@ -58,7 +76,7 @@ class PaginasController extends Controller
       \App\User::getDataIp();
 
 
-      return view('intro.inscripcion', ['user' => $user, 'country'=> session('country')]);
+      return view('intro.register', ['user' => $user, 'country'=> session('country')]);
     }
 
     public function showCourse(\App\Course $Course, $origin=null)

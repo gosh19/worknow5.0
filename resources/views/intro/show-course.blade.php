@@ -2,271 +2,255 @@
 
 @section('content')
     
-<div class="bg-gray-900 pb-5 relative max-w-full">
+{{--navBar--}}
+
+<div class="grid grid-cols-8 p-3 bg-white items-center">
+  <div class="col-start-1 justify-self-center">
+    <div><img src="{{ asset('img\inicio\logo-wn.png') }}" alt=""> </div>
+  </div>
+  <div class="col-start-5 col-span-1 justify-self-center"> 
+    <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none">
+      FAQ
+    </button>
+  </div>
+  <div class="col-span-1 justify-self-center"> 
+    <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none">
+      Cursos
+    </button>
+  </div>
+  <div class="col-span-1 justify-self-center"> 
+    <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+        </svg>
+  </button>
+  </div>
+  <div class="col-span-1 justify-self-center">
+    <button class="p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm font-bold transform hover:scale-105 transition duration-500 focus:outline-none">
+      Ingresar al aula
+    </button>
+  </div>
+</div>
+
+{{--todo--}}
+<div class="grid grid-cols-3 bg-blueGray-100">
+  <div class="col-span-2 ">
     
-    <div class="relative pt-6 px-4  lg:px-8 mb-4">
-      <nav class="relative flex items-center justify-between sm:h-10 ">
-        <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-          <div class="flex items-center justify-between w-full md:w-auto">
-            <a href="#" aria-label="Home">
-                <a class="fuente-bauhaus93 text-white text-3xl mr-auto" href="/">Work Now</a>
-            </a>
-          </div>            
-        </div>
-      </nav>
-    </div>
-    <div class="border-2 border-white md:w-3/4 p-3 m-3">
-
-      <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 mb-3">
-        <div class="col-span-2">
-          <h1 class="text-5xl text-left text-white font-bold mb-3">{{$course->nombre}}</h1>
-
-          <hr class="mb-3 border border-gray-500">
-          <div class="flex">
-            <i class="fas fa-tags fa-3x text-red-800 mr-3"></i>
-            <p class="text-gray-300 text-left mb-3 text-xl">
-              La duracion del curso depende del tiempo que le dediques y los conocimientos previos 
-              con los que accedas. El 90% de 
-              los alumnos que se inscriben a esta cursada suelen demorar
-              aproximadamente entre 3 y 6 meses. Tenga en cuenta que mientras mas tiempo 
-              le dedique, menor sera su duracion.
-            </p>
-          </div>
-          
-        </div>
-        <div class="md:col-span-1 p-3">
-          <div class="border-2 border-white rounded-2xl shadow-outline-indigo">
-            <img class="w-full rounded-2xl" src="{{$course->url_img}}" alt="">
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="md:fixed md:z-10 md:w-1/5 right-0 top-0 mx-3 mt-20 bg-white shadow-2xl border-2 border-gray-500">
-      <div class="border-2 border-white p-3">
-        @if ($course->info != null)
-          @if ($course->info->on && ($course->info->discount != null)&&(!$course->info->free))                               
-            <div class="md:absolute right-3 top-3 text-center">
-              <p class=" bg-red-800 py-1 px-2 text-white font-extrabold">
-                {{$course->info->discount}}% Off
-              </p>
+    {{--curso--}}
+      <div class="p-3">
+          <div class="py-2">
+            <div class="text-left text-blueGray-600 font-bold text-4xl">
+              Adobe Illustrator desde 0
             </div>
-          @else 
-            @if ($course->info->free) 
-              <div class="md:absolute right-3 top-3 text-center">
-                <p class=" bg-red-800 py-1 px-2 text-white font-extrabold">
-                  GRATIS
-                </p>
+          </div>
+      </div>
+
+      {{--video--}}
+      <div class="p-3 col-span-1">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/Yx-ytGJwB9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+          {{--calificacion curso--}}
+          <div class="grid grid-cols-3 bg-blueGray-200 px-3 mx-3 py-1 text-blueGray-600">
+            <div class="col-span-1 flex items-center">
+               <h1><i class="fas fa-certificate text-lightBlue-700"></i> Certificación oficial</h1>
+            </div>
+            <div class="col-span-1 flex items-center">
+               <h1><i class="fas fa-users"></i> 3829 alumnos</h1>
+             </div>
+            <div class="col-span-1 flex items-center">
+               <h1><i class="fas fa-star text-yellow-500"></i> 4.6</h1>
+            </div>      
+          </div>
+
+
+
+    {{--temario--}}
+    <div class="p-3 my-2 col-span-1">
+      <div class="grid grid-cols-2 text-3xl p-3">
+        <div class="col-span-1 text-left">
+          <h1>Temario</h1>
+        </div>
+          <div class="col-span-1">
+            <div class="flex justify-end text-sm">
+              <button class="flex items-center hover:text-gray-600 focus:outline-none">
+                <div class="p-1">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div class="p-1">
+                  <h1>Descargar temario</h1>
+                </div>
+              </button>
+            </div>
+          </div>
+      </div>
+      <div class="p-1" x-data="{open:false}">
+        <div class="flex p-2 text-xl bg-blueGray-200">
+          <button x-on:click="open=!open" class="flex focus:outline-none hover:text-gray-600">
+            <div>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <div class=" mx-2">
+              <h1 class="font-semibold">Unidad 1:</h1>
+            </div>
+            <div>
+              <h1>Introducción a Illustrator</h1>
+            </div>
+          </button>
+        </div>
+        <div class="p-2 bg-white" x-show="open" x-transition>
+          <ul>
+            <li>◦Trabajo práctico 1</li>
+            <li>◦Video</li>
+            <li>◦Teoría</li>
+          </ul>  
+        </div>
+      </div>
+    </div>
+
+    {{--descipcion gral. de cursos--}}
+
+    <div class="px-3 col-span-1">
+      <div class="flex items-center">
+        <div class="p-1">
+          <i class="far fa-clock "></i>
+        </div>
+        <div class="p-1">
+          <h1 class="font-semibold"> Duración del curso:</h1>
+        </div>
+        <div class="">
+         <h1>Con 2 horas semanales, lo terminas en 3 meses.</h1> 
+        </div>
+      </div>
+    </div>
+    <div class="px-3">
+      <div class="flex items-center">
+        <div class="p-1">
+          <i class="fas fa-infinity"></i>
+        </div>
+        <div class="p-1">
+          <h1 class="font-semibold"> Habilitación de la plataforma:</h1>
+        </div>
+        <div class="">
+         <h1>Para toda la vida!</h1> 
+        </div>
+      </div>
+    </div>
+    <div class="px-3">
+      <div class="flex items-center">
+        <div class="p-1">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
+        <div class="p-1">
+          <h1 class="font-semibold"> Profesores disponibles:</h1>
+        </div>
+        <div class="">
+         <h1>Campus virtual con profesores.</h1> 
+        </div>
+      </div>
+    </div>
+
+    {{--cursos relacionados--}}
+    <div class="mt-4">
+      <div class="p-3 text-3xl">
+        <h1>Cursos relacionados</h1>
+      </div>
+      <div class="grid grid-cols-3 p-3">
+        <div class="col-span-1 bg-white m-2 px-6 py-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+          <div class="relative">
+            <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+            <p class="absolute top-0 bg-red-500 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">Certificación oficial</p>
+          </div>
+          <h1 class="mt-4 text-gray-800 text-3xl font-bold cursor-pointer">
+            Adobe Illustrator desde 0
+          </h1>
+            <button class="mt-4 text-xl w-full text-white hover:bg-indigo-700 bg-indigo-600 py-1.5 rounded-xl shadow-lg">Añadir</button>
+          </div>
+
+          <div class="col-span-1 bg-white m-2 px-6 py-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+            <div class="relative">
+              <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+              <p class="absolute top-0 bg-red-500 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">Certificación oficial</p>
+            </div>
+            <h1 class="mt-4 text-gray-800 text-3xl font-bold cursor-pointer">Adobe Illustrator desde 0</h1>
+              <button class="mt-4 text-xl w-full text-white hover:bg-indigo-700 bg-indigo-600 py-1.5 rounded-xl shadow-lg">Añadir</button>
+            </div>
+
+            <div class="col-span-1 bg-white m-2 px-6 py-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+              <div class="relative">
+                <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+                <p class="absolute top-0 bg-red-500 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">Certificación oficial</p>
               </div>
-            @endif
-          @endif
-        @endif
-        <img src="{{ asset('img/Personaje.png') }}" class="hidden md:block md:w-full" alt="">
-        <p class="text-2xl font-bold">Accede ahora mismo</p>
-        <small>{{$course->nombre}}</small>
-        <div class="mb-2">
-          <div>
-            @if ($course->info != null)
-              @if ($course->info->on && ($course->info->discount != null))
-              
-              <s class="text-md text-gray-500 font-bold"> $ {{(($country == 'AR')||($country == 'ARG'))?$course->info->peso:($country == 'PY' ?number_format(($course->info->dolar*(session('conversion')?? 7045)),2,',','.'):$course->info->dolar)}} {{(($country == 'AR')||($country == 'ARG'))? 'ARS':($country == 'PY' ?'PYG':'USD')}}</s>
-              @endif
-            @endif
-            <p class="text-xl text-white-700 ">
-              <strong>
-                $
-                @if ($course->info != null)
-                {{number_format($course->info->getPrecio($country),2,',','.')}}
-                @else
-                {{(($country == 'AR')||($country == 'ARG'))? 1989:($country == 'PY' ?number_format((23*(session('conversion')?? 7045)),2,',','.'):23)}}
-                @endif
-                {{(($country == 'AR')||($country == 'ARG'))? 'ARS':($country == 'PY' ?'PYG':'USD')}}
-              </strong>
-            </p>
-            <p>Pago <strong>Unico</strong></p>
+              <h1 class="mt-4 text-gray-800 text-3xl font-bold cursor-pointer">Adobe Illustrator desde 0</h1>    
+                <button class="mt-4 text-xl w-full text-white hover:bg-indigo-700 bg-indigo-600 py-1.5 rounded-xl shadow-lg">Añadir</button>
+              </div>
+        </div>
+     </div>
+
+    {{--caja datos--}}
+    <div class="p-6 col-span-1 ">
+      <div class="flex items-center justify-center h-screen">
+        <div class="bg-gradient-to-tr from-blue-300 to-indigo-400 flex flex-col w-full border border-gray-900 rounded-xl px-8 py-5 shadow-md">
+        <div class="text-white">
+          <h1 class="font-bold text-4xl">Dejanos tus datos</h1>
+          <p class="font-semibold">Un asesor se contactará para despejar tus dudas!</p>
+        </div>
+        <form class="flex flex-col space-y-8 mt-10">
+          <div class="py-2">
+            <input type="text" value="Nombre completo" class="w-full border-b-2 text-blue-100 bg-blueGray-300 bg-opacity-0 text-lg focus:outline-none focus:border-transparent focus:border-white focus:text-white">
           </div>
-        </div>
-        <hr class="mb-2">
-        <div class="flex justify-around text-xl mb-2">
-          <i class="fab fa-cc-visa text-blue-600"></i>
-          <i class="fab fa-cc-paypal text-indigo-800"></i>
-          <i class="fab fa-cc-mastercard text-pink-700"></i>
-          <i class="fab fa-cc-amex text-red-600"></i>
-        </div>
-        <hr class="mb-2">
-        <div class="flex justify-center mb-3">
-          @if ($canSelect)
-          <a class="py-2 rounded text-decoration-none text-center w-full bg-blue-700 transition-all duration-300 hover:bg-blue-500 text-white font-bold" 
-                href="{{route('addCourse',['Course'=> $course])}}"
-            >
-              Agregar
-            </a>
-          @else
-            <p class="py-2 rounded text-decoration-none text-center w-full bg-blue-300 text-black font-bold">
-              Agregado
-            </p>
-          @endif
-            
-        </div>
-        <div class="flex justify-center">
-          <a class="py-2 rounded text-decoration-none text-center w-full bg-red-700 transition-all duration-300 hover:bg-red-500 text-white font-bold" 
-                href="{{route('inscripcionTemprana')}}"
-            >
-              Ir al registro
-            </a>   
-        </div>
-      </div>  
-    </div>
-    
-</div>
-<hr class="w-full border-4 border-red-700">
-
-<div class="mx-3 my-5 ">
-  <div class="border-2 border-gray-300 md:w-3/4 p-3 shadow-lg">
-    <div class="flex justify-between">
-
-      <h1 class="text-3xl font-bold text-gray-700">Unidades</h1>
-      <a target="_blanck" class="text-center text-gray-700" href="{{$course->url_temario}}">
-        <p class="font-bold text-center">
-          <i class="far fa-file-alt fa-2x"></i><br>
-          Temario</p>
-      </a>
-    </div>
-    <hr class="my-2">
-    <ul class="p-2">
-      @foreach ($course->unities as $unity)
-          <li class="text-lg font-bold text-gray-500 mb-3">
-            <i class="fas fa-check mr-3 text-red-700"></i>{{$unity->nombre}} <a class="cursor-pointer" data-toggle="collapse" data-target="#collapse-{{$unity->id}}"><i class="fas fa-caret-down"></i></a>
-            <ul class="ml-4 collapse" id="collapse-{{$unity->id}}">
-              @foreach ($unity->modules as $module)
-              <li>
-
-                <i class="fas fa-angle-right mr-3 text-red-800"></i>{{$module->titulo}}
-              </li>
-              @endforeach
-            </ul>
-          </li>
-      @endforeach
-        <li class="text-lg font-bold text-gray-500 mb-2">
-          <a target="_blanck" href="{{$course->url_temario}}">
-
-            <i class="fas fa-angle-double-right mr-3 text-red-700"></i>
-            Ver mas...
-          </a>
-        </li>
-    </ul>
-  </div>
-</div>
-
-@if ($course->videoMuestra != null)
-  @if ($course->videoMuestra->url != null)
-      
-    <div class="mx-3 my-5" >
-      <div class="border-2 border-gray-300 md:w-3/4 p-3 shadow-lg">
-        <h1 class="text-3xl font-bold text-gray-700"><i class="fab fa-youtube text-red-900 mr-4"></i> Video de muestra</h1>
-        <hr class="my-3">
-        <div class="flex">
-          <div class="text-xl text-gray-500 w-full border">
-            <iframe width="100%" height="500" src="{{$course->videoMuestra->url}}" frameborder="0"  allowfullscreen></iframe>
+          <div class="py-2">
+            <input type="text" value="Teléfono" class="w-full border-b-2 text-blue-100 bg-blueGray-300 bg-opacity-0 text-lg focus:outline-none focus:border-transparent focus:border-white focus:text-white">
           </div>
-        </div>
-      </div>
-    </div>
-  @endif
-@endif
-
-
-<div class="mx-3 my-5" >
-  <div class="border-2 border-gray-300 md:w-3/4 p-3 shadow-lg">
-    <h1 class="text-3xl font-bold text-gray-700">Descripcion</h1>
-    <hr class="my-3">
-    <div class="flex w-full">
-      <i class="fas fa-info-circle text-red-900 fa-3x mr-4"></i>
-
-      <div class="text-xl text-gray-500 w-9/12 md:w-full overflow-ellipsis overflow-hidden">
-        {!! $course->descripcion !!}
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="my-3 mx-3 md:w-3/4">
-
-<div class="border-2 border-gray-300 md:w-3/4 p-3 shadow-lg mx-3">
-  <p class="font-bold text-xl text-center text-red-600 mb-3">Deja tus datos para que se contacte un asesor para despejar tus dudas <br> sobre el curso de {{$course->nombre}} </p>
-  <form class="flex justify-center" action="{{route('Tienda.contacto',['course'=> $course])}}" method="post">
-    @csrf
-    @if (session('platform'))
-        <input type="hidden" name="platform" value="{{session('platform')}}">
-    @endif
-    <div class="grid grid-rows-1 gap-5 p-4 border-2 text-black border-red-300 rounded w-full md:w-1/2">
-      <div class="mb-3 relative h-5">
-        <div class=" w-full absolute z-50">
-          <input type="text" name="name" required placeholder="Nombre" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-white focus:bg-white-500">
-        </div>
-        <div class="h-10 bg-red-600 w-full absolute top-2 right-2 z-40"></div>
-      </div>
-      <div class="mb-3 relative h-5">
-        <div class=" w-full absolute z-50">
-          <input type="number" name="phone" required placeholder="Telefono" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-white-400 focus:bg-white-500">
-        </div>
-        <div class="h-10 bg-red-600 w-full absolute top-2 right-2 z-40"></div>
-      </div>
-      <div class="mb-3 relative h-5">
-        <div class=" w-full absolute z-50">
-          <input type="text" name="email" placeholder="E-mail" class="h-10 px-3 text-xl font-bold placeholder-black w-full bg-white-400 focus:bg-white-500">
-        </div>
-        <div class="h-10 bg-red-600 w-full absolute top-2 right-2 z-40"></div>
-      </div>
-      <div class="relative h-5">
-        <div class="h-10 bg-red-600 w-full absolute top-3 right-2 z-40"></div>
-        <div class=" w-full absolute z-50">
-
-          <select name="horario" class="bg-white-400 focus:bg-white-500 text-lg w-full p-2 text-black font-bold">
-            <option value="10:00hs_a_12:00hs">10:00hs_a_12:00hs</option>
-            <option value="12:00hs_a_14:00hs">12:00hs_a_14:00hs</option>
-            <option value="14:00hs_a_16:00hs">14:00hs_a_16:00hs</option>
-            <option value="16:00hs_a_18:00hs">16:00hs_a_18:00hs</option>
+          <div class="py-2">
+            <input type="text" value="Email" class="w-full border-b-2 text-blue-100 bg-blueGray-300 bg-opacity-0 text-lg focus:outline-none focus:border-transparent focus:border-white focus:text-white">
+          </div>
+           <select name="Horario" class="w-full border-b-2 text-blue-100 bg-blueGray-300 bg-opacity-0 text-lg focus:outline-none focus:border-transparent focus:border-white focus:text-white">
+            <option value="10:00hs_a_12:00hs" class="text-blueGray-600 focus:text-white">10:00hs a 12:00hs</option>
+            <option value="12:00hs_a_14:00hs" class="text-blueGray-600 focus:text-white">12:00hs a 14:00hs</option>
+            <option value="14:00hs_a_16:00hs" class="text-blueGray-600 focus:text-white">14:00hs a 16:00hs</option>
+            <option value="16:00hs_a_18:00hs" class="text-blueGray-600 focus:text-white">16:00hs a 18:00hs</option>
           </select>
+          <button class="border border-blue-500 bg-blue-500 text-white rounded-lg py-3 font-semibold focus:outline-none">Cargar</button>
+        </form>
+      </div>
+      </div>
+    </div>
+
+  </div>  
+    
+
+  {{--pago--}}
+  <div class="col-span-1">
+    <div class="bg-white rounded-xl p-3 mx-3 my-2 shadow fixed">
+      <div class="">
+        <img class="rounded-t-xl" src="{{ asset('img/show-courses/illustrator.jpg') }}" alt="">
+      </div>
+      <div>
+        <h1 class="text-2xl p-2 text-center font-semibold">Accedé ahora mismo</h1>
+      </div>
+      <div class="p-2">
+        <h1>Adobe illustrator desde 0</h1>
+        <h1 class="text-2xl font-semibold text-red-700">$4.200 ARS</h1>
+        <h1>Pago único</h1>
+      </div>
+      <div class="grid grid-cols-2">
+        <div class="col-span-1 text-center p-2">
+          <button class="bg-indigo-600 text-white rounded-xl w-full p-2 text-xl transform hover:scale-105 transition duration-500">
+            Agregar
+          </button>
+        </div>
+        <div class="col-span-1 text-center p-2">
+          <button class="bg-indigo-600 text-white rounded-xl w-full p-2 text-xl transform hover:scale-105 transition duration-500">
+           Ir al registro
+          </button>
         </div>
       </div>
-      <hr class="my-2">
-      <input class="w-full py-2 bg-red-600 text-xl font-bold rounded" type="submit" value="Cargar">
     </div>
-  </form>
+  </div>
+
 </div>
 
-<hr class="my-3 mx-3 md:w-3/4">
-<div class="my-4 mx-3">
-  <a class="py-2 px-5 bg-white-500 font-bold rounded text-white tracking-wider" href="{{route('inscripcionTemprana')}}">
-    <i class="fas fa-backward"></i> Volver al registro
-  </a>
-</div>
-<hr class="w-full border-4 border-red-700">
-<div class="bg-gray-500 p-3 pb-5">
-  <h1 class="text-5xl text-center font-bold text-white mb-3">¡Los cursos mas elegidos!</h1>
-  <div class="grid grid-flow-row md:grid-cols-4">
-    @foreach ($list as $item)
-      <div class="mx-3 mb-3 p-2 py-auto bg-gray-100 rounded border-2 border-red-400">
-        <div class="flex h-full">
-            <i class="flex self-center fas fa-tag fa-2x mr-2 text-red-600"></i>
-            <h1 class="flex self-center text-2xl font-bold mb-2 ">
-              <a class="hover:no-underline hover:text-white-600 transition-all duration-200" href="{{route('Intro.ShowCourse',['Course'=> $item])}}">
-                {{$item->nombre}}
-              </a>
-            </h1>
-        </div>
-      </div>
-    @endforeach
-  </div>
-</div>
-<hr class="w-full border-4 border-red-700">
-<div class="bg-black p-3 pb-5">
-  <div class="flex justify-around w-full text-3xl text-white">
-    <a href="https://www.facebook.com/WorkNowcursos/"><i class="fab fa-facebook-square"></i></a>
-    <a href="https://www.instagram.com/worknowcursos/"><i class="fab fa-instagram"></i></a>
-    <a href="https://api.whatsapp.com/send?phone=+5492236772444&text=Quiero%20mas%20informacion"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.youtube.com/channel/UCFcR9BQVm5UeJYjVflshvHQ"><i class="fab fa-youtube"></i></a>
-  </div>
-</div>
 @endsection

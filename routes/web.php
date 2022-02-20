@@ -15,25 +15,29 @@ use App\Http\Controllers;
 */
 Auth::routes();
 
-Route::get('/','PaginasController@index')->middleware('redireccion');
+Route::get('/sss',function(){
+  return view('layouts.validadorTarjeta');
+});
 
-Route::get('/intro', [Controllers\PaginasController::class ,'intro'])->name('intro');
-
-Route::get('/inscripcion', [Controllers\PaginasController::class ,'inscripcionTemprana'])->name('inscripcionTemprana');
-Route::post('/cargarDatosAltaTemprana', [Controllers\PaginasController::class ,'cargarUser'])->name('cargarInscripcionTemprana');
-
-Route::get('/ingreso-alternativo', [Controllers\PaginasController::class ,'ingresoAlternativo']);
+Route::get('/ingreso-alternativo', 'PaginasController@ingresoAlternativo');
 
 //REDIRRIGE AL INICIO DE CADA TIPO DE USER
 
 Route::post('/tienda/contacto/{course?}', 'TiendaController@cargarDato')->name('Tienda.contacto');
 
-Route::get('/add-course/{Course}', [Controllers\PaginasController::class ,'addCourse'])->name('addCourse');
+Route::get('/add-course/{Course}', 'PaginasController@addCourse')->name('addCourse');
 
+Route::match(['get', 'post'],'/inscripcion', 'PaginasController@inscripcionTemprana')->name('inscripcionTemprana');
+Route::get('/inscipcion/cursos', 'PaginasController@coursesView')->name('Intro.Cursos');
+Route::post('/cargarDatosAltaTemprana', 'PaginasController@cargarUser')->name('cargarInscripcionTemprana');
 
-Route::get('/show-course/{Course}/{origin?}', [Controllers\PaginasController::class ,'showCourse'])->name('Intro.ShowCourse');
+Route::get('/selectCountry', 'PaginasController@preIntro')->name('PreIntro');
+Route::get('/intro/{country?}', 'PaginasController@intro')->name('intro');
 
-Route::view('login', [Controllers\PaginasController::class ,'index'])->middleware('redireccion');
+Route::get('/show-course/{Course}/{origin?}', 'PaginasController@showCourse')->name('Intro.ShowCourse');
+
+Route::get('/','PaginasController@index')->middleware('redireccion');
+Route::view('login', 'PaginasController@index')->middleware('redireccion');
 
 Route::get('/back-mp/{id}/{precio?}', 'PaymentController@backMp');
 
