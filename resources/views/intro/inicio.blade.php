@@ -15,7 +15,7 @@
 
             <div class="col-start-2 lg:col-start-6 col-span-1 justify-self-center">
                 <a href={{ route('Intro.Cursos') }}
-                    class="focus:outline-none hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500">
+                    class="no-underline hover:text-gray-400 text-black p-3 transform hover:scale-105 transition duration-500">
                     Cursos
                 </a>
             </div>
@@ -124,30 +124,30 @@
                     {{-- FORMULARIO DE REGISTRO --}}
                     <form action="{{ route('inscripcionTemprana') }}" method="POST">
                         @csrf
-                        <div class="p-3">
+                        <div class="py-3">
                             <input
-                                class="p-2 border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full"
+                                class="p-2 w-full border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full"
                                 name="email" type="text" placeholder="Email..." required>
                         </div>
-                        <div class="p-3">
+                        <div class="py-3">
                             <input
-                                class="p-2 border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full"
+                                class="p-2 w-full border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full"
                                 name="password" type="password" placeholder="Contraseña..." required>
                         </div>
-                        <div class="p-1 justify-self-center">
+                        <div class="py-3 justify-self-center">
                             <input type="submit" value="Registrarme gratis"
                                 class="focus:outline-none focus-within p-2 w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-blue-600 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                         </div>
                     </form>
 
                     <div class="">
-                        <div class="p-1 justify-self-center">
+                        {{-- <div class="p-1 justify-self-center">
                             <button
                                 class="focus:outline-none p-2 w-full text-black rounded-xl bg-gray-50 hover:bg-gray-200 transform hover:scale-105 transition duration-500">
                                 Continuar con Google
                             </button>
-                        </div>
-                        <div class="p-1 justify-self-center">
+                        </div> --}}
+                        <div class="py-2 justify-self-center">
                             <button
                                 class="focus:outline-none p-2 w-full bg-transparent text-blue-700 hover:text-blue-900 px-3 py-1 rounded-lg transform hover:scale-105 transition duration-500">
                                 Ya tengo cuenta!
@@ -209,7 +209,31 @@
                 </div>
             </div>
         </div>
+        <div class="w-full h-2 bg-blue-600"></div>
+        <div class="text-center bg-gradient-to-br from-blue-100 to-purple-100 py-2">
+            <p class="text-4xl font-bold text-blue-900">Top 5 <i class="fa-solid fa-fire text-red-900"></i></p>
+        </div>
 
+        <div class="border-t-4 border-b-4 border-purple-300 grid grid-cols-1 md:grid-cols-5 divide-y-2 md:divide-y-0 md:divide-x-2 divide-black">
+                @php
+                    $cant = 0;
+                @endphp
+            @foreach ($masElegidos as $key => $elegido)
+                <div class="col-span-1 h-32 flex items-center" style="background: no-repeat center url({{ $elegido['img'] }});">
+                    <div class="w-full text-center bg-gray-700 " style="background-color: rgba(91, 63, 117, 0.712)">
+
+                        <p class="text-white text-lg font-bold">{{ $elegido['nombre'] }}</p>
+                    </div>
+
+                </div>
+                @php
+                    $cant++;
+                    if ($cant >= 5) {
+                        break;
+                    }
+                @endphp
+            @endforeach
+        </div>
 
         <style>
             .top-100 {
@@ -263,9 +287,7 @@
                         <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
 
                             @foreach ($categoria->courses as $course)
-
                                 @livewire('inscripcion.curso', ['course' => $course], key($course->id))
-
                             @endforeach
                         </div>
                     </div>
@@ -277,24 +299,26 @@
         {{-- footer --}}
         <div class="grid grid-cols-6 p-6 bg-white items-center">
             <div class="col-span-2 md:col-span-1">
-                <h1>© WorkNow 2021</h1>
+                <p>© WorkNow 2021</p>
             </div>
             <div class="col-span-1">
                 <ul>
                     <li>
-                        <button><i class="fab fa-facebook-f text-2xl"></i></button>
+                        <a href="https://www.facebook.com/WorkNowcursos"><i
+                                class="fab fa-facebook-f text-2xl text-blue-800"></i></a>
                     </li>
                     <li>
-                        <button><i class="fab fa-instagram text-2xl"></i></button>
+                        <a href="https://www.instagram.com/worknowcursos"><i
+                                class="fab fa-instagram text-2xl text-blue-800"></i></a>
                     </li>
                     <li>
-                        <button><i class="far fa-envelope text-xl"></i></button>
+                        <a href="mailto:worknowcursos@gmail.com"><i class="far fa-envelope text-xl text-blue-800"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        
+
 
     </body>
 @endsection

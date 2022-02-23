@@ -204,7 +204,6 @@ class AdminController extends Controller
         }
 
         $valores = [];
-        $flag = 0;
 
         foreach ($cantidades as $key => $cant) {
             $valores[$cant['nombre']] = $cant['cant'];

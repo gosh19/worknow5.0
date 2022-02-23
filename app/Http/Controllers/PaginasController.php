@@ -42,11 +42,26 @@ class PaginasController extends Controller
         $country = "LAT";
       }
 
+      $users = \App\User::take(1000)
+                              ->orderBy('id','DESC')
+                              ->get();
+      $masElegidos = [];
+      foreach ($users as $user) {
+        foreach ($user->courses as $course) {
+          if (!\Illuminate\Support\Arr::exists($masElegidos,$course->nombre)) {
+            $masElegidos[$course->nombre] = ['id'=>$course->id,'nombre'=>$course->nombre, 'cant'=> 1,'img'=>$course->url_img];
+          }else{
+            $masElegidos[$course->nombre]['cant']++;
+          }
+        }
+      }
+      usort($masElegidos, function ($a, $b) { return ($a['cant'] <= $b['cant']); });
+
       session()->forget('country');
       session(['country'=>$country]);
       //return session('country');
       /**cambiamo0ps a la vista inicio q es el nuevo maquetado */
-      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country]);
+      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country, 'masElegidos'=> $masElegidos]);
     }
     public function coursesView()
     {

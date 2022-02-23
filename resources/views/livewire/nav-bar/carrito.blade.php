@@ -32,7 +32,7 @@
                 </button>
             </div>
             <div class="p-2">
-                {{-- descripción compra - cada curso --}}
+                
                 @php
                     $total = 0;
                 @endphp
@@ -51,17 +51,12 @@
                                     <div class="row-span-1">
                                         <h1 class="text-lg font-bold">{{ $course['nombre'] }}</h1>
                                     </div>
-                                    <div class="hidden lg:block ">
-
-
-                                        <p class="leading-tight text-sm">{!! $course['descripcion'] !!}</p>
-                                    </div>
                                 </div>
                             </div>
                             <div
                                 class="col-span-6 md:col-span-1 md:col-start-6 mx-2 mt-2 text-blueGray-600 flex justify-between items-center border-t-2 border-blue-100">
                                 <div class="p-3 text-lg">
-                                    <h1>{{ '$'.number_format($course->info->getPrecio($country), 2, '.', ',') }}</h1>
+                                    <p>{{ '$'.number_format($course->info->getPrecio($country), 2, '.', ',') }}</p>
                                 </div>
                                 <div>
                                     <button class="p-3 focus:outline-none"><i
@@ -74,7 +69,7 @@
 
                 <div class="grid grid-cols-6 border-b pb-2 pt-3">
                     <div class="col-span-2 col-start-6 text-center">
-                        <h1 class="text-lg font-bold">Total ${{ $total }}</h1>
+                        <p class="text-lg font-bold">Total ${{ $total }}</p>
                     </div>
                 </div>
                 <div class="flex justify-end pb-2 pt-3 ">

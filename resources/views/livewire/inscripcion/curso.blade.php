@@ -4,32 +4,33 @@
         <p class="absolute top-0 bg-red-500 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
             Certificación oficial</p>
     </div>
-    <h1 class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">{{ $course->nombre }}
-    </h1>
+    <p class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">{{ $course->nombre }}
+    </p>
     <div class="my-4">
-        <div class="flex space-x-1 items-center p-1">
-            <h1><i class="fas fa-certificate text-lightBlue-700"></i> Certificación oficial
-            </h1>
+        <div class="flex items-center">
+            <p><i class="fas fa-certificate text-blue-700"></i> Certificación oficial
+            </p>
         </div>
-        <div class="flex space-x-1 items-center p-1">
-            <h1><i class="fas fa-users text-lightBlue-700"></i>
+        <div class="flex items-center">
+            <p><i class="fas fa-users text-red-500"></i>
                 {{ $course->info->people == null ? rand(1500, 5000) : $course->info->people }}
-                alumnos</h1>
+                alumnos</p>
         </div>
-        <div class="flex space-x-1 items-center p-1">
-            <h1><i class="fas fa-star text-lightBlue-700"></i>
+        <div class="flex items-center">
+            <p><i class="fas fa-star text-yellow-500"></i>
                 {{ $course->info->score == null ? rand(1500, 5000) : $course->info->score }}
-            </h1>
+            </p>
         </div>
+        <hr class="my-1">
         <div class="mt-2 text-2xl font-semibold text-red-700">
-            <h1>$ {{ number_format($course->info->getPrecio($country), 2, '.', ',') }}</h1>
+            <p>$ {{ number_format($course->info->getPrecio($country), 2, '.', ',') }}</p>
         </div>
         <div class="text-md mt-2">
-            <h1>Pago único</h1>
+            <p>Pago único</p>
         </div>
         <div>
             <button wire:click="add" id="{{ $course->id }}"
-                class="mt-4 text-xl w-full text-white  py-1.5 rounded-xl shadow-lg {{ $selected ? 'hover:bg-rose-700 bg-rose-600' : 'hover:bg-indigo-700 bg-indigo-600' }}">{{ $btnText }}
+                class="mt-4 text-xl w-full text-white  py-1.5 rounded-xl shadow-lg {{ $selected ? 'hover:bg-purple-800 bg-purple-600' : 'hover:bg-indigo-700 bg-indigo-600' }}">{{ $btnText }}
             </button>
         </div>
 
