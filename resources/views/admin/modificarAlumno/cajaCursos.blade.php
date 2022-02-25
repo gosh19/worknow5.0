@@ -155,7 +155,7 @@
                     </form>
                     
 
-                    <a type="button" data-toggle="modal" data-target="#a{{$course['id']}}" style="color:white;" class="btn btn-success btn-sm">Aprobar Tps</a>
+                    <a type="button" data-bs-toggle="modal" data-bs-target="#a{{$course['id']}}" style="color:white;" class="btn btn-success btn-sm">Aprobar Tps</a>
                       
                         {{--INICIO MODAL TPS--}}
                           <div class="modal fade" id="a{{$course['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -163,7 +163,7 @@
                               <div class="modal-content border border-primary">
                                 <div class="modal-header bg-primary text-white font-weight-bolder">
                                   <h5 class="modal-title" id="exampleModalLabel">{{$course['nombre']}}</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
@@ -266,7 +266,7 @@
                                   </div>{{--CIERRE MODAL-BODY--}}
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Listo!</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Listo!</button>
                                 </div>
                           </div>
                     
