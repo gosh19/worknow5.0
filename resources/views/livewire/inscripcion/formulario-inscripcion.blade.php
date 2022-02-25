@@ -40,7 +40,7 @@
 
     <div class="flex justify-end px-6 py-4">
       <button @click="openCat = ! openCat" x-show="openCat" class="p-2 flex items-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm font-semibold transform hover:scale-105 transition duration-500 focus:outline-none">
-        <h1>Siguiente</h1>
+        Siguiente
         <i class="fas fa-angle-right font-semibold ml-1"></i>
       </button>
     </div>
@@ -70,7 +70,7 @@
 
     <div class="flex justify-end px-6 py-4">
       <button wire:click="register" x-show="!openCat" class="p-2 flex items-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm font-semibold transform hover:scale-105 transition duration-500 focus:outline-none">
-        <h1>Registrarme</h1>
+        Registrarme
         <i class="fas fa-angle-right font-semibold ml-1"></i>
       </button>
     </div>

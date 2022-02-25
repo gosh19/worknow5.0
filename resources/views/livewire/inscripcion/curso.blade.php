@@ -11,12 +11,12 @@
             <p><i class="fas fa-certificate text-blue-700"></i> Certificación oficial
             </p>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center" wire:ignore>
             <p><i class="fas fa-users text-red-500"></i>
                 {{ $course->info->people == null ? rand(1500, 5000) : $course->info->people }}
                 alumnos</p>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center" wire:ignore>
             <p><i class="fas fa-star text-yellow-500"></i>
                 {{ $course->info->score == null ? rand(1500, 5000) : $course->info->score }}
             </p>

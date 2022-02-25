@@ -4,7 +4,7 @@
         @click="isDialogOpen = true">
         <i class="fas fa-shopping-cart fa-2x"></i>
     </button>
-
+{{--
     <div id="carrito-flotante"
         class="fixed bottom-5 right-5 z-50 text-5xl bg-gray-100  rounded-full border-4 border-indigo-300 p-3 text-blue-400"
         @click="isDialogOpen = true">
@@ -13,7 +13,7 @@
             <p class="bg-gradient-to-tr from-blue-800 to-indigo-700 text-3xl p-1 rounded-full">{{count($courses)}}</p>
         </div>
     </div>
-
+--}}
     {{-- modal carrito --}}
     <div wire:ignore.self class="overflow-auto " style="background-color: rgba(0,0,0,0.5)" x-show="isDialogOpen"
         x-transition
@@ -38,11 +38,13 @@
                 @endphp
                 <div class="w-full">
                     @foreach ($courses as $key => $course)
+                        
+                    
                         @php
-                            $total += $course->info->getPrecio($country);
+                            $total += $prices[$key];
                         @endphp
                         <div class="grid grid-cols-6 border-b py-2">
-                            <div class="col-span-2 mx-2 mt-2">
+                            <div class="col-span-6 md:col-span-1 mx-2 mt-2">
                                 <img class="rounded-lg" src="{{ asset($course['url_img']) }}"
                                     alt="">
                             </div>
@@ -54,13 +56,14 @@
                                 </div>
                             </div>
                             <div
-                                class="col-span-6 md:col-span-1 md:col-start-6 mx-2 mt-2 text-blueGray-600 flex justify-between items-center border-t-2 border-blue-100">
+                                class="col-span-6 md:col-span-1 md:col-start-6 mx-2 mt-2 text-blueGray-600 flex justify-between items-center">
                                 <div class="p-3 text-lg">
-                                    <p>{{ '$'.number_format($course->info->getPrecio($country), 2, '.', ',') }}</p>
+                                    <p>{{ '$'.number_format($prices[$key], 2, '.', ',') }}</p>
                                 </div>
                                 <div>
-                                    <button class="p-3 focus:outline-none"><i
-                                            class="fas fa-trash-alt "></i></button>
+                                    <button wire:click="remove({{$key}})" class="p-3 outline-none">
+                                        <i class="fas fa-trash-alt "></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +78,7 @@
                 <div class="flex justify-end pb-2 pt-3 ">
                     <div class="text-center">
                         <a  href="{{route('inscripcionTemprana')}}"
-                            class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center">Registrarme gratis</a>
+                            class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center outline-none">Registrarme gratis</a>
                     </div>
                 </div>
             </div>

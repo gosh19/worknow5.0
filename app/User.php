@@ -159,7 +159,7 @@ class User extends Authenticatable
         try {
           $informacionSolicitud = file_get_contents("http://www.geoplugin.net/json.gp?ip=".\Request::ip());
           $dataSolicitud = json_decode($informacionSolicitud);
-          session()->put('country',$dataSolicitud->geoplugin_countryCode);
+          //session()->put('country',$dataSolicitud->geoplugin_countryCode);
           session()->put('conversion',$dataSolicitud->geoplugin_currencyConverter);
           
         } catch (\Throwable $th) {

@@ -115,23 +115,22 @@
         {{-- registro --}}
         <div>
             <div class="grid grid-cols-2">
-                <div
-                    class="px-15 py-4 grid grid-flow-row col-span-2 lg:col-span-1 justify-items-center bg-gradient-to-tr from-blue-300 to-indigo-400">
+                <div class="px-15 py-4 grid grid-flow-row col-span-2 lg:col-span-1 justify-items-center bg-gradient-to-tr from-blue-300 to-indigo-400">
                     <div class="p-1 text-white font-bold text-4xl text-center">
                         <h1>Registrate y forma parte de Work Now!</h1>
                     </div>
 
                     {{-- FORMULARIO DE REGISTRO --}}
-                    <form action="{{ route('inscripcionTemprana') }}" method="POST">
+                    <form action="{{ route('inscripcionTemprana') }}" method="POST" class="w-2/3 md:w-1/2 ">
                         @csrf
                         <div class="py-3">
                             <input
-                                class="p-2 w-full border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full"
+                                class="p-2 w-full border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full text-center"
                                 name="email" type="text" placeholder="Email..." required>
                         </div>
                         <div class="py-3">
                             <input
-                                class="p-2 w-full border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full"
+                                class="p-2 w-full border-transparent focus:ring-indigo-400 focus:ring-4 focus:outline-none focus:border-transparent rounded-full text-center"
                                 name="password" type="password" placeholder="Contraseña..." required>
                         </div>
                         <div class="py-3 justify-self-center">
@@ -158,8 +157,10 @@
 
 
                 {{-- Imagen  LA RESOLUCION ES 1024X768 --}}
-                <div
-                    class="col-span-2 lg:col-span-1 lg:visible sm:invisible bg-gradient-to-br  from-indigo-400 to-blue-300">
+
+                <div class="col-span-2 lg:col-span-1 lg:visible sm:invisible bg-gradient-to-br  from-indigo-400 to-blue-300">
+                    <img src="{{ asset('img/inicio/banner-inicio.gif') }}" alt="">
+                {{--
                     <div id="carouselExampleSlidesOnly" class="carousel slide flex items-center h-full"
                         data-bs-ride="carousel">
                         <div class="carousel-inner relative w-full overflow-hidden">
@@ -174,7 +175,9 @@
                             </div>
                         </div>
                     </div>
+                    --}}
                 </div>
+
             </div>
         </div>
 

@@ -59,6 +59,7 @@ class Curso extends Component
         $this->selected? $this->btnText='Quitar':$this->btnText='Agregar';
 
         $this->emit('addCourse', $this->course->id);
+        $this->emit('refreshCourseList');
     }
     
     public function render()
