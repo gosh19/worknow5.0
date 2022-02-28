@@ -40,6 +40,7 @@ class Curso extends Component
     public function removeCourse()
     {
         $this->selected = false;
+        $this->btnText='Agregar';
     }
 
 

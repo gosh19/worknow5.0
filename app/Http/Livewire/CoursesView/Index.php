@@ -14,8 +14,10 @@ class Index extends Component
     public $isInCarrito = false;
     public $courseList = [];
     public $country;
+    public $debug ='qwe';
+    public $showDropdown = false;
 
-    public $listeners = ['selectCategoria','selectCourse'];
+    public $listeners = ['selectCategoria','selectCourse','asd'];
 
     public function mount($categorias){
         $this->categorias = $categorias;
@@ -31,6 +33,13 @@ class Index extends Component
         $this->selectedCategoria = \App\Categoria::find($id);
     }
 
+    public function asd($id)
+    {
+        $this->selectedCourse = \App\Course::find($id);
+        $this->debug = $id;
+        $this->showDropdown = true;
+    }
+
     public function updateCourseList()
     {
         if (session('courses')) {
@@ -40,21 +49,23 @@ class Index extends Component
         }
     }
 
-    public function selectCourse(\App\Course $course)
+    public function selectCourse($id)
     {   
-        $this->showModal = true;
-        $this->selectedCourse = $course;
+        //$this->selectedCourse = \App\Course::find($id);
+        $this->selectedCourse = $id;
         $this->isInCarrito = false;
         $this->btnText = 'Añadir al carrito';
-
+       
+/*
         if (session('courses')) {
             foreach (session('courses') as $key => $selected) {
-                if ($selected == $course->id) {
+                if ($selected == $this->selectedCourse->id) {
                     $this->isInCarrito = true;
                     $this->btnText = 'Quitar del carrito';
                 }
             }
-        }
+        }*/
+        $this->showModal = true;
     }
 
     public function add($id)

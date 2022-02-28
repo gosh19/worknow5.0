@@ -224,12 +224,11 @@
         <div class="px-3 py-6 border-t-4 grid grid-cols-1 md:grid-cols-5 gap-y-3 gap-x-4 divide-y-2 items-center justify-items-center bg-black">
                 @php
                     $cant = 0;
-                    $heights = [96,64,64,52,52];
+                    $heights = [80,64,64,52,52];
                     $order = [3,2,4,1,5];
                 @endphp
             @foreach ($masElegidos as $key => $elegido)
                 <div class="col-span-1 md:order-{{$order[$cant]}} h-40 md:h-{{$heights[$cant]}} md:w-52 rounded-2xl flex items-center justify-center" style="background: no-repeat center url({{ $elegido['img'] }});">
-                    
                     <div class="w-full text-center bg-gray-700 " style="background-color: rgba(63, 62, 62, 0.829)">
 
                         <p class="text-white text-lg font-bold">{{ $elegido['nombre'] }}</p>

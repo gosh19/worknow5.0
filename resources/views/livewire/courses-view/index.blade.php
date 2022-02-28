@@ -1,5 +1,5 @@
 <div class="w-full">
-    <div class="w-full  flex items-center justify-center md:h-screen" x-data="{ showModal: @entangle('showModal') }"
+    <div class="w-full  flex items-center justify-center md:h-screen" x-data="{ showModal: false}"
         @keydown.escape="showModal = false" x-cloak>
 
         <div class="w-full h-24 md:h-screen md:flex bg-gradient-to-tr from-blue-400 to-indigo-500 md:bg-none">
@@ -16,7 +16,6 @@
                     @livewire('courses-view.categorias', ['categorias' => $categorias])
                 </div>
             </nav>
-
             <div class="w-full lg:w-screen">
                 {{-- buscador-carrito-ingresar --}}
                 <div class="flex justify-between md:justify-end items-center mr-4 border-0 md:border-b-2 border-gray-300 w-full md:w-auto">

@@ -38,20 +38,3 @@ const validationCreditCard = () =>{
     }
     
   }
-
-  //ANIMACION DEL CARRITO FLOTANTE
-
-var carrito = document.getElementById('carrito-flotante');
-carrito.classList.add('opacity-0');
-if (carrito != null) {
-  
-  window.onscroll = function () {
-    let y = window.scrollY;
-    //console.log(y);
-    if (y > 150) {
-      carrito.classList.add("motion-safe:animate-fadeIn");
-    } else {
-      carrito.classList.remove("motion-safe:animate-fadeIn");
-    }
-  }
-};
