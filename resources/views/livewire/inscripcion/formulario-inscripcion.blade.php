@@ -4,7 +4,7 @@
       <h1 class="p-1 text-xl text-blueGray-600">y probá <b>gratis</b> los cursos que quieras!</h1>
     </div>
 
-    <div class="px-3 py-2 grid grid-cols-2">
+    <div class="px-3 py-2 grid grid-cols-1 md:grid-cols-2">
       <div class="col-span-1 p-3">
         <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="email">
       </div>

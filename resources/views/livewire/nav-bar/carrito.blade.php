@@ -18,7 +18,7 @@
     <div wire:ignore.self class="overflow-auto " style="background-color: rgba(0,0,0,0.5)" x-show="isDialogOpen"
         x-transition
         :class="{ 'fixed w-full inset-0 z-10 flex items-start justify-center': isDialogOpen }">
-        <div class="bg-white w-3/4 mx-auto rounded shadow-lg py-4 text-left px-6 my-3"
+        <div class="bg-white w-full md:w-3/4 mx-auto rounded shadow-lg py-4 text-left px-6 my-3"
             x-show="isDialogOpen" @click.away="isDialogOpen = false">
             <div class="flex justify-between items-center border-b p-2 text-xl">
                 <h6 class="text-xl font-bold">Carrito de compras</h6>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="grid grid-cols-6 border-b pb-2 pt-3">
-                    <div class="col-span-2 col-start-6 text-center">
+                    <div class="col-span-2 col-start-5 md:col-start-6 text-center">
                         <p class="text-lg font-bold">Total ${{ $total }}</p>
                     </div>
                 </div>
