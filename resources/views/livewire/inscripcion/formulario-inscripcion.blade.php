@@ -6,16 +6,16 @@
 
     <div class="px-3 py-2 grid grid-cols-2">
       <div class="col-span-1 p-3">
-        <input class="w-full border-b-2 focus:outline-none focus:border-transparent focus:border-coolGray-300" type="text" wire:model="email">
+        <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="email">
       </div>
       <div class="col-span-1 p-3">
-        <input class="w-full border-b-2 focus:outline-none focus:border-transparent focus:border-coolGray-300" type="password" wire:model="password">
+        <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="password" wire:model="password">
       </div>
       <div class="col-span-1 p-3">
-          <input class="w-full border-b-2 focus:outline-none focus:border-transparent focus:border-coolGray-300" type="text" wire:model="name" placeholder="Nombre completo">
+          <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="name" placeholder="Nombre completo">
       </div>
       <div class="col-span-1 p-3">
-        <input class="w-full border-b-2 focus:outline-none focus:border-transparent focus:border-coolGray-300" type="text" wire:model="phone" placeholder="teléfono">
+        <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="phone" placeholder="Teléfono">
       </div>    
     </div>
 

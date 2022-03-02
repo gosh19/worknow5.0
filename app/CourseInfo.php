@@ -39,6 +39,19 @@ class CourseInfo extends Model
                 $valor = 23;
             }
 
+            switch ($country) {
+                case 'CL':
+                    $valor = $valor * 806.93;
+                    break;
+                case 'UY':
+                    $valor = $valor * 42.54;
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+
+/*
             if ($country == 'PY') {
 
                 if (session('conversion')) {
@@ -47,7 +60,14 @@ class CourseInfo extends Model
                 }else{
                     $valor =( $valor * 7045);
                 }
-            }
+            }else if ($country ==  'CL') {
+                if (session('conversion')) {
+
+                    $valor = $valor*(session('conversion') ?? 808.92 );
+                }else{
+                    $valor =( $valor * 808.92);
+                }
+            }*/
             return $valor;
         }
     }

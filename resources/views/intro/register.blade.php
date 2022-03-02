@@ -1,7 +1,7 @@
 @extends('layouts.app-alt')
 
 @section('content')
-    <div class="bg-gradient-to-tr from-blue-300 to-indigo-400" style="height:100vh;">
+    <div class="bg-gradient-to-tr from-blue-300 to-indigo-400">
 
 
         {{-- navBar --}}
@@ -34,17 +34,10 @@
         {{-- area de registro --}}
         <div>
             <div class="py-10">
-                <div class="grid grid-cols-1 md:grid-cols-3 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
-                    <div class="col-span-1 md:col-span-2">
-
+                <div class="grid grid-cols-1 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
+                    <div class="col-span-1">
                         @livewire('inscripcion.formulario-inscripcion')
                     </div>
-                    {{-- imagen --}}
-
-                    <div class="  md:col-span-1 bg-registro rounded-r-xl bg-cover">
-                    </div>
-
-
                 </div>
             </div>
         </div>

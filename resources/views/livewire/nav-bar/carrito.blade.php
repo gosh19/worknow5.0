@@ -76,9 +76,9 @@
                     </div>
                 </div>
                 <div class="flex justify-end pb-2 pt-3 ">
-                    <div class="text-center">
+                    <div class="text-center outline-none">
                         <a  href="{{route('inscripcionTemprana')}}"
-                            class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center outline-none">Registrarme gratis</a>
+                            class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center ">Registrarme gratis</a>
                     </div>
                 </div>
             </div>
