@@ -5,8 +5,8 @@
         <div>
             <div>
 
-                <div class="mb-5">
-                    <img class="w-full" src="{{ asset('img/inicio/logo-wn.png') }}" alt="">
+                <div class="mb-5  flex justify-center">
+                    <img class="w-10/12 md:w-4/12 " src="{{ asset('img/inicio/logo-wn.png') }}" alt="">
                     
                 </div>
                 <div class="flex justify-center">
