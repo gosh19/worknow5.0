@@ -1,91 +1,148 @@
-<div  x-data="{ isDialogOpen: false}" class="mx-2 w-full flex justify-end " @keydown.escape="isDialogOpen = false">
-    <button
-        class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none"
-        @click="isDialogOpen = true">
-        <i class="fas fa-shopping-cart fa-2x"></i>
-    </button>
-{{--
-    <div id="carrito-flotante"
+<div class="w-full">
+    <div class="mx-2 w-full flex justify-end ">
+
+        <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none hidden md:block"
+            data-bs-toggle="modal" data-bs-target="#modal-carrito">
+            <i class="fas fa-shopping-cart fa-2x"></i>
+        </button>
+        <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none md:hidden block"
+                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-carrito" aria-expanded="false"
+                aria-controls="collapse-carrito">
+            <i class="fas fa-shopping-cart fa-2x"></i>
+        </button>
+    </div>
+    <div wire:ignore.self class="collapse absolute w-screen right-0 z-50" id="collapse-carrito">
+        <div class="p-2 bg-white">
+
+            @php
+                $total = 0;
+            @endphp
+            <div class="w-full">
+                @foreach ($courses as $key => $course)
+                    @php
+                        $total += $prices[$key];
+                    @endphp
+                    <div class="grid grid-cols-6 border-b py-2">
+                        <div class="col-span-6 md:col-span-1 mx-2 mt-2">
+                            <img class="rounded-lg" src="{{ asset($course['url_img']) }}" alt="">
+                        </div>
+                        <div class="col-span-4 md:col-span-4 mx-2">
+                            <div class="grid grid-rows-2 lg:grid-rows-1">
+                                <div class="row-span-1">
+                                    <h1 class="text-lg font-bold">{{ $course['nombre'] }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-span-6 md:col-span-1 md:col-start-6 mx-2 mt-2 text-blueGray-600 flex justify-between items-center">
+                            <div class="p-3 text-lg">
+                                <p>{{ '$' . number_format($prices[$key], 2, '.', ',') }}</p>
+                            </div>
+                            <div>
+                                <button wire:click="remove({{ $key }})" class="p-3 outline-none">
+                                    <i class="fas fa-trash-alt "></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="grid grid-cols-6 border-b pb-2 pt-3">
+                <div class="col-span-2 col-start-5 md:col-start-6 text-center">
+                    <p class="text-lg font-bold">Total ${{ $total }}</p>
+                </div>
+            </div>
+            <div class="flex justify-end pb-2 pt-3 ">
+                <div class="text-center">
+                    <a href="{{ route('inscripcionTemprana') }}"
+                        class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center "
+                        style="text-decoration: none !important;">Registrarme</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-300 flex justify-center">
+            <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none"
+                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-carrito" aria-expanded="false"
+                aria-controls="collapse-carrito">
+                <i class="fa-solid fa-angles-up"></i>
+        </button>
+        </div>
+    </div>
+    
+    {{-- <div id="carrito-flotante"
         class="fixed bottom-5 right-5 z-50 text-5xl bg-gray-100  rounded-full border-4 border-indigo-300 p-3 text-blue-400"
         @click="isDialogOpen = true">
         <i class="fas fa-shopping-cart"></i>
         <div class="absolute bottom-0 right-0 text-white opacity-70">
             <p class="bg-gradient-to-tr from-blue-800 to-indigo-700 text-3xl p-1 rounded-full">{{count($courses)}}</p>
         </div>
-    </div>
---}}
-    {{-- modal carrito --}}
-    <div wire:ignore.self class="overflow-auto " style="background-color: rgba(0,0,0,0.5)" x-show="isDialogOpen"
-        x-transition
-        :class="{ 'fixed w-full inset-0 z-10 flex items-start justify-center': isDialogOpen }">
-        <div class="bg-white w-full md:w-3/4 mx-auto rounded shadow-lg py-4 text-left px-6 my-3"
-            x-show="isDialogOpen" @click.away="isDialogOpen = false">
-            <div class="flex justify-between items-center border-b p-2 text-xl">
-                <h6 class="text-xl font-bold">Carrito de compras</h6>
-                <button type="button" @click="isDialogOpen = false">
-                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg"
-                        width="18" height="18" viewBox="0 0 18 18">
-                        <path
-                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <div class="p-2">
-                
-                @php
-                    $total = 0;
-                @endphp
-                <div class="w-full">
-                    @foreach ($courses as $key => $course)
-                        
-                    
+    </div> --}}
+
+    <div wire:ignore.self class="modal fade " id="modal-carrito" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div wire:ignore.self class="modal-dialog modal-xl">
+            <div wire:ignore.self class="modal-content ">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Lista de cursos seleccionados</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="p-2">
+
                         @php
-                            $total += $prices[$key];
+                            $total = 0;
                         @endphp
-                        <div class="grid grid-cols-6 border-b py-2">
-                            <div class="col-span-6 md:col-span-1 mx-2 mt-2">
-                                <img class="rounded-lg" src="{{ asset($course['url_img']) }}"
-                                    alt="">
-                            </div>
-                            <div class="col-span-4 md:col-span-4 mx-2">
-                                <div class="grid grid-rows-2 lg:grid-rows-1">
-                                    <div class="row-span-1">
-                                        <h1 class="text-lg font-bold">{{ $course['nombre'] }}</h1>
+                        <div class="w-full">
+                            @foreach ($courses as $key => $course)
+                                @php
+                                    $total += $prices[$key];
+                                @endphp
+                                <div class="grid grid-cols-6 border-b py-2">
+                                    <div class="col-span-6 md:col-span-1 mx-2 mt-2">
+                                        <img class="rounded-lg" src="{{ asset($course['url_img']) }}" alt="">
+                                    </div>
+                                    <div class="col-span-4 md:col-span-4 mx-2">
+                                        <div class="grid grid-rows-2 lg:grid-rows-1">
+                                            <div class="row-span-1">
+                                                <h1 class="text-lg font-bold">{{ $course['nombre'] }}</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-span-6 md:col-span-1 md:col-start-6 mx-2 mt-2 text-blueGray-600 flex justify-between items-center">
+                                        <div class="p-3 text-lg">
+                                            <p>{{ '$' . number_format($prices[$key], 2, '.', ',') }}</p>
+                                        </div>
+                                        <div>
+                                            <button wire:click="remove({{ $key }})" class="p-3 outline-none">
+                                                <i class="fas fa-trash-alt "></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div
-                                class="col-span-6 md:col-span-1 md:col-start-6 mx-2 mt-2 text-blueGray-600 flex justify-between items-center">
-                                <div class="p-3 text-lg">
-                                    <p>{{ '$'.number_format($prices[$key], 2, '.', ',') }}</p>
-                                </div>
-                                <div>
-                                    <button wire:click="remove({{$key}})" class="p-3 outline-none">
-                                        <i class="fas fa-trash-alt "></i>
-                                    </button>
-                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="grid grid-cols-6 border-b pb-2 pt-3">
+                            <div class="col-span-2 col-start-5 md:col-start-6 text-center">
+                                <p class="text-lg font-bold">Total ${{ $total }}</p>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-
-                <div class="grid grid-cols-6 border-b pb-2 pt-3">
-                    <div class="col-span-2 col-start-5 md:col-start-6 text-center">
-                        <p class="text-lg font-bold">Total ${{ $total }}</p>
+                        <div class="flex justify-end pb-2 pt-3 ">
+                            <div class="text-center">
+                                <a href="{{ route('inscripcionTemprana') }}"
+                                    class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center "
+                                    style="text-decoration: none !important;">Registrarme</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex justify-end pb-2 pt-3 ">
-                    <div class="text-center outline-none">
-                        <a  href="{{route('inscripcionTemprana')}}"
-                            class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center ">Registrarme gratis</a>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    {{-- fin modal carrito --}}
-
 
 </div>
-

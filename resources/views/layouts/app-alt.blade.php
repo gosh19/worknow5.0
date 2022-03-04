@@ -20,7 +20,7 @@
     
 
     @livewireStyles
-    @livewireScripts
+    
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -66,10 +66,21 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js" defer></script>
 </head>
 <body style="height:100vh;">
+    @guest
+        <div class="fixed right-4 bottom-4 md:right-10 md:bottom-10">
+            <div class="w-16 md:w-24">
+                <a href="https://api.whatsapp.com/send?phone=542236772444&app=facebook&entry_point=page_cta&fbclid=IwAR3NHSP8Z8dlKtOC_SkfkU55n8jAUC75rJIq_QX04SXJoXBnFxBBLbNlSn4">
+
+                    <img src="{{ asset('/img/whatsapp.png') }}" alt="">
+                </a>
+            </div>
+        </div>    
+    @endguest
     
         <main >
             @yield('content')
         </main>
+
 
     @auth
         
@@ -82,7 +93,7 @@
         >
         E-Campus V. 4.0.7.0</small>
     @endauth
-    
+    @livewireScripts
     <script type="text/javascript" src="{{ asset('js/methods.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
