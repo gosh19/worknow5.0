@@ -8,7 +8,7 @@
 
         {{-- navBar --}}
 
-        <div class="grid grid-cols-8 p-3 bg-white items-center gap-3">
+        <div class="grid grid-cols-8 p-3 bg-white items-end md:items-center gap-3">
             <div class="col-start-1 col-span-6 lg:col-span-1 justify-self-center">
                 <div><img class="w-full" src="{{ asset('img\inicio\logo-wn.png') }}" alt=""></div>
             </div>
@@ -42,8 +42,8 @@
             </div>
 
         </div>
-        <div class="collapse" id="collapse-menu">
-            <div class="card card-body">
+        <div class="collapse collapse-horizontal absolute" id="collapse-menu">
+            <div class="card card-body w-screen">
                 <div class="grid grid-cols-6">
 
                     <div class="col-span-1 justify-self-center">
@@ -248,6 +248,7 @@
                 </div>
             </div>
         </div>
+        {{--
         <div class="w-full h-2 bg-blue-600"></div>
 
         <div class="text-center flex justify-center py-2">
@@ -297,6 +298,7 @@
                 @endphp
             @endforeach
         </div>
+ --}}
 
         <style>
             .top-100 {
@@ -328,18 +330,13 @@
             @foreach ($categorias as $categoria)
                 <div x-data="{open:false}">
                     <div class="mx-10 mb-4">
-                        <button x-on:click="open=!open" class=" border-b p-1 w-full text-left focus:outline-none">
-                            <div class="flex text-white">
+                        <button x-on:click="open=!open" class=" border-b p-1 w-full text-left">
+                            <div class="flex text-white justify-between">
                                 <div>
                                     <h1 class="font-semibold text-2xl">{{ $categoria->name }}</h1>
                                 </div>
-                                <div class="text-xs p-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg>
+                                <div class="text-xs p-2 ">
+                                    <i class="fa-solid fa-chevron-down"></i>
                                 </div>
                             </div>
                         </button>

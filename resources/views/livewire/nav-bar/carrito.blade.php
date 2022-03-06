@@ -5,7 +5,7 @@
             data-bs-toggle="modal" data-bs-target="#modal-carrito">
             <i class="fas fa-shopping-cart fa-2x"></i>
         </button>
-        <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none md:hidden block"
+        <button class="hover:text-gray-400 p-3  md:hidden block"
                 type="button" data-bs-toggle="collapse" data-bs-target="#collapse-carrito" aria-expanded="false"
                 aria-controls="collapse-carrito">
             <i class="fas fa-shopping-cart fa-2x"></i>
