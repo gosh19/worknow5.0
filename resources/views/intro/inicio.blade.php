@@ -185,6 +185,7 @@
                         </div> --}}
                         <div class="py-2 justify-self-center">
                             <button
+                                data-bs-toggle="modal" data-bs-target="#modal-ingreso"
                                 class="focus:outline-none p-2 w-full bg-transparent text-blue-700 hover:text-blue-900 px-3 py-1 rounded-lg transform hover:scale-105 transition duration-500">
                                 Ya tengo cuenta!
                             </button>
