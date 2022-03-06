@@ -90,6 +90,11 @@ class PaginasController extends Controller
       $request->session()->put('id',$user[0]['id']+1);
       \App\User::getDataIp();
 
+      $request->session()->forget('email');
+      $request->session()->forget('password');
+      $request->session()->put('email',$request->email);
+      $request->session()->put('password',$request->password);
+
       return view('intro.register', ['user' => $user, 'country'=> session('country')]);
     }
 

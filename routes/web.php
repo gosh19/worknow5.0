@@ -28,7 +28,7 @@ Route::post('/tienda/contacto/{course?}', 'TiendaController@cargarDato')->name('
 Route::get('/add-course/{Course}', 'PaginasController@addCourse')->name('addCourse');
 
 Route::match(['get', 'post'],'/inscripcion', 'PaginasController@inscripcionTemprana')->name('inscripcionTemprana');
-Route::get('/inscipcion/cursos', 'PaginasController@coursesView')->name('Intro.Cursos');
+Route::get('/inscripcion/cursos', 'PaginasController@coursesView')->name('Intro.Cursos');
 Route::post('/cargarDatosAltaTemprana', 'PaginasController@cargarUser')->name('cargarInscripcionTemprana');
 
 Route::get('/selectCountry', 'PaginasController@preIntro')->name('PreIntro');
