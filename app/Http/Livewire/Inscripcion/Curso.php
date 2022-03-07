@@ -14,10 +14,12 @@ class Curso extends Component
     public $cant = 0;
     public $country = '';
     public $btnText = 'Agregar';
+    public $showModal;
 
 
-    public function mount(\App\Course $course)
+    public function mount(\App\Course $course, $showModal =false)
     {
+        $this->showModal = $showModal;
         $this->course = $course;
         $this->country = session('country') == null ? 'SD':session('country');
 

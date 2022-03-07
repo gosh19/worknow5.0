@@ -26,7 +26,7 @@ class Carrito extends Component
         if (session('courses')) {
             foreach (session('courses') as $key => $value) {
                 $this->courses[] = \App\Course::find($value);
-                $this->prices[$key] = $this->courses[$key]->info->getPrecio($this->country);
+                $this->prices[] = $this->courses[$key]->info->getPrecio($this->country);
             }
         }
     }
