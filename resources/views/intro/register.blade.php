@@ -1,7 +1,7 @@
 @extends('layouts.app-alt')
 
 @section('content')
-    <div class="bg-gradient-to-tr from-blue-300 to-indigo-400">
+    <div class="min-h-screen bg-gradient-to-tr from-blue-300 to-indigo-400">
 
 
         {{-- navBar --}}

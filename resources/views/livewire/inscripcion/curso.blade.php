@@ -28,6 +28,19 @@
         <div class="text-md mt-2">
             <p>Pago único</p>
         </div>
+
+{{--
+        <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-course-{{$course['id']}}">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            
+        </div>
+
+--}}
         <div>
             <button wire:click="add" id="{{ $course->id }}"
                 class="mt-4 text-xl w-full text-white  py-1.5 rounded-xl shadow-lg {{ $selected ? 'hover:bg-purple-800 bg-purple-600' : 'hover:bg-indigo-700 bg-indigo-600' }}">{{ $btnText }}
@@ -35,5 +48,5 @@
         </div>
 
     </div>
-
+    
 </div>

@@ -17,6 +17,8 @@ class FormularioInscripcion extends Component
     public $phone = "";
     public $country = "";
 
+    public $errorFields = ['name'=> false,'email'=> false,'password'=> false,'phone'=> false];
+
     public $listeners = ['repetido'];
 
 
@@ -85,9 +87,26 @@ class FormularioInscripcion extends Component
         }
     }
 
+    public function validateFields()
+    {      
+
+        $this->errorFields['name'] =  ($this->name == '') ? true:false;
+        $this->errorFields['email'] =  ($this->email == '') ? true:false;
+        $this->errorFields['phone'] =  ($this->phone == '') ? true:false;
+        $this->errorFields['password'] =  ($this->password == '') ? true:false;
+            
+        foreach ($this->errorFields as $key => $error) {
+            if (!$error) {
+                return 0;
+            }
+        }
+
+    }
+
     public function register()
     {
-
+        
+        $this->validateFields();
         $search = \App\User::where('email',$this->email)->get();
         if (count($search) != 0) {
             $this->emit('repetido'); 

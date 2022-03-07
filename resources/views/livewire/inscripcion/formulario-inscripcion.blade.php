@@ -1,21 +1,24 @@
-<div x-data="{ openCat: true }" class="bg-white rounded-l-xl w-full">
+<div x-data="{ openCat: true}" class="bg-white rounded-l-xl w-full">
     <div class="p-4">
       <h1 class="text-4xl text-blueGray-600 font-bold p-1">Registrate</h1>
       <h1 class="p-1 text-xl text-blueGray-600">y probá <b>gratis</b> los cursos que quieras!</h1>
     </div>
-
     <div class="px-3 py-2 grid grid-cols-1 md:grid-cols-2">
       <div class="col-span-1 p-3">
         <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="email" placeholder="E-mail">
+        @if ($errorFields['email'])<span><small class="text-red-500">Campo obligatorio</small></span>@endif
       </div>
       <div class="col-span-1 p-3">
         <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="password" wire:model="password" placeholder="Contraseña">
+        @if ($errorFields['password'])<span><small class="text-red-500">Campo obligatorio</small></span>@endif
       </div>
       <div class="col-span-1 p-3">
           <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="name" placeholder="Nombre completo">
+          @if ($errorFields['name'])<span><small class="text-red-500">Campo obligatorio</small></span>@endif
       </div>
       <div class="col-span-1 p-3">
         <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" wire:model="phone" placeholder="Teléfono">
+        @if ($errorFields['phone'])<span><small class="text-red-500">Campo obligatorio</small></span>@endif
       </div>    
     </div>
 
@@ -68,7 +71,12 @@
       </div>
     </div>
 
-    <div class="flex justify-end px-6 py-4">
+    <div class="flex justify-between px-6 py-1">
+      <button @click="openCat = ! openCat" x-show="!openCat" class="p-2 flex items-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm font-semibold transform hover:scale-105 transition duration-500 focus:outline-none">
+        <i class="fas fa-angle-left font-semibold mr-1"></i>
+        Anterior
+      </button>
+
       <button wire:click="register" x-show="!openCat" class="p-2 flex items-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm font-semibold transform hover:scale-105 transition duration-500 focus:outline-none">
         Registrarme
         <i class="fas fa-angle-right font-semibold ml-1"></i>
