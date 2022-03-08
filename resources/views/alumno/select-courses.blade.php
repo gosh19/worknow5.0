@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-alt')
 
 @section('content')
     <div class="fixed z-10">
@@ -26,7 +26,7 @@
                         @endphp
                         @if ($control)
                             
-                        @livewire('inscripcion.curso', ['curso' => $course,'country'=>$country], key($key))
+                        @livewire('inscripcion.curso', ['course' => $course,'country'=>$country], key($key))
                         @endif            
                     @endforeach
                 </div>

@@ -322,11 +322,11 @@
               </div>
             </div>
             <hr class="w-full border-4 border-red-700">
-            <a class="py-2 block bg-orange-500 hover:bg-orange-400 transition-all duration-300 text-white text-center font-bold tracking-wider text-decoration-none" 
+            <a class="py-2 block bg-red-500 hover:bg-red-400 transition-all duration-300 text-white text-center font-bold tracking-wider text-decoration-none" 
                 href="{{route('User.selectCourses')}}"
             >Agregar mas cursos <i class="fas fa-user-graduate"></i></a>
           </div>
-          <div class="mb-3 hidden md:block">
+          <div class="mb-3 hidden {{--md:block--}}">
             @include('user.carrito',['country'=>$country])
           </div>
           <div class="card mb-3">

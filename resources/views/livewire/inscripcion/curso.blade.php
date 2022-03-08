@@ -3,6 +3,7 @@
         <img class="w-full max-h-48 rounded-xl" src="{{ $course->url_img }}" alt="{{ $course->nombre }}" />
         <p class="absolute top-0 bg-red-500 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
             Certificación oficial</p>
+
     </div>
     <p class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">{{ $course->nombre }}
     </p>
@@ -30,7 +31,7 @@
         </div>
 
         <div wire:ignore class="w-full flex justify-end">
-            @if (\Request::route()->getName() == 'Intro.Cursos')
+            @if ((\Request::route()->getName() == 'Intro.Cursos') || (\Request::route()->getName() == 'User.selectCourses'))
                 <button type="button" class="p-2 bg-blue-800 text-white rounded" data-bs-toggle="modal"
                     data-bs-target="#modal-course-{{ $course['id'] }}">
                     Ver mas <i class="fa-solid fa-maximize ml-1"></i>

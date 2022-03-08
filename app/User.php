@@ -150,6 +150,19 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\AvisoPago');
     }
+
+    /**REVISA SI EXISTE EL CURSO EN ESTE USUARIO */
+    public function hasCourse($courseId)
+    {
+        $courses = $this->courses;
+
+        foreach ($courses as $key => $course) {
+          if ($course->id == $courseId) {
+            return true;
+          }
+        }
+        return false;
+    }
     /**
      * envio la ip del user autenticado y me devuelve data geopolitica
      */
