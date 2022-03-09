@@ -388,6 +388,7 @@
         </a>
       </div>
     </div>
+    ***************************
                           ESTA ES LA WEA Q MODIFIQUEa
     <div class="col-6">
       <div class="row align-items-center justify-content-center h-100 ml-2">
@@ -396,7 +397,7 @@
         </a>
       </div>
     </div>
-   
+   ****************************
   </div>
 </div>
  --}}

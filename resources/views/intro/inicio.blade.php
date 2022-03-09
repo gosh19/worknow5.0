@@ -32,11 +32,11 @@
 
             <div class="col-start-8 lg:col-start-9  col-span-3 lg:col-span-1 justify-self-end hidden md:block">
 
-                <button type="button"
-                    class="focus:outline-none p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500"
-                    data-bs-toggle="modal" data-bs-target="#modal-ingreso">
-                    Ingresar al aula
-                </button>
+                <a href="{{ route('inscripcionTemprana') }}"
+                style="text-decoration: none"
+                    class="outline-none p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500">
+                    Registrarme
+                </a>
 
 
             </div>
@@ -60,11 +60,11 @@
 
                     <div class="col-span-4 justify-self-end">
 
-                        <button type="button"
-                            class="focus:outline-none p-3 w-full  bg-indigo-600 text-white hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500"
-                            data-bs-toggle="modal" data-bs-target="#modal-ingreso">
-                            Ingresar al aula
-                        </button>
+                        <a href="{{ route('inscripcionTemprana') }}"
+                        style="text-decoration: none"
+                            class="outline-none p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500">
+                            Registrarme
+                        </a>
 
 
                     </div>
@@ -158,7 +158,7 @@
                     </div>
 
                     {{-- FORMULARIO DE REGISTRO --}}
-                    <form action="{{ route('inscripcionTemprana') }}" method="POST" class="w-2/3 md:w-1/2 ">
+                    <form method="POST" action="/login" class="w-2/3 md:w-1/2 ">
                         @csrf
                         <div class="py-3">
                             <input
@@ -171,24 +171,24 @@
                                 name="password" type="password" placeholder="Contraseña..." required>
                         </div>
                         <div class="py-3 justify-self-center">
-                            <input type="submit" value="Registrarme"
+                            <input type="submit" value="Ingresar"
                                 class="focus:outline-none focus-within p-2 w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-blue-600 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                         </div>
                     </form>
 
-                    <div class="">
+                    <div class="w-full">
                         {{-- <div class="p-1 justify-self-center">
                             <button
                                 class="focus:outline-none p-2 w-full text-black rounded-xl bg-gray-50 hover:bg-gray-200 transform hover:scale-105 transition duration-500">
                                 Continuar con Google
                             </button>
                         </div> --}}
-                        <div class="py-2 justify-self-center">
-                            <button
-                                data-bs-toggle="modal" data-bs-target="#modal-ingreso"
-                                class="focus:outline-none p-2 w-full bg-transparent text-blue-700 hover:text-blue-900 px-3 py-1 rounded-lg transform hover:scale-105 transition duration-500">
-                                Ya tengo cuenta!
-                            </button>
+                        <div class="py-2 flex justify-center w-full">
+                            <a href="{{ route('inscripcionTemprana') }}"
+                        style="text-decoration: none"
+                            class="w-1/2 block text-center px-3 py-2 text-white bg-pink-700 hover:bg-pink-900 rounded-xl shadow-lg font-bold">
+                            Registrarme
+                        </a>
                         </div>
                     </div>
                 </div>
@@ -249,8 +249,7 @@
                 </div>
             </div>
         </div>
-        {{--
-        <div class="w-full h-2 bg-blue-600"></div>
+        {{-- <div class="w-full h-2 bg-blue-600"></div>
 
         <div class="text-center flex justify-center py-2">
             <p class="text-4xl font-bold text-black mr-3">
@@ -298,8 +297,7 @@
                     }
                 @endphp
             @endforeach
-        </div>
- --}}
+        </div> --}}
 
         <style>
             .top-100 {
@@ -329,7 +327,12 @@
 
             {{-- titulo de categoría --}}
             @foreach ($categorias as $categoria)
-                <div x-data="{open:false}">
+            @if ($loop->first)
+                
+            <div x-data="{open:true}">
+            @else
+            <div x-data="{open:false}">
+            @endif
                     <div class="mx-10 mb-4">
                         <button x-on:click="open=!open" class=" border-b p-1 w-full text-left">
                             <div class="flex text-white justify-between">
