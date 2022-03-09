@@ -377,6 +377,7 @@
     $wpp = '5492236772444';
   }
 @endphp
+{{--  
 <div id="caja-wpp-tel" class="alert alert-info p-2 pr-4 pl-4">
   <div class="row">
     <div class="col">
@@ -387,7 +388,7 @@
         </a>
       </div>
     </div>
-    {{--                        ESTA ES LA WEA Q MODIFIQUEa
+                          ESTA ES LA WEA Q MODIFIQUEa
     <div class="col-6">
       <div class="row align-items-center justify-content-center h-100 ml-2">
           <a href="https://api.whatsapp.com/send?phone={{$wpp}}&text=Tengo%20una%20duda%20sobre%20el%20aula%20virtual%20y%20los%20cursos!%20">
@@ -395,10 +396,10 @@
         </a>
       </div>
     </div>
-    --}}
+   
   </div>
 </div>
-
+ --}}
 <script type="text/javascript">
 $(function () {
   $('[data-bs-toggle="popover"]').popover('toggle');
