@@ -11,7 +11,7 @@
             <li class="list-group-item"><a href="{{route ('Tpresuelto.index')}}">Correción de Tp's</a></li>
             <li class="list-group-item">
               <div class="d-flex  justify-content-between" style="height: 25px">
-                <a role="button" data-toggle="collapse" href="#collapsePracticas">Correccion practicas</a>
+                <a role="button" data-bs-toggle="collapse" href="#collapsePracticas">Correccion practicas</a>
                 @if (count($practicas) ?? 0 != 0)
                   <div style="height: 100%" class="d-flex">
                     <img style="height:100%" src={{ asset('img/notification-bell.png') }}>

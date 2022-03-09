@@ -60,7 +60,7 @@
                         @if (($key+1) <= 1)
                         <a class="btn btn-primary text-white " href="{{ route('Unity.showUser', ['unity' => $unity])}}">Ver Unidad</a> 
                         @else
-                        <button type="button" class="btn btn-danger" data-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">No disponible</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">No disponible</button>
                         @endif
 
                         
@@ -86,7 +86,7 @@
                 <hr class="mb-3">
                 <div class="d-flex justify-content-center">
                     @if (@$course->pivot->type == "test")
-                    <button type="button" class="btn btn-danger" data-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">No disponible</button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">No disponible</button>
                        
                     @else
                         
@@ -115,7 +115,7 @@
                 <hr class="mb-3">
                 <div class="d-flex justify-content-center">
                     @if (@$course->pivot->type == "test")
-                    <button type="button" class="btn btn-danger" data-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">No disponible</button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">No disponible</button>
                        
                     @else
                         

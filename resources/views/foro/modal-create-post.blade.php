@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-block mb-3 font-weight-bolder" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary btn-block mb-3 font-weight-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Crear Publicacion <i class="fas fa-file-import"></i>
 </button>
   
@@ -9,7 +9,7 @@
       <div class="modal-content">
         <div class="modal-header bg-none-blue">
           <h5 class="modal-title text-primary " id="exampleModalLabel"><b>CREA TU PUBLICACION <i class="fas fa-file-import"></i></b></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -40,7 +40,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

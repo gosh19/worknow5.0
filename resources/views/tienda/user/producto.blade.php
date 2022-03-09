@@ -3,7 +3,7 @@
         @if (count($product->imgs) == 0)
             <img class="card-img-top" src="{{ asset('img/lupa.jpg') }}" alt=""> 
         @else
-        <a data-toggle="modal" data-target="#ModalImg{{$product->id}}">
+        <a data-bs-toggle="modal" data-bs-target="#ModalImg{{$product->id}}">
 
             <img style="cursor: pointer;" class="card-img-top" src="{{ asset($product->imgs[0]->url) }}" alt="">  
         </a>
@@ -25,7 +25,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="ModalImg{{$product->id}}Label">{{$product->name}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -34,9 +34,9 @@
                 <ol class="carousel-indicators">
                     @foreach ($product->imgs as $i => $img)
                         @if ($i == 0)
-                            <li data-target="#IndicatorProd{{$product->id}}" data-slide-to="0" class="active"></li>
+                            <li data-bs-target="#IndicatorProd{{$product->id}}" data-slide-to="0" class="active"></li>
                         @else
-                            <li data-target="#IndicatorProd{{$product->id}}" data-slide-to="{{$i}}"></li>
+                            <li data-bs-target="#IndicatorProd{{$product->id}}" data-slide-to="{{$i}}"></li>
                         @endif
                     @endforeach
                 </ol>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
                         </p>
                     @else
                         <p style="font-size: 13px;margin-top:8px;" class="text-center">
-                            <button type="button" class="btn btn-danger" data-toggle="popover" title="Atencion!"
+                            <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Atencion!"
                                 data-content="No disponible en la version de prueba">TP N°{{ $tp->numero }} <br> No
                                 disponible</button>
                         </p>

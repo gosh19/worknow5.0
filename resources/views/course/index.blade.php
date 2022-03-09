@@ -61,7 +61,7 @@
     <script>
         window.onload=function(){   
           $(function () {
-            $('[data-toggle="popover"]').popover();
+            $('[data-bs-toggle="popover"]').popover();
             $('#tip').popover('toggle');
             
           });

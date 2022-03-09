@@ -18,7 +18,7 @@
 
                         @endif
                     @endif
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal-{{$course->id}}">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-{{$course->id}}">
                         <i class="fas fa-plus-square"></i>
                     </button>
                 </div>
@@ -51,7 +51,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-black" id="exampleModalLabel">{{$course->nombre}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

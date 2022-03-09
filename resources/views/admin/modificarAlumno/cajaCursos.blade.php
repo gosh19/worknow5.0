@@ -43,7 +43,7 @@
                         <td>{{date_format($score->created_at, "d-m")}}</td>
                         <td><a class="btn btn-warning" href="{{route ('Tpresuelto.download', ['url' => $score->tpResuelto->url])}}"> Descargar </a></td>
                         <td>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#correctionModal{{$score->id}}">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correctionModal{{$score->id}}">
                             Corregir
                           </button>
                         </td>
@@ -60,7 +60,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">{{$user->name}}</h5>
                                 <img src={{ asset('img/lupa.jpg') }} height="40px" alt="Lupa">
                               </div>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
@@ -94,7 +94,7 @@
                               </div>                      
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                           </div>
                         </div>

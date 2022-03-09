@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header" role="tab" id="section{{$i}}HeaderId">
                 <h5 class="mb-0 ">
-                    <a class="text-lg text-blue-800 font-bold flex justify-between" data-toggle="collapse" data-parent="#accordianId" href="#section{{$i}}ContentId" aria-expanded="true" aria-controls="section{{$i}}ContentId">
+                    <a class="text-lg text-blue-800 font-bold flex justify-between" data-bs-toggle="collapse" data-parent="#accordianId" href="#section{{$i}}ContentId" aria-expanded="true" aria-controls="section{{$i}}ContentId">
                        <p> Paso N° {{$i+1}} : {{$step->titulo}}</p>
 
                        <i class="fas fa-plus-square"></i>

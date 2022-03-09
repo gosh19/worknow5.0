@@ -139,7 +139,7 @@
                           <p style="font-size: 13px;margin-top:5px;" class="text-center"><a class="btn btn-success" href="{{$modules[$i]['url']}}">Modulo N° {{$i+1}}</a></p>
                           @else
                           <p style="font-size: 13px;margin-top:5px;" class="text-center">
-                            <button type="button" class="btn btn-danger" data-toggle="popover" title="Atencion!" data-content="No disponible en la version de prueba">Modulo N° {{$i+1}}</button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Atencion!" data-content="No disponible en la version de prueba">Modulo N° {{$i+1}}</button>
                           </p>
 
                           @endif
@@ -207,7 +207,7 @@
                                 
                             @else
                               <p style="font-size: 13px;margin-top:8px;" class="text-center">
-                                <button type="button" class="btn btn-danger" data-toggle="popover" title="Atencion!" data-content="No disponible en la version de prueba">TP N°{{$tps[$i]['numero']}}</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Atencion!" data-content="No disponible en la version de prueba">TP N°{{$tps[$i]['numero']}}</button>
                               </p>
         
                             @endif
@@ -591,7 +591,7 @@ margin: 0 !important;
 
 <script>
   $(function () {
-    $('[data-toggle="popover"]').popover()
+    $('[data-bs-toggle="popover"]').popover()
   })
 </script>
 @endsection

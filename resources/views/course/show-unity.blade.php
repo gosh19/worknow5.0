@@ -19,8 +19,8 @@
               <h4 class="text-lg">Principales temas en la unidad</h4>
               <button class="btn btn-primary ml-3" 
                       type="button" 
-                      data-toggle="collapse" 
-                      data-target="#collapseDesc" 
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#collapseDesc" 
                       aria-controls="collapseDesc"
               >Ver mas</button>
             </div>
@@ -50,7 +50,7 @@
                         <p style="font-size: 13px;margin-top:5px;" class="text-center"><a class="btn btn-success" href="{{$module->url}}">Modulo N° {{$i+1}}</a></p>
                       @else
                         <p style="font-size: 13px;margin-top:5px;" class="text-center">
-                          <button type="button" class="btn btn-danger" data-toggle="popover" title="Atencion!" data-content="No disponible en la version de prueba">Modulo N° {{$i+1}} <br> No disponible</button>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Atencion!" data-content="No disponible en la version de prueba">Modulo N° {{$i+1}} <br> No disponible</button>
                         </p>
 
                       @endif
@@ -99,7 +99,7 @@
     </div>{{--end container--}}
     <script>
       $(function () {
-        $('[data-toggle="popover"]').popover()
+        $('[data-bs-toggle="popover"]').popover()
       })
     </script>
 @endsection

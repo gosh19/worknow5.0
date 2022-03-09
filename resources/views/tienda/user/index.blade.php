@@ -24,7 +24,7 @@
                             class="btn btn-block btn-success mb-3"
                         >Terminar Compra</a>
                     @endif
-                    <button class="btn btn-danger btn-block mb-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-danger btn-block mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         Ver Carrito
                     </button>
                 </div>

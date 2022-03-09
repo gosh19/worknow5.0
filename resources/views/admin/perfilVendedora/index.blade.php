@@ -45,7 +45,7 @@ $mesArray= array(
 
                         <b>Puntos : </b>{{$vendedora->puntosMes($mes)}}
                     </p>
-                    <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapsePuntos" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePuntos" aria-expanded="false" aria-controls="collapseExample">
                         +
                     </button>
                 </div>
@@ -61,7 +61,7 @@ $mesArray= array(
             <li class="list-group-item">
                 <div class="d-flex justify-content-between">
                         <b>Ingresos</b>
-                    <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseIngresos" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIngresos" aria-expanded="false" aria-controls="collapseExample">
                         +
                     </button>
                 </div>
@@ -89,7 +89,7 @@ $mesArray= array(
                         <div class="card">
                             <div class="card-header bg-{{$venta->alta ? "success":"danger"}}" id="headingOne">
                                 <h2 class="mb-0">
-                                <button class="btn btn-link btn-block text-left text-white font-weight-bolder" type="button" data-toggle="collapse" data-target="#collapse-{{$venta->id}}">
+                                <button class="btn btn-link btn-block text-left text-white font-weight-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{$venta->id}}">
                                     {{$venta->datosAlumno->name}}
                                     
                                 </button>

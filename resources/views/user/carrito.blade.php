@@ -3,7 +3,7 @@
 
     <div class="mb-3 py-2 bg-gradient-to-br from-red-600 to-red-300 shadow-2xl">
       <div class=" py-2 px-3  text-white">
-        <a class="flex justify-between text-decoration-none hover:text-black transition-all duration-500" data-toggle="collapse" href="#collapseCarrito" role="button" aria-expanded="true" >
+        <a class="flex justify-between text-decoration-none hover:text-black transition-all duration-500" data-bs-toggle="collapse" href="#collapseCarrito" role="button" aria-expanded="true" >
           <p class="text-lg font-extrabold tracking-wider">Carrito de cursos <span class="bg-gray-700 p-1 rounded-full">{{count(Auth::user()->courses)}}</span></p>
           <p class="text-right  mb-2"><i class="fas fa-cart-arrow-down fa-2x"></i></p>
         </a>

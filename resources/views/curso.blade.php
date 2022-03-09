@@ -92,7 +92,7 @@
             
           <span>
             Tip
-            <a onclick="mostrarTip()" id="tip" tabindex="0" data-delay="100" class="btn btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Tip #{{$tip->id}}" data-content="{{$tip->texto}}" >
+            <a onclick="mostrarTip()" id="tip" tabindex="0" data-delay="100" class="btn btn-danger" role="button" data-bs-toggle="popover" data-trigger="focus" title="Tip #{{$tip->id}}" data-content="{{$tip->texto}}" >
               <img width="25px" src={{asset('img/checked.png')}} alt="">
             </a>
           </span>
@@ -281,7 +281,7 @@
           @if ($i < $unidades_habilitadas)              
             <a class="btn btn-conf text-white " href="{{ route('Unidad.index', ['id' => $unidades[$i]['id']])}}">Ver Unidad</a>
           @else
-            <button type="button" class="btn btn-danger" data-toggle="popover" title="Aviso!" data-content="Contenido aun no disponible">Ver Unidad</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Aviso!" data-content="Contenido aun no disponible">Ver Unidad</button>
           @endif
           </div>
         </div>
@@ -365,7 +365,7 @@
 
               </a>
               @else
-              <button type="button" class="btn btn-danger" data-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">Ver Unidad</button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Aviso!" data-content="Contenido no disponible en la version de prueba">Ver Unidad</button>
               @endif
             </div>
           </div>
@@ -453,7 +453,7 @@
   window.onload=function(){
 
     $(function () {
-      $('[data-toggle="popover"]').popover();
+      $('[data-bs-toggle="popover"]').popover();
       $('#tip').popover('toggle');
       
       $('#tip').on('show.bs.popover', function () {

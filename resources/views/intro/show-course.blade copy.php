@@ -137,7 +137,7 @@
     <ul class="p-2">
       @foreach ($course->unities as $unity)
           <li class="text-lg font-bold text-gray-500 mb-3">
-            <i class="fas fa-check mr-3 text-red-700"></i>{{$unity->nombre}} <a class="cursor-pointer" data-toggle="collapse" data-target="#collapse-{{$unity->id}}"><i class="fas fa-caret-down"></i></a>
+            <i class="fas fa-check mr-3 text-red-700"></i>{{$unity->nombre}} <a class="cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapse-{{$unity->id}}"><i class="fas fa-caret-down"></i></a>
             <ul class="ml-4 collapse" id="collapse-{{$unity->id}}">
               @foreach ($unity->modules as $module)
               <li>

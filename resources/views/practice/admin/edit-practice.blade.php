@@ -30,8 +30,8 @@
 
     <hr>
     <div class="d-flex justify-content-between">
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapsePractice">Editar</a>
-        <a class="btn btn-success" data-toggle="collapse" href="#collapseAddImg">Agregar imagenes</a>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapsePractice">Editar</a>
+        <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseAddImg">Agregar imagenes</a>
         <a class="btn btn-danger text-white" href="{{route('Practice.delete',['Practice'=> $practice])}}" onclick="javascript: return confirm('Seguro que desea eliminar la practica?')" >Eliminar</a>
     </div>
 </div>
@@ -131,11 +131,11 @@
             <hr>
             <div class="d-flex justify-content-between">
 
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#editCollapse-{{$step->id}}" aria-expanded="false"
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#editCollapse-{{$step->id}}" aria-expanded="false"
                     aria-controls="editCollapse-{{$step->id}}">
                     Editar
                 </button>         
-                <a class="btn btn-success" data-toggle="collapse" href="#collapseAddImgtoStep-{{$step->id}}">Agregar imagenes</a>       
+                <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseAddImgtoStep-{{$step->id}}">Agregar imagenes</a>       
                 <a class="btn btn-danger" 
                     onclick="javascript: return confirm('Seguro que desea eliminar el paso?')" 
                     href="{{route('Practice.deleteStep',['StepPractice' => $step])}}"

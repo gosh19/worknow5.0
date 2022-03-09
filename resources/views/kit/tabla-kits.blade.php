@@ -40,7 +40,7 @@
                 </td>
                 <td>{{$kit->user->venta != null ? $kit->user->venta->datosVendedor->name:''}}</td>
                 <td>{{date_format($kit->updated_at,'d-m-Y')}}</td>
-                <td><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-{{$kit->id}}">
+                <td><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal-{{$kit->id}}">
                     Ver
                   </button></td>
 
@@ -51,7 +51,7 @@
                   <div class="modal-content">
                     <div class="modal-header" style="background-color: rgb(211, 115, 198);">
                       <h5 class="modal-title" id="exampleModalLabel">Kit</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>

@@ -26,8 +26,8 @@
                     <div id="heading{{$problem->id}}" class="card-header bg-{{$theme}} text-white" style="font-size: 17px">
                        
                        <button class="btn btn-link btn-block text-left text-white" 
-                                type="button" data-toggle="collapse" 
-                                data-target="#collapse-{{$problem->id}}" 
+                                type="button" data-bs-toggle="collapse" 
+                                data-bs-target="#collapse-{{$problem->id}}" 
                                 aria-expanded="true" 
                                 aria-controls="collapse-{{$problem->id}}"
                         >

@@ -11,7 +11,7 @@
                             {{-- 
                                 
                                 type="button"
-                                data-toggle="collapse" data-target="#collapse-{{ $video->id }}" aria-expanded="true"
+                                data-bs-toggle="collapse" data-bs-target="#collapse-{{ $video->id }}" aria-expanded="true"
                                 aria-controls="collapse-{{ $video->id }}">
                                 --}}
                                 >
@@ -49,7 +49,7 @@
             <div class="card-header " id="heading{{ $video->id + 15 }}">
                 <h2 class="mb-0">
                     <button class="btn btn-link btn-block text-left text-white font-weight-bold" type="button"
-                        data-toggle="collapse" data-target="#collapse-{{ $video->id + 15 }}" aria-expanded="true"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-{{ $video->id + 15 }}" aria-expanded="true"
                         aria-controls="collapse-{{ $video->id + 15 }}">
                         <div class="d-flex justify-content-between">
 

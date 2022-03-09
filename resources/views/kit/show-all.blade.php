@@ -4,13 +4,13 @@
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pendientes</a>
+      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pendientes</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Otros</a>
+      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Otros</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#kitTypes" role="tab" aria-controls="kitTypes" aria-selected="false">Tipos de kits</a>
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#kitTypes" role="tab" aria-controls="kitTypes" aria-selected="false">Tipos de kits</a>
     </li>
 </ul>
 <div class="tab-content" id="myTabContent">

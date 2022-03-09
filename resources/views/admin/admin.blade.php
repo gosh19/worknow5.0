@@ -185,20 +185,20 @@
           <div class="card-header bg-dark text-white font-weight-bolder">
             <div class="d-flex justify-content-between">
               <p>Informacion</p>
-              <button class="btn btn-dark" data-target="#collapseInfo" data-toggle="collapse">↓</button>
+              <button class="btn btn-dark" data-bs-target="#collapseInfo" data-bs-toggle="collapse">↓</button>
             </div>
           </div>
 
           <div class="card-body collapse show" id="collapseInfo" >
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ingresos Vendedoras</a>
+                <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ingresos Vendedoras</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ingresos Alumnos</a>
+                <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ingresos Alumnos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Avisos de pago <span class="badge badge-danger">{{count($avisosPago)}}</span> </a>
+                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Avisos de pago <span class="badge badge-danger">{{count($avisosPago)}}</span> </a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -302,7 +302,7 @@
       </div>
       <div class="modal-footer">
         <a href={{ route('Admin.verVentasMes') }} class="btn btn-info">Ver mas...</a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

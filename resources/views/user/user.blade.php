@@ -203,7 +203,7 @@
           <div class="card mb-3">
             <div class="card-header bg-conf text-white d-flex justify-content-between">
               <strong class="text-center">Datos Personales</strong>
-              <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseDatosUser" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDatosUser" aria-expanded="false" aria-controls="collapseExample">
                  ↓
               </button>
             </div>
@@ -344,7 +344,7 @@
                 @endif
               </div>
               <span ></span>
-              <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseNovedades" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNovedades" aria-expanded="false" aria-controls="collapseExample">
                  ↓
               </button>
             </div>
@@ -401,7 +401,7 @@
 
 <script type="text/javascript">
 $(function () {
-  $('[data-toggle="popover"]').popover('toggle');
+  $('[data-bs-toggle="popover"]').popover('toggle');
 });
 
 </script>

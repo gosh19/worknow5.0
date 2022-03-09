@@ -5,7 +5,7 @@
             Seccion cobranza
         </p>
         <div class="custom-control custom-switch">
-            <input type="checkbox" data-toggle="collapse" data-target="#cobranzaCollapse" class="custom-control-input" id="customSwitch1">
+            <input type="checkbox" data-bs-toggle="collapse" data-bs-target="#cobranzaCollapse" class="custom-control-input" id="customSwitch1">
             <label class="custom-control-label" for="customSwitch1">+</label>
         </div>
     </div>
@@ -58,7 +58,7 @@
                           @else
                           <p>No hay adicionales</p>
                           @endif
-                            <a data-toggle="collapse" href="#collapseAdicional" class="btn btn-primary mt-3">Crear nuevo adicional</a>
+                            <a data-bs-toggle="collapse" href="#collapseAdicional" class="btn btn-primary mt-3">Crear nuevo adicional</a>
                             <div class="collapse" id="collapseAdicional">
                                 <div class="border rounded border-primary p-3 mt-3">
                                     <form action="{{route('Adicional.store')}}" method="POST">

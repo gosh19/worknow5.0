@@ -18,7 +18,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="alert alert-danger">Antes de cargar un estado debe estar seguro que no existe un estado en la base de datos </div>
-    <a  type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger">Cargar Nuevo Estado</a>
+    <a  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Cargar Nuevo Estado</a>
   </div>
 </div>
 
@@ -27,7 +27,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Cargando Estado de alumno</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -62,7 +62,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <input type="submit" class="btn btn-danger" value="Guardar Estado" />
         </div>
       </div>
