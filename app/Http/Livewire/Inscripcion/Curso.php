@@ -76,10 +76,9 @@ class Curso extends Component
             }else{
                 session()->push('courses',$this->course->id);
             }
-            $this->btnText='asd2';
         }
         $this->selected = !$this->selected;
-        //$this->selected? $this->btnText='Quitar':$this->btnText='Agregar';
+        $this->selected? $this->btnText='Quitar':$this->btnText='Agregar';
 
         $this->emit('addCourse', $this->course->id);
         $this->emit('refreshCourseList');
