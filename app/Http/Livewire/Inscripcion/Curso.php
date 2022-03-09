@@ -56,13 +56,13 @@ class Curso extends Component
     }
 
 
-    public function add()
+    public function add($isInSelectCourses)
     {
-        if(\Request::route()->getName() == 'User.selectCourses'){
-            if (Auth::user()->hasCourse($this->course->id)) {
-                $user->courses()->attach($curso_id);
+        if($isInSelectCourses){
+            if (!Auth::user()->hasCourse($this->course->id)) {
+                Auth::user()->courses()->attach($this->course->id);
             }else {
-                $user->courses()->detach($curso_id);
+                Auth::user()->courses()->detach($this->course->id);
             }
             $this->btnText='asd';
         }else{
@@ -76,7 +76,7 @@ class Curso extends Component
             }else{
                 session()->push('courses',$this->course->id);
             }
-    
+            $this->btnText='asd2';
         }
         $this->selected = !$this->selected;
         //$this->selected? $this->btnText='Quitar':$this->btnText='Agregar';

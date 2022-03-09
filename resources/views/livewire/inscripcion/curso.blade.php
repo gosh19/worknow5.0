@@ -31,7 +31,7 @@
         </div>
 
         <div wire:ignore class="w-full flex justify-end">
-            @if ((\Request::route()->getName() == 'Intro.Cursos') || (\Request::route()->getName() == 'User.selectCourses'))
+            @if (\Request::route()->getName() == 'Intro.Cursos') 
                 <button type="button" class="p-2 bg-blue-800 text-white rounded" data-bs-toggle="modal"
                     data-bs-target="#modal-course-{{ $course['id'] }}">
                     Ver mas <i class="fa-solid fa-maximize ml-1"></i>
@@ -41,7 +41,7 @@
 
 
         <div>
-            <button wire:click="add" id="{{ $course->id }}"
+            <button wire:click="add({{\Request::route()->getName() == 'User.selectCourses'}})" id="{{ $course->id }}"
                 class="mt-4 text-xl w-full text-white  py-1.5 rounded-xl shadow-lg {{ $selected ? 'hover:bg-red-800 bg-red-600' : 'hover:bg-indigo-700 bg-indigo-600' }}">{{ $btnText }}
             </button>
         </div>
