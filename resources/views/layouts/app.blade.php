@@ -80,11 +80,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('confs/diseno.css') }}" rel="stylesheet">
-
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
-
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js" defer></script>
+    @livewireScripts
 </head>
 
 <body style="height:100vh;">
@@ -231,7 +229,7 @@
             E-Campus V. 4.1.5.0</small>
     @endauth
 
-    @livewireStyles
+    
 </body>
 
 </html>
