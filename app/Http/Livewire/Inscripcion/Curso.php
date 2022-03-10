@@ -56,7 +56,7 @@ class Curso extends Component
     }
 
 
-    public function add($isInSelectCourses)
+    public function add($isInSelectCourses = false)
     {
         if($isInSelectCourses){
             if (!Auth::user()->hasCourse($this->course->id)) {
