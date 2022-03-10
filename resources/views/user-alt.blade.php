@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('panel')
-@php
-  use App\Course;
-  use App\Unity;
-  use App\Exam;
-  use Carbon\Carbon;
-@endphp
+
 <div class="container">
 
 
@@ -130,18 +125,6 @@
 
           </div>{{--CIERRE CARD CURSOS--}}
         </div>{{--CIERRE COL-8--}}
-
-
-
-<div id="inferior" class="container">
-  @php
-    $delay = 500;
-  @endphp
-  <div class="row justify-content-center" style="margin-right: 70px; margin-bottom: 40px;" >
-    <button type="button" class="btn btn-lg btn-success bg-dark" data-placement="top" data-delay="500" data-bs-toggle="popover" title="Aviso" data-content="Recuerda que puedes hablar con los profesores haciendo click aqui!"></button>
-    <a href="https://api.whatsapp.com/send?phone=5491126942226&text=Tengo%20una%20duda%20sobre%20el%20aula%20virtual%20y%20los%20cursos!%20"><img id="img" src="/img/whatsapp.png" ></a>
-  </div>
-</div>
 
 
 <script type="text/javascript">

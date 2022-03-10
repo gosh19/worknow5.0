@@ -33,31 +33,7 @@
             </div>
         </div>
     </div>
-    <div id="inferior" class="container">
-        <div class="row justify-content-center" style="margin-right: 70px; margin-bottom: 40px;" >
-          <a href="https://api.whatsapp.com/send?phone=5491126942226&text=Tengo%20una%20duda%20sobre%20el%20aula%20virtual%20y%20los%20cursos!%20"><img id="img" src="/img/whatsapp.png" ></a>
-        </div>
-    </div>
 
-    <style>
-        #inferior{
-            color: #FFF;
-            margin: 0 !important;
-            padding: 0 !important;
-            position: fixed !important;
-            z-index: 16000160 !important;
-            bottom: 0 !important;
-            text-align: center !important;
-            width: 60px;
-            visibility: visible;
-            transition: none !important;
-            right:0;
-            margin-left: 10px;
-        }
-        #inferior img{
-            max-width: 100px;
-        }
-    </style>
     <script>
         window.onload=function(){   
           $(function () {
