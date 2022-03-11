@@ -42,7 +42,7 @@
             </div>
 
         </div>
-        <div class="collapse collapse-horizontal absolute" id="collapse-menu">
+        <div class="collapse collapse-horizontal absolute block md:hidden" id="collapse-menu">
             <div class="card card-body w-screen">
                 <div class="grid grid-cols-6">
 

@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 
-import ExampleComponent from './components/Vue-test/ExampleComponent.vue';
+import Index from './components/Vue/Register/Index.vue';
 
 const app = createApp({});
-app.component('example-component', ExampleComponent)
+app.component('index', Index)
 
-app.mount('#app')
+app.mount('#register')

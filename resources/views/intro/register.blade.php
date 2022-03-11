@@ -1,9 +1,7 @@
 @extends('layouts.app-alt')
 
 @section('content')
-<div x-data="{open:false}">
-<p x-show="open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maxime, atque ullam quae aliquid sapiente numquam placeat! In aut officia, tempora harum repellendus blanditiis voluptatum expedita sit sint vel praesentium!</p>
-</div>
+
     <div class="min-h-screen bg-gradient-to-tr from-blue-300 to-indigo-400">
 
 
@@ -32,8 +30,12 @@
         <div>
             <div class="py-10">
                 <div class="grid grid-cols-1 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
-                    <div class="col-span-1">
+                    <div id="register" class="col-span-1">
+                        <Index></Index>
+                        {{--
                         @livewire('inscripcion.formulario-inscripcion')
+                        --}}
+
                     </div>
                 </div>
             </div>
