@@ -58,7 +58,7 @@
                     </div>
 
 
-                    <div class="col-span-4 justify-self-end">
+                    <div class="col-span-4 justify-self-end flex items-center">
 
                         <a href="{{ route('inscripcionTemprana') }}"
                         style="text-decoration: none"

@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./vue');
 
 require('./components/BotonesArchivosUnidad');
 
@@ -14,3 +15,4 @@ require('./components/UserComponents/ListCoursesBox');
 require('./components/AdminComponents/VendedorasView');
 require('./components/AdminComponents/Cobranza');
 require('./components/AnexoComponent');
+
