@@ -1,7 +1,8 @@
 <script>
 export default {
-    setup() {
-        
+    props:['user'],
+    setup(props) {
+        console.log(props.user);
     },
 }
 </script>
