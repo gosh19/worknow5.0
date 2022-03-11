@@ -12,7 +12,7 @@
             <i class="fas fa-shopping-cart fa-2x"></i>
         </button>
     </div>
-    <button class="hover:text-gray-400 p-3 fixed bottom-36 right-14 bg-purple-200 rounded-full z-50 border-4 border-purple-700"
+    <button class="hover:text-gray-400 p-3 fixed bottom-36 right-12 bg-purple-200 rounded-full z-50 border-4 border-purple-700 hidden md:block "
             data-bs-toggle="modal" data-bs-target="#modal-carrito">
         <i class="fas fa-shopping-cart fa-2x"></i>
         <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>

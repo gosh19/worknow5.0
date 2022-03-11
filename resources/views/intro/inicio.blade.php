@@ -58,11 +58,11 @@
                     </div>
 
 
-                    <div class="col-span-4 justify-self-end">
+                    <div class="col-span-4 justify-self-end flex items-center">
 
                         <a href="{{ route('inscripcionTemprana') }}"
                         style="text-decoration: none"
-                            class="outline-none p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500">
+                            class="p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold ">
                             Registrarme
                         </a>
 
