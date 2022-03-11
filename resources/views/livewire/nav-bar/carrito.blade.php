@@ -4,6 +4,7 @@
         <button class="hover:text-gray-400 p-3 transform hover:scale-105 transition duration-500 focus:outline-none hidden md:block"
             data-bs-toggle="modal" data-bs-target="#modal-carrito">
             <i class="fas fa-shopping-cart fa-2x"></i>
+            <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>
         </button>
         <button class="hover:text-gray-400 p-3  md:hidden block"
                 type="button" data-bs-toggle="collapse" data-bs-target="#collapse-carrito" aria-expanded="false"
@@ -11,6 +12,11 @@
             <i class="fas fa-shopping-cart fa-2x"></i>
         </button>
     </div>
+    <button class="hover:text-gray-400 p-3 fixed bottom-36 right-14 bg-purple-200 rounded-full z-50 border-4 border-purple-700"
+            data-bs-toggle="modal" data-bs-target="#modal-carrito">
+        <i class="fas fa-shopping-cart fa-2x"></i>
+        <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>
+    </button>
     <div wire:ignore.self class="collapse absolute w-screen right-0 z-50" id="collapse-carrito">
         <div class="p-2 bg-white">
 
