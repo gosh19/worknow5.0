@@ -1,21 +1,28 @@
 <script>
 import Step1 from './Step1.vue';
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
   components: {
-    Step1
+    Step1,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
   }
 }
 </script>
 
 <template>
-    <div>
-        Estas a solo 3 pasos de comenzar tu futuro
-    </div>
-    <div>
-        <Step1 />
-    </div>
-    <div>
-        <button>Siguiente</button>
-    </div>
+  <carousel >
+    <slide v-for="slide in 10" :key="slide">
+      {{ slide }}
+    </slide>
+
+    <template #addons>
+      <navigation />
+      <pagination />
+    </template>
+  </carousel>
 </template>
