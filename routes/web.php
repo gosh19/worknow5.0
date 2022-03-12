@@ -252,7 +252,7 @@ Route::middleware('supervisor')->group(function(){
     Route::get('/informar-pago', 'UserController@informarPago')->name('User.informarPago');
 
     Route::post('load-consulta', 'ConsultaController@loadConsulta');
-    Route::get('get-cursos', 'CourseController@getCursos');
+    Route::get('get-cursos-user', 'CourseController@getCursosUser');
     Route::get('/get-info-kit', 'KitController@getInfo');
     
     Route::post('/correction-tp-vf/{tp_id}', 'ScoreController@corregirTpVf')->name('Score.CorrectionTpVf');

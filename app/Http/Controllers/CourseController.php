@@ -57,7 +57,7 @@ class CourseController extends Controller
       
     }
     
-    public function getCursos()
+    public function getCursosUser()
     {
         $scores = \App\Score::where([
                                     ['user_id', Auth::user()->id],

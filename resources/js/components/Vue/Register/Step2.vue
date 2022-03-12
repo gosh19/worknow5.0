@@ -1,13 +1,17 @@
 <script>
 export default {
-    setup() {
-        
+    props:['courses'],
+    setup(props) {
+        console.log(props.courses);
     },
+    updated(){
+        console.log('asd');
+    }
 }
 </script>
 
 <template>
     <div>
-        PASO 2
+        
     </div>
 </template>

@@ -1,9 +1,12 @@
 <script>
 export default {
     props:['user'],
-    setup(props) {
-        console.log(props.user);
-    },
+    data(props){
+        return {
+
+            userData: props.user,
+        }
+    }
 }
 </script>
 
@@ -15,16 +18,21 @@ export default {
         </div>
         <div class="px-3 py-2 grid grid-cols-1 md:grid-cols-2">
             <div class="col-span-1 p-3">
-                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" placeholder="E-mail">
+                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" 
+                v-model="userData.email"
+                type="text" placeholder="E-mail">
             </div>
             <div class="col-span-1 p-3">
-                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="password" placeholder="Contraseña">
+                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" 
+                v-model="userData.password" type="password" placeholder="Contraseña">
             </div>
             <div class="col-span-1 p-3">
-                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text" placeholder="Nombre completo">
+                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" 
+                v-model="userData.name" type="text" placeholder="Nombre completo">
             </div>
             <div class="col-span-1 p-3">
-                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" type="text"  placeholder="Teléfono">
+                <input class="w-full border-b-2 focus:outline-none border-purple-200 rounded focus:border-coolGray-300" 
+                v-model="userData.phone" type="text"  placeholder="Teléfono">
             </div>    
         </div>
     </div>
