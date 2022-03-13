@@ -15,7 +15,7 @@ export default {
               email:'',
               phone:''
           },
-          courses:[1,2],
+          courses:{},
       }
   },
   components: {
@@ -28,28 +28,15 @@ export default {
     Navigation,
   },
   computed:{
-    setCourses(){
-      this.courses = [3,4];
-      console.log(this.courses);
-      return this.courses;
-    }
+
   },
-  beforeCreate(){
-    this.courses = [3,4];
-    fetch('/api/courses/get-all')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-          //this.courses=data;
-          
-        })
-        .catch(function(e) {
-          console.log(e);
-        })
-  },
-  setup(){
+  mounted(){
     
+    fetch('/api/courses/get-all')
+        .then(response => response.json())
+        .then(data => {this.courses=data})
+        .catch(e => console.log(e));
+
   }
 }
 </script>
