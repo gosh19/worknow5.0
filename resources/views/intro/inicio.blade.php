@@ -45,6 +45,7 @@
         <div class="collapse collapse-horizontal absolute" id="collapse-menu">
             <div class="card card-body w-screen">
                 <div class="grid grid-cols-6">
+                    
 
                     <div class="col-span-1 justify-self-center">
                         <a href={{ route('Intro.Cursos') }}

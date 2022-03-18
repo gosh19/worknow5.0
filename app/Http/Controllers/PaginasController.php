@@ -26,6 +26,9 @@ class PaginasController extends Controller
 
     public function preIntro()
     {
+      if (session('country')) {
+        $this->intro(session('country'));
+      }
 
       return view('preIntro.index');
     }

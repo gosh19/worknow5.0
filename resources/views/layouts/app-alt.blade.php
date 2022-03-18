@@ -68,7 +68,7 @@
     @guest
         <div class="fixed right-4 bottom-4 md:right-10 md:bottom-10 z-50">
             <div class="w-16 md:w-24">
-                <a href="https://api.whatsapp.com/send?phone=542236772444&app=facebook&entry_point=page_cta&fbclid=IwAR3NHSP8Z8dlKtOC_SkfkU55n8jAUC75rJIq_QX04SXJoXBnFxBBLbNlSn4">
+                <a href="https://api.whatsapp.com/send?phone=541150485211&app=facebook&entry_point=page_cta&fbclid=IwAR3NHSP8Z8dlKtOC_SkfkU55n8jAUC75rJIq_QX04SXJoXBnFxBBLbNlSn4">
 
                     <img src="{{ asset('/img/whatsapp.png') }}" alt="">
                 </a>
