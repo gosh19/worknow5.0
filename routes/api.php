@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('courses/get-all', [\App\Http\Controllers\Api\CoursesData::class ,'getAll']);
+Route::get('courses/get-all/{withSelected?}', [\App\Http\Controllers\Api\CoursesData::class ,'getAll']);
+Route::get('courses/get-selected', [\App\Http\Controllers\Api\CoursesData::class ,'getSelectedInSession']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

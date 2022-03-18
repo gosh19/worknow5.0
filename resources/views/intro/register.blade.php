@@ -15,14 +15,12 @@
             </div>
 
             <div class="md:col-start-6 col-span-2 md:col-span-1 justify-self-center">
-                <button
-                    class="text-white hover:text-blueGray-200 p-3 transform hover:scale-105 transition duration-500 focus:outline-none">
-                    Cursos
-                </button>
+                <a href={{ route('Intro.Cursos') }}
+                            class="no-underline hover:text-gray-400 text-white inline-block mt-3 transform hover:scale-105 transition duration-500">
+                            Cursos
+                        </a>
             </div>
-            <div class="col-span-2 md:col-span-1 justify-self-center">
-                @livewire('nav-bar.carrito')
-            </div>
+
         </div>
 
 
@@ -30,7 +28,7 @@
         <div>
             <div class="py-10">
                 <div class="grid grid-cols-1 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
-                    <div id="register" class="col-span-1">
+                    <div id="register" class="col-span-1">                        
                         <Index></Index>
                         {{--
                         @livewire('inscripcion.formulario-inscripcion')

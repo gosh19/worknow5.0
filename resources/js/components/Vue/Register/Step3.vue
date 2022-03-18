@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="w-full bg-white">
         PASO 3
     </div>
 </template>

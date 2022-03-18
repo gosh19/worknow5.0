@@ -6,6 +6,7 @@ import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
+  props:{selectedCourses:String},
   data(){
       return{
           step:1,
@@ -34,9 +35,10 @@ export default {
     
     fetch('/api/courses/get-all')
         .then(response => response.json())
-        .then(data => {this.courses=data})
+        .then(data => {this.courses=data;})
         .catch(e => console.log(e));
 
+    
   }
 }
 </script>
