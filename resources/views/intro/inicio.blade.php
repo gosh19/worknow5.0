@@ -28,7 +28,9 @@
 
                 @livewire('nav-bar.carrito')
             </div>
-
+            <div class="col-span-1 justify-self-center hidden md:block">
+                @livewire('nav-bar.select-country')
+            </div>
 
             <div class="col-start-8 lg:col-start-9  col-span-3 lg:col-span-1 justify-self-end hidden md:block">
 
@@ -57,9 +59,12 @@
 
                         @livewire('nav-bar.carrito')
                     </div>
+                    <div class="col-span-1 justify-self-end my-auto inline-block md:hidden">
 
+                            @livewire('nav-bar.select-country')
+                    </div>
 
-                    <div class="col-span-4 justify-self-end flex items-center">
+                    <div class="col-span-3 justify-self-end flex items-center">
 
                         <a href="{{ route('inscripcionTemprana') }}"
                         style="text-decoration: none"

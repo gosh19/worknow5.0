@@ -27,7 +27,8 @@ class PaginasController extends Controller
     public function preIntro()
     {
       if (session('country')) {
-        $this->intro(session('country'));
+        //return session('country');
+        return redirect()->route('intro',['country'=>session('country')]);
       }
 
       return view('preIntro.index');
@@ -35,15 +36,18 @@ class PaginasController extends Controller
 
     public function intro($country = null)
     {
+      //return $country;
       if (Auth::check()) {
         return redirect('/User/'.Auth::id());
       }
       $courses = \App\Course::all();
       $categorias = \App\Categoria::orderBy('order','asc')->get();
       //\App\User::getDataIp();
-      if ($country == null) {
-        $country = "LAT";
-      }
+
+      session()->forget('country');
+      session(['country'=> $country]);
+
+
 
       $users = \App\User::take(1000)
                               ->orderBy('id','DESC')

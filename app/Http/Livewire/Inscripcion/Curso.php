@@ -46,7 +46,7 @@ class Curso extends Component
 
     protected function getListeners()
     {
-        return ['removeCourse-'.$this->course->id => 'removeCourse'];
+        return ['removeCourse-'.$this->course->id => 'removeCourse', ];
     }
 
     public function removeCourse()
