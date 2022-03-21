@@ -5,6 +5,12 @@
             data-bs-toggle="modal" data-bs-target="#modal-carrito">
             <i class="fas fa-shopping-cart fa-2x"></i>
             <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>
+            @if (count($courses) >= 3)
+                
+            <div class="absolute top-9 left-0">
+                <img src="{{ asset('img/inicio/50off.svg') }}" alt="">
+            </div>
+            @endif
         </button>
         <button class="hover:text-gray-400 p-3  md:hidden block"
                 type="button" data-bs-toggle="collapse" data-bs-target="#collapse-carrito" aria-expanded="false"
@@ -16,6 +22,12 @@
             data-bs-toggle="modal" data-bs-target="#modal-carrito">
         <i class="fas fa-shopping-cart fa-2x"></i>
         <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>
+        @if (count($courses) >= 3)
+            
+        <div class="absolute top-9 left-0">
+            <img src="{{ asset('img/inicio/50off.svg') }}" alt="">
+        </div>
+        @endif        
     </button>
     <div wire:ignore.self class="collapse absolute w-screen right-0 z-50" id="collapse-carrito">
         <div class="p-2 bg-white">
@@ -131,8 +143,17 @@
                         </div>
 
                         <div class="grid grid-cols-6 border-b pb-2 pt-3">
-                            <div class="col-span-2 col-start-5 md:col-start-6 text-center">
-                                <p class="text-lg font-bold">Total ${{ $total }}</p>
+                            <div class="col-span-4 col-start-5 md:col-start-6 text-center">
+                            @if (count($courses) >= 3)
+                            <p class="text-md text-gray-600 font-bold">
+                                Descuento por mas de 3 cursos
+                                <span class="line-through">${{ $total/2 }}</span>
+                            </p>
+                                @php
+                                    $total = $total/2;
+                                @endphp
+                            @endif
+                            <p class="text-lg font-bold">Total ${{ $total }}</p>
                             </div>
                         </div>
                         <div class="flex justify-end pb-2 pt-3 ">
