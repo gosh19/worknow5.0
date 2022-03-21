@@ -24,7 +24,7 @@
         </div>
         <hr class="my-1">
         <div class="mt-2 text-2xl font-semibold text-red-700">
-            <p>$ {{ number_format($course->info->getPrecio($country), 2, '.', ',') }}</p>
+            <p>${{session('country')}} {{ number_format($course->info->getPrecio($country), 2, '.', ',') }}</p>
         </div>
         <div class="text-md mt-2">
             <p>Pago único</p>
