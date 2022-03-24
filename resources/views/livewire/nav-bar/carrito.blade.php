@@ -18,15 +18,15 @@
             <i class="fas fa-shopping-cart fa-2x"></i>
         </button>
     </div>
-    <button class="hover:text-gray-400 p-3 fixed bottom-36 right-12 bg-purple-200 rounded-full z-50 border-4 border-purple-700 hidden md:block "
+    <button class="hover:text-gray-400 p-3 fixed bottom-28 right-10 rounded-full z-50 hidden md:block "
             data-bs-toggle="modal" data-bs-target="#modal-carrito">
-        <i class="fas fa-shopping-cart fa-2x"></i>
-        <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>
+            <img class="w-16" src="{{ asset('img/inicio/cart.svg') }}" alt="">
+            <p class="absolute bottom-0 right-0 p-1 bg-pink-700 font-bold text-white rounded-full">{{count($courses)}}</p>
         @if (count($courses) >= 3)
             
-        <div class="absolute top-9 left-0">
-            <img src="{{ asset('img/inicio/50off.svg') }}" alt="">
-        </div>
+            <div class="absolute top-9 left-0">
+                <img src="{{ asset('img/inicio/50off.svg') }}" alt="">
+            </div>
         @endif        
     </button>
     <div wire:ignore.self class="collapse absolute w-screen right-0 z-50" id="collapse-carrito">
@@ -142,30 +142,49 @@
                             @endforeach
                         </div>
 
-                        <div class="grid grid-cols-6 border-b pb-2 pt-3">
-                            <div class="col-span-4 col-start-5 md:col-start-6 text-center">
-                            @if (count($courses) >= 3)
-                            <p class="text-md text-gray-600 font-bold">
-                                Descuento por mas de 3 cursos
-                                <span class="line-through">${{ $total/2 }}</span>
-                            </p>
-                                @php
-                                    $total = $total/2;
-                                @endphp
-                            @endif
-                            <p class="text-lg font-bold">Total ${{ $total }}</p>
+                        <div class="grid grid-cols-6 pb-2 pt-3">
+                            <div class="col-span-6 col-start-4 md:col-start-5 text-center">
+                                <div class="grid grid-cols-3">
+                                    <div class="col-span-3  h-6 py-0">
+                                        <hr class="h-full">
+                                    </div>
+                                    <div class="col-span-2 h-6">
+                                        <p class="text-md  text-left">Sub-total </p>
+                                    </div>
+                                    <div class="col-span-1 text-lg font-extrabold h-6">{{session('country')}}${{ $total }}.00</div>
+
+                                    @if (count($courses) >= 3)
+                                        @php
+                                            $total = $total/2;
+                                        @endphp
+                                        <div class="col-span-3  h-6 py-0">
+                                            <hr class="h-full">
+                                        </div>
+                                        <div class="col-span-2 h-6">
+                                            <p class="text-md  text-left">Descuentos aplicados </p>
+                                        </div>
+                                        <div class="col-span-1 text-lg font-extrabold line-through h-6">{{session('country')}}${{ $total }}.00</div>
+                                    @endif
+
+                                    <div class="col-span-3 py-0 h-6">
+                                        <hr class="h-full">
+                                    </div>
+                                    <div class="col-span-2 h-6">
+                                        <p class="text-md text-left">Total </p>
+                                    </div>
+                                    <div class="col-span-1 text-xl text-pink-700 font-extrabold">{{session('country')}}${{ $total }}.00</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex justify-end pb-2 pt-3 ">
-                            <div class="text-center">
-                                <a href="{{ route('inscripcionTemprana') }}"
-                                    class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center "
-                                    style="text-decoration: none !important;">Registrarme</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <div class="text-center">
+                        <a href="{{ route('inscripcionTemprana') }}"
+                            class="modal-close bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 py-2 px-3 w-40 text-center "
+                            style="text-decoration: none !important;">Registrarme</a>
+                    </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>

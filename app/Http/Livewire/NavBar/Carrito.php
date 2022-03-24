@@ -25,16 +25,17 @@ class Carrito extends Component
         $this->courses = [];
         if (session('courses')) {
             foreach (session('courses') as $key => $value) {
-                $this->courses[] = \App\Course::find($value);
-                $this->prices[] = $this->courses[$key]->info->getPrecio($this->country);
+
+                    $this->courses[$key] = \App\Course::find($value);
+                    $this->prices[$key] = $this->courses[$key]->info->getPrecio($this->country);
             }
         }
     }
 
     public function remove($key)
     {
-        $courseId = $this->courses[$key]['id'];
         if (isset($this->courses[$key])) {
+            $courseId = $this->courses[$key]['id'];
             
             unset($this->courses[$key]);
             unset($this->prices[$key]);

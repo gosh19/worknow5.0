@@ -10,7 +10,7 @@
 
         <div class="grid grid-cols-8 p-3 bg-white items-end md:items-center gap-3">
             <div class="col-start-1 col-span-6 lg:col-span-1 justify-self-center">
-                <div><img class="w-full" src="{{ asset('img\inicio\logo-wn.png') }}" alt=""></div>
+                <div><img class="w-full" src="{{ asset('img\inicio\logo-wn-2.png') }}" alt=""></div>
             </div>
             <div class="col-start-7 col-span-2 lg:col-span-1 justify-self-center block md:hidden">
                 <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse-menu" aria-expanded="false"
@@ -46,7 +46,7 @@
         </div>
         <div class="collapse collapse-horizontal absolute" id="collapse-menu">
             <div class="card card-body w-screen">
-                <div class="grid grid-cols-6">
+                <div class="grid grid-cols-7">
                     
 
                     <div class="col-span-1 justify-self-center">
@@ -59,7 +59,7 @@
 
                         @livewire('nav-bar.carrito')
                     </div>
-                    <div class="col-span-1 justify-self-end my-auto inline-block md:hidden">
+                    <div class="col-span-2 justify-self-end my-auto inline-block md:hidden">
 
                             @livewire('nav-bar.select-country')
                     </div>
