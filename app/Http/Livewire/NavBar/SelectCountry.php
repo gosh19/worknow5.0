@@ -15,7 +15,7 @@ class SelectCountry extends Component
 
     public function mount()
     {
-        $this->selected = session('country');
+        $this->selected = session('country') !== null ? session('country'):'AR' ;
     }
     
     public function changeCountry($selected)

@@ -78,6 +78,7 @@
             </div>
         </div>
 
+
         {{-- MODAL LOGIN --}}
         <div class="modal fade" id="modal-ingreso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">

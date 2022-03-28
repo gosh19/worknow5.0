@@ -1,9 +1,6 @@
 @extends('layouts.app-alt')
 
 @section('content')
-<div x-data="{open:false}">
-<p x-show="open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maxime, atque ullam quae aliquid sapiente numquam placeat! In aut officia, tempora harum repellendus blanditiis voluptatum expedita sit sint vel praesentium!</p>
-</div>
     <div class="min-h-screen bg-gradient-to-tr from-blue-300 to-indigo-400">
 
 
