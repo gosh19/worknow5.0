@@ -259,13 +259,15 @@
     }
 }
 
-@media (max-width: 700px) { 
+@media screen and (max-width: 700px) { 
     #caja-wpp-tel{
         width: 100%;
         margin: 0px !important;
-
     }
     #prox{
         display: none;
+    }
+    #course-cart-box::-webkit-scrollbar-thumb{
+        border:10px solid white;
     }
 }

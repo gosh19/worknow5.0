@@ -1,8 +1,9 @@
-<div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+<div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg md:transform hover:scale-105 transition duration-500">
     <div class="relative">
         <img class="w-full max-h-48 rounded-xl" src="{{ $course->url_img }}" alt="{{ $course->nombre }}" 
         data-bs-toggle="modal"
-        data-bs-target="#modal-course-{{ $course['id'] }}"
+        data-bs-target="#modal-course"
+        wire:click="$emit('setCourse',{{$course['id']}})"
         />
         <p class="absolute top-0 bg-red-500 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
             Certificación oficial</p>
@@ -10,15 +11,10 @@
     </div>
     <p class="mt-4  cursor-pointer"
         data-bs-toggle="modal"
-        data-bs-target="#modal-course-{{ $course['id'] }}"
+        data-bs-target="#modal-course"
+        wire:click="$emit('setCourse',{{$course['id']}})"
     >
         <span class="text-gray-800 text-2xl font-bold">{{ $course->nombre }}</span>
-        @if (\Request::route()->getName() == 'Intro.Cursos') 
-        <span>
-            -
-            <i class="fa-solid fa-maximize ml-1 text-purple-600"></i>
-        </span>
-        @endif
     </p>
     <div class="my-4">
         <div class="flex items-center">

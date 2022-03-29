@@ -73,7 +73,9 @@
                     <img class="w-16" src="{{ asset('img/inicio/wpp.svg') }}" alt="">
                 </a>
             </div>
-        </div>    
+        </div>  
+        @livewire('nav-bar.modal-carrito')  
+        @livewire('courses-view.modal-course')
     @endguest
     
         <main >
