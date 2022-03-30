@@ -30,10 +30,6 @@
                 <div class="grid grid-cols-1 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
                     <div id="register" class="col-span-1">                        
                         <Index></Index>
-                        {{--
-                        @livewire('inscripcion.formulario-inscripcion')
-                        --}}
-
                     </div>
                 </div>
             </div>
@@ -43,6 +39,10 @@
 
 
 
-
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <script>
+            const mp = new MercadoPago('YOUR_PUBLIC_KEY');
+            // Add step #3
+        </script>
     </div>
 @endsection
