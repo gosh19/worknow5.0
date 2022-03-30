@@ -66,7 +66,7 @@
 </head>
 <body style="height:100vh;">
     @guest
-        <div class="fixed right-4 bottom-4 md:right-14 md:bottom-10 z-50">
+        <div class="fixed right-6 bottom-4 md:right-14 md:bottom-10 z-50">
             <div class="">
                 <a href="https://api.whatsapp.com/send?phone=541150485211&app=facebook&entry_point=page_cta&fbclid=IwAR3NHSP8Z8dlKtOC_SkfkU55n8jAUC75rJIq_QX04SXJoXBnFxBBLbNlSn4">
 
@@ -76,6 +76,7 @@
         </div>  
         @livewire('nav-bar.modal-carrito')  
         @livewire('courses-view.modal-course')
+        @livewire('nav-bar.carrito-flotante')
     @endguest
     
         <main >

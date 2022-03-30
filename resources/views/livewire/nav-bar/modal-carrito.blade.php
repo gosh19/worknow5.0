@@ -24,7 +24,7 @@
                                     $total += $prices[$key];
                                 @endphp
                                 <div class="grid grid-cols-6 border-b border-purple-200 py-2">
-                                    <div class="col-span-6 md:col-span-1 mx-2 mt-2">
+                                    <div class="col-span-2 md:col-span-1 mx-2 mt-2">
                                         <img class="rounded-lg" src="{{ asset($course['url_img']) }}" alt="">
                                     </div>
                                     <div class="col-span-4 md:col-span-4 mx-2">
@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                     <div
-                                        class="col-span-6 md:col-span-1 mx-2 mt-2 text-blueGray-600 flex justify-between">
+                                        class="col-span-6 md:col-span-1 mx-2 mt-2 text-blueGray-600 flex justify-end">
                                         
                                         <div>
                                             <button wire:click="remove({{ $key }})">

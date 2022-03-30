@@ -4,7 +4,7 @@ namespace App\Http\Livewire\NavBar;
 
 use Livewire\Component;
 
-class Carrito extends Component
+class CarritoFlotante extends Component
 {
     public $courses = [];
     public $country;
@@ -28,10 +28,9 @@ class Carrito extends Component
             }
         }
     }
-
-
+    
     public function render()
     {
-        return view('livewire.nav-bar.carrito');
+        return view('livewire.nav-bar.carrito-flotante');
     }
 }
