@@ -135,12 +135,7 @@
                                     <input type="submit" value="Ingresar"
                                         class="text-xl focus:outline-none p-2 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500">
                                 </div>
-                                {{-- <div class="mt-2">
-                                    <button
-                                        class="text-md focus:outline-none p-2 w-full text-blueGray-500 bg-transparent hover:bg-indigo-700 transform hover:scale-105 transition duration-500">
-                                        Olvidé mi contraseña
-                                    </button>
-                                </div> --}}
+
                             </form>
                         </div>
                     </div>
@@ -184,12 +179,6 @@
                     </form>
 
                     <div class="w-full">
-                        {{-- <div class="p-1 justify-self-center">
-                            <button
-                                class="focus:outline-none p-2 w-full text-black rounded-xl bg-gray-50 hover:bg-gray-200 transform hover:scale-105 transition duration-500">
-                                Continuar con Google
-                            </button>
-                        </div> --}}
                         <div class="py-2 flex justify-center w-full">
                             <a href="{{ route('inscripcionTemprana') }}"
                         style="text-decoration: none"
@@ -206,20 +195,6 @@
                 <div
                     class="col-span-2 lg:col-span-1 lg:visible sm:invisible bg-gradient-to-br  from-indigo-400 to-blue-300">
                     <img src="{{ asset('img/inicio/banner-inicio.jpeg') }}" alt="">
-                    {{-- <div id="carouselExampleSlidesOnly" class="carousel slide flex items-center h-full"
-                        data-bs-ride="carousel">
-                        <div class="carousel-inner relative w-full overflow-hidden">
-                            <div class="carousel-item active relative float-left w-full">
-                                <img src="{{ asset('storage/inicio/1.png') }}" class="block w-full" alt="Work-Now-1" />
-                            </div>
-                            <div class="carousel-item relative float-left w-full">
-                                <img src="{{ asset('storage/inicio/2.png') }}" class="block w-full" alt="Work-Now-2" />
-                            </div>
-                            <div class="carousel-item relative float-left w-full">
-                                <img src="{{ asset('storage/inicio/3.png') }}" class="block w-full" alt="Work-Now-3" />
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
 
             </div>
@@ -256,55 +231,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="w-full h-2 bg-blue-600"></div>
 
-        <div class="text-center flex justify-center py-2">
-            <p class="text-4xl font-bold text-black mr-3">
-                Top 5
-            </p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="45" viewBox="0 0 375 375" height="45" version="1.0">
-                <defs>
-                    <clipPath id="a">
-                        <path d="M 48.914062 11.445312 L 309 11.445312 L 309 359 L 48.914062 359 Z M 48.914062 11.445312" />
-                    </clipPath>
-                </defs>
-                <g clip-path="url(#a)">
-                    <path fill="#F1473A"
-                        d="M 181.066406 358.289062 C 145.253906 358.289062 56.742188 352.703125 48.902344 250.988281 C 48.902344 250.988281 71.828125 291.519531 71.863281 286.757812 C 71.972656 271.285156 48.902344 214.660156 106.578125 176.097656 C 177.164062 128.914062 155.863281 71.03125 139.0625 69.914062 C 139.0625 69.914062 184.230469 65.351562 188.347656 125.132812 C 190.582031 157.65625 218.027344 63.765625 201.789062 11.792969 C 201.789062 11.792969 284.25 55.382812 274.027344 162.683594 C 274.027344 162.683594 286.769531 138.378906 308.1875 151.367188 C 308.1875 151.367188 294.746094 155.980469 299.230469 191.75 C 303.707031 227.515625 323.304688 358.289062 181.066406 358.289062" />
-                </g>
-                <path fill="#F79326"
-                    d="M 170.425781 354.578125 C 147.277344 353.523438 103.222656 348.429688 103.222656 290.867188 C 103.222656 233.304688 160.90625 225.476562 160.90625 172.386719 C 160.90625 172.386719 188.34375 181.886719 185.546875 208.15625 C 185.546875 208.15625 239.304688 174.625 234.824219 134.941406 C 234.824219 134.941406 351.121094 362.828125 170.425781 354.578125" />
-                <path fill="#F79326"
-                    d="M 170.425781 354.578125 C 147.277344 353.523438 103.222656 348.429688 103.222656 290.867188 C 103.222656 233.304688 160.90625 225.476562 160.90625 172.386719 C 160.90625 172.386719 188.34375 181.886719 185.546875 208.15625 C 185.546875 208.15625 239.304688 174.625 234.824219 134.941406 C 234.824219 134.941406 351.121094 362.828125 170.425781 354.578125" />
-                <path fill="#FFF533"
-                    d="M 181.625 255.429688 C 181.625 255.429688 195.625 296.394531 172.664062 296.394531 C 156.703125 296.394531 158.660156 279.074219 158.660156 279.074219 C 158.660156 279.074219 114.140625 351.164062 181.625 351.164062 C 195.292969 351.164062 219.148438 348.371094 219.148438 311.484375 C 219.148438 274.601562 198.421875 259.726562 181.625 255.429688" />
-            </svg>
-        </div>
-
-        <div
-            class="md:px-32 md:py-6 border-t-4 grid grid-cols-1 md:grid-cols-5 md:gap-y-3 gap-x-4 divide-y-2 items-center justify-items-center bg-white">
-            @php
-                $cant = 0;
-                $heights = [80, 64, 64, 52, 52];
-                $order = [3, 2, 4, 1, 5];
-            @endphp
-            @foreach ($masElegidos as $key => $elegido)
-                <div class="col-span-1 w-full md:order-{{ $order[$cant] }} h-40 md:h-{{ $heights[$cant] }} md:w-44 rounded-2xl flex items-center justify-center"
-                    style="background: no-repeat center url({{ $elegido['img'] }});">
-                    <div class="w-full text-center bg-gray-700 " style="background-color: rgba(63, 62, 62, 0.829)">
-
-                        <p class="text-white text-lg font-bold pt-1">{{ $elegido['nombre'] }}</p>
-                    </div>
-
-                </div>
-                @php
-                    $cant++;
-                    if ($cant >= 5) {
-                        break;
-                    }
-                @endphp
-            @endforeach
-        </div> --}}
 
         <style>
             .top-100 {
