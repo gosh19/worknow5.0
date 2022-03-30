@@ -19,7 +19,7 @@
                 {{-- buscador-carrito-ingresar --}}
                 <div class="flex justify-between md:justify-end items-center mr-4 border-0 md:border-b-2 border-gray-300 w-full md:w-auto">
 
-                    <div >
+                    <div class="mr-2">
                         @livewire('nav-bar.carrito')
                     </div>
                     

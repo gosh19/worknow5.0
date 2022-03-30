@@ -4,7 +4,7 @@ namespace App\Http\Livewire\NavBar;
 
 use Livewire\Component;
 
-class Carrito extends Component
+class ModalCarrito extends Component
 {
     public $courses = [];
     public $isModalOpen = false;
@@ -12,6 +12,7 @@ class Carrito extends Component
     public $prices = [];
 
     public $listeners = ['refreshCourseList' => 'refreshList'];
+
 
     public function mount()
     {
@@ -26,8 +27,8 @@ class Carrito extends Component
         if (session('courses')) {
             foreach (session('courses') as $key => $value) {
 
-                    $this->courses[$key] = \App\Course::find($value);
-                    $this->prices[$key] = $this->courses[$key]->info->getPrecio($this->country);
+                $this->courses[$key] = \App\Course::find($value);
+                $this->prices[$key] = $this->courses[$key]->info->getPrecio($this->country);
             }
         }
     }
@@ -51,6 +52,6 @@ class Carrito extends Component
 
     public function render()
     {
-        return view('livewire.nav-bar.carrito');
+        return view('livewire.nav-bar.modal-carrito');
     }
 }

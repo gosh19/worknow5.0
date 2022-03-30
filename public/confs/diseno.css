@@ -244,6 +244,14 @@
 .sub-comments h5{
     color: rgb(71, 71, 71);
 }
+#course-cart-box::-webkit-scrollbar{
+    width: 40px;
+}
+#course-cart-box::-webkit-scrollbar-thumb{
+    background-color: rgb(172, 39, 101);
+    border-radius: 30px;
+    border:15px solid white;
+}
 @media screen and (max-width:1100px){
     .tabla-historial{
         max-width:100% !important;
@@ -251,13 +259,15 @@
     }
 }
 
-@media (max-width: 700px) { 
+@media screen and (max-width: 700px) { 
     #caja-wpp-tel{
         width: 100%;
         margin: 0px !important;
-
     }
     #prox{
         display: none;
+    }
+    #course-cart-box::-webkit-scrollbar-thumb{
+        border:10px solid white;
     }
 }

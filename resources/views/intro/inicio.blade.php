@@ -10,7 +10,7 @@
 
         <div class="grid grid-cols-8 p-3 bg-white items-end md:items-center gap-3">
             <div class="col-start-1 col-span-6 lg:col-span-1 justify-self-center">
-                <div><img class="w-full" src="{{ asset('img\inicio\logo-wn.png') }}" alt=""></div>
+                <div><img class="w-full" src="{{ asset('img\inicio\logo-wn-2.png') }}" alt=""></div>
             </div>
             <div class="col-start-7 col-span-2 lg:col-span-1 justify-self-center block md:hidden">
                 <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse-menu" aria-expanded="false"
@@ -28,7 +28,9 @@
 
                 @livewire('nav-bar.carrito')
             </div>
-
+            <div class="col-span-1 justify-self-center hidden md:block">
+                @livewire('nav-bar.select-country')
+            </div>
 
             <div class="col-start-8 lg:col-start-9  col-span-3 lg:col-span-1 justify-self-end hidden md:block">
 
@@ -44,7 +46,8 @@
         </div>
         <div class="collapse collapse-horizontal absolute block md:hidden" id="collapse-menu">
             <div class="card card-body w-screen">
-                <div class="grid grid-cols-6">
+                <div class="grid grid-cols-7">
+                    
 
                     <div class="col-span-1 justify-self-center">
                         <a href={{ route('Intro.Cursos') }}
@@ -56,13 +59,16 @@
 
                         @livewire('nav-bar.carrito')
                     </div>
+                    <div class="col-span-2 justify-self-end my-auto inline-block md:hidden">
 
+                            @livewire('nav-bar.select-country')
+                    </div>
 
-                    <div class="col-span-4 justify-self-end flex items-center">
+                    <div class="col-span-3 justify-self-end flex items-center">
 
                         <a href="{{ route('inscripcionTemprana') }}"
                         style="text-decoration: none"
-                            class="outline-none p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold transform hover:scale-105 transition duration-500">
+                            class="p-3 w-full text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-lg font-bold ">
                             Registrarme
                         </a>
 
@@ -71,6 +77,7 @@
                 </div>
             </div>
         </div>
+
 
         {{-- MODAL LOGIN --}}
         <div class="modal fade" id="modal-ingreso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
