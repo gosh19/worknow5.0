@@ -6,18 +6,19 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "barryvdh/laravel-dompdf": "^0.8.6",
+        "codemancompany/laravel-mercadopago": "^1.07",
+        "doctrine/dbal": "^2.10",
         "fruitcake/laravel-cors": "^2.0",
+        "google/apiclient": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel-frontend-presets/tall": "^4.0",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.10",
-        "barryvdh/laravel-dompdf": "^0.8.6",
-        "codemancompany/laravel-mercadopago": "^1.07",
-        "doctrine/dbal": "^2.10",
-        "google/apiclient": "^2.0",
         "maatwebsite/excel": "^3.1",
+        "mercadopago/dx-php": "^2.4",
         "paypal/rest-api-sdk-php": "^1.14"
     },
     "require-dev": {
