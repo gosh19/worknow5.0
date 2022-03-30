@@ -1,15 +1,13 @@
-
-<template>
-  <div class="w-full bg-white">
-3
-  </div>
-</template>
-
 <script>
 export default {
-  setup() {},
-};
-
-
-
+    setup() {
+        
+    },
+}
 </script>
+
+<template>
+    <div class="w-full bg-white">
+        PASO 3
+    </div>
+</template>

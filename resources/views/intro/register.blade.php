@@ -54,7 +54,8 @@
      </form>
    <script src="https://sdk.mercadopago.com/js/v2"></script>
    <script>
-       const mp = new MercadoPago('YOUR_PUBLIC_KEY');
+       
+       const mp = new MercadoPago('TEST-5e4664e6-3941-4a13-8094-05ad5ee9967e');
        // Step #3
 const cardForm = mp.cardForm({
   amount: "100.5",
