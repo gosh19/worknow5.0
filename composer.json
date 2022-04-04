@@ -9,6 +9,7 @@
         "barryvdh/laravel-dompdf": "^0.8.6",
         "codemancompany/laravel-mercadopago": "^1.07",
         "doctrine/dbal": "^2.10",
+        "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "google/apiclient": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",

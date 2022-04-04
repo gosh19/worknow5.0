@@ -40,6 +40,7 @@
         
     </div>
     <form id="form-checkout" >
+      @csrf
         <input type="text" name="cardNumber" id="form-checkout__cardNumber" />
         <input type="text" name="cardExpirationDate" id="form-checkout__cardExpirationDate" />
         <input type="text" name="cardholderName" id="form-checkout__cardholderName"/>

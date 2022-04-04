@@ -23,7 +23,7 @@ class PaymentController extends Controller
     private $apiContext;
 
     public function __construct()
-    {
+    {/*
         $payPalConfig = config('paypal');
 
         $this->apiContext = new ApiContext(
@@ -33,7 +33,38 @@ class PaymentController extends Controller
             )
         );
 
-        $this->apiContext->setConfig($payPalConfig['settings']);
+        $this->apiContext->setConfig($payPalConfig['settings']);*/
+    }
+
+    public function processPayment(Request $request)
+    {
+      \MercadoPago\SDK::setAccessToken("APP_USR-7514513084559246-010717-089cbcdb084288bf118c1cc3013f3d66-787422277");
+
+      $payment = new \MercadoPago\Payment();
+      $payment->transaction_amount = (float)$request['transactionAmount'];
+      $payment->token = $request['token'];
+      $payment->description = $request['description'];
+      $payment->installments = (int)$request['installments'];
+      $payment->payment_method_id = $request['paymentMethodId'];
+      $payment->issuer_id = (int)$request['issuer'];
+  
+      $payer = new \MercadoPago\Payer();
+      $payer->email = $request['cardholderEmail'];
+      $payer->identification = array(
+          "type" => $request['identificationType'],
+          "number" => $request['identificationNumber']
+      );
+      $payer->first_name = $request['cardholderName'];
+      $payment->payer = $payer;
+  
+      $payment->save();
+  
+      $response = array(
+          'status' => $payment->status,
+          'status_detail' => $payment->status_detail,
+          'id' => $payment->id
+      );
+      echo json_encode($response);
     }
 
     public function payWithMp()
