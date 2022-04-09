@@ -30,7 +30,7 @@ class FormularioInscripcion extends Component
         $this->password = session('password') == null ? '':session('password');
         $this->country = session('country');
         if (session('courses')) {
-            $this->coursesInSession = session('courses');
+            $this->coursesSelected = session('courses');
         }
     }
 
@@ -52,17 +52,6 @@ class FormularioInscripcion extends Component
         }
         if (!$flag) {
             $categoria = \App\Categoria::find($cat['id']);
-
-            foreach ($categoria->courses as $j => $curso) {
-                $curso->selected = 0;
-                foreach ($this->coursesInSession as $i => $value) {
-                    if ($curso->id == $value) {
-                        $curso->selected = 1;
-                        $this->updateSelectedCourse($value);
-                        break;
-                    }
-                }
-            }
 
             $this->selectedCat[] = ['id'=>$cat['id'],'data'=>$categoria->courses];
             
