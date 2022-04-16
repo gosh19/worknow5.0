@@ -38,7 +38,7 @@ class PaymentController extends Controller
 
     public function processPayment(Request $request)
     {
-      \MercadoPago\SDK::setAccessToken("APP_USR-7514513084559246-010717-089cbcdb084288bf118c1cc3013f3d66-787422277");
+      \MercadoPago\SDK::setAccessToken("TEST-7514513084559246-010717-6941ff530eeac4f7c1a99439fab255e4-787422277");
 
       $payment = new \MercadoPago\Payment();
       $payment->transaction_amount = (float)$request['transactionAmount'];
@@ -65,6 +65,7 @@ class PaymentController extends Controller
           'id' => $payment->id
       );
       echo json_encode($response);
+      
     }
 
     public function payWithMp()

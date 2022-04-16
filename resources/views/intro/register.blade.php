@@ -28,8 +28,8 @@
         <div>
             <div class="py-10">
                 <div class="grid grid-cols-1 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
-                    <div id="register" class="col-span-1">                        
-                        <Index></Index>
+                    <div class="col-span-1">                        
+                       @livewire('inscripcion.formulario-inscripcion')
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ const cardForm = mp.cardForm({
     },
     onSubmit: event => {
       event.preventDefault();
-
+      
       const {
         paymentMethodId: payment_method_id,
         issuerId: issuer_id,
@@ -119,26 +119,28 @@ const cardForm = mp.cardForm({
         identificationType,
       } = cardForm.getCardFormData();
 
+      const data = {
+          "token":token,
+          "issuer_id":issuer_id,
+          "payment_method_id":payment_method_id,
+          "installments": Number(installments),
+          "transaction_amount": 200,
+          "description": "Descripción del producto",
+          "payer": {
+            "email":email,
+            "identification": {
+              "type": identificationType,
+              "number": identificationNumber,
+            },
+          },
+        }; //ME SALTA Q SIGUE NULL EL TRANSACTION AMOUNT, REVISAR ESA WEA
+      
       fetch("/process_payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          token,
-          issuer_id,
-          payment_method_id,
-          transaction_amount: Number(amount),
-          installments: Number(installments),
-          description: "Descripción del producto",
-          payer: {
-            email,
-            identification: {
-              type: identificationType,
-              number: identificationNumber,
-            },
-          },
-        }),
+        body: data,
       });
     },
     onFetching: (resource) => {
