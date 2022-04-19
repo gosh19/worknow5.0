@@ -326,7 +326,7 @@
                 href="{{route('User.selectCourses')}}"
             >Agregar mas cursos <i class="fas fa-user-graduate"></i></a>
           </div>
-          <div class="mb-3 hidden {{--md:block--}}">
+          <div class="mb-3 hidden md:block">
             @include('user.carrito',['country'=>$country])
           </div>
           <div class="card mb-3">

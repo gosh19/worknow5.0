@@ -11,6 +11,9 @@ class FormularioInscripcion extends Component
     public $coursesSelected = [];
     public $coursesInSession = [];
 
+    public $allCourses =[];
+    public $isSelected =[];
+
     public $email = "";
     public $password = "";
     public $name = "";
@@ -25,13 +28,23 @@ class FormularioInscripcion extends Component
 
     public function mount()
     {
-        $this->categorias = \App\Categoria::all();
+        $this->allCourses =\App\Course::orderBy('nombre','asc')->get();
+        
         $this->email = session('email') == null ? '':session('email');
         $this->password = session('password') == null ? '':session('password');
         $this->country = session('country');
-        if (session('courses')) {
-            $this->coursesSelected = session('courses');
+        foreach ($this->allCourses as $key => $course) {
+            $this->isSelected[$key]=false;
+            if (session('courses')) {
+                foreach (session('courses') as $i => $id) {
+                    if ($course->id == $id) {
+                        $this->isSelected[$key]= true;
+                    }
+                }
+            }
         }
+
+        
     }
 
     public function repetido()
@@ -39,41 +52,10 @@ class FormularioInscripcion extends Component
         # code...
     }
 
-    public function updateSelectedCat($cat)
+
+    public function updateSelectedCourse($key)
     {
-        $flag = false;
-
-        foreach ($this->selectedCat as $key => $value) {
-            if($value['id'] == $cat['id']){
-                unset($this->selectedCat[$key]);
-                $flag = true;
-                break;
-            }
-        }
-        if (!$flag) {
-            $categoria = \App\Categoria::find($cat['id']);
-
-            $this->selectedCat[] = ['id'=>$cat['id'],'data'=>$categoria->courses];
-            
-
-        }
-    }
-
-    public function updateSelectedCourse($id)
-    {
-        $flag = false;
-
-        foreach ($this->coursesSelected as $key => $value) {
-            if($value == $id){
-                unset($this->coursesSelected[$key]);
-                $flag = true;
-                break;
-            }
-        }
-        if (!$flag) {
-            $this->coursesSelected[] = $id;
-
-        }
+        $this->isSelected[$key] = !$this->isSelected[$key];
     }
 
     public function validateFields()
@@ -125,9 +107,9 @@ class FormularioInscripcion extends Component
         $userTest->user_id = $user->id;
         $userTest->save();
 
-        foreach ($this->coursesSelected as $curso) {
-            if ($curso != null) {
-                $user->courses()->attach($curso);
+        foreach ($this->isSelected as $key => $value) {
+            if ($value) {
+                $user->courses()->attach($this->allCourses[$key]['id']);
             }
         }
         foreach ($user->courses as  $course) {

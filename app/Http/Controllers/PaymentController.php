@@ -26,14 +26,17 @@ class PaymentController extends Controller
     {
         $payPalConfig = config('paypal');
 
-        $this->apiContext = new ApiContext(
+        if ($payPalConfig) {
+          # code...
+          $this->apiContext = new ApiContext(
             new OAuthTokenCredential(
-                $payPalConfig['client_id'],
-                $payPalConfig['secret']
-            )
-        );
-
-        $this->apiContext->setConfig($payPalConfig['settings']);
+              $payPalConfig['client_id'],
+              $payPalConfig['secret']
+              )
+            );
+            
+            $this->apiContext->setConfig($payPalConfig['settings']);
+          }
     }
 
     public function payWithMp()
