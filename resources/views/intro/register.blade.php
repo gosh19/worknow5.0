@@ -14,10 +14,10 @@
             </div>
 
             <div class="md:col-start-6 col-span-2 md:col-span-1 justify-self-center">
-                <button
+                <a  href="{{ route('Intro.Cursos') }}"
                     class="text-white hover:text-blueGray-200 p-3 transform hover:scale-105 transition duration-500 focus:outline-none">
                     Cursos
-                </button>
+                </a>
             </div>
             <div class="col-span-2 md:col-span-1 justify-self-center">
                 @livewire('nav-bar.carrito')
