@@ -16,6 +16,8 @@ use \PayPal\Api\Payment;
 use \PayPal\Api\PaymentExecution;
 use \PayPal\Exception\PayPalConnectionException;
 
+use MP;
+
 use Carbon\Carbon;
 
 class PaymentController extends Controller
@@ -70,7 +72,7 @@ class PaymentController extends Controller
                   "auto_return"=> "approved",
                   ];
         
-        $preference = \MP::create_preference($pref);
+        $preference = MP::create_preference($pref);
       
         return redirect('https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id='.$preference['response']['id']);
     }

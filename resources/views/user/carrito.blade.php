@@ -78,19 +78,19 @@
           <p class="tracking-widest">TOTAL : $ {{$total}} {{$country == 'AR'?'ARS':'USD'}}</p>
         </div>
       </div>
-      {{--
+
       <div class="w-full">
-        @if ($country == 'AR')
+        @if ($country == 'AR' || $country == 'ARG')
             
             <a href="{{route('Mp.pay')}}" 
-            class="py-2 px-5 block bg-blue-600 border-2 text-center border-blue-900 rounded font-bold text-white text-decoration-none hover:bg-blue-500 transition-all duration-300"
+            class="py-2 px-5 block bg-blue-600 border-2 text-center border-blue-900 rounded f.-ont-bold text-white text-decoration-none hover:bg-blue-500 transition-all duration-300"
             >Abonar inscripcion con MercadoPago</a>
         @else
             <a href="{{route('PayPal.pay')}}" 
             class="block text-center py-2 px-5 bg-blue-600  font-bold text-white text-decoration-none hover:bg-blue-500 transition-all duration-300"
             >Abonar inscripcion con PayPal <i class="fab fa-paypal"></i></a>
         @endif
-      </div>--}}
+      </div>
       </div>
     </div>
 @endif

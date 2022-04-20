@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //mercadopago
+        CodemanCompany\LaravelMercadoPago\Providers\MercadoPagoServiceProvider::class,
 
     ],
 
@@ -230,7 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        'MP' => CodemanCompany\LaravelMercadoPago\MP::class,
+        'MP' => CodemanCompany\LaravelMercadoPago\Facades\MP::class,
 
     ],
 
