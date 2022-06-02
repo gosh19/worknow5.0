@@ -5,9 +5,12 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="media mb-3">
-          <img width="160px" class="border border-dark rounded-circle mr-3 flotante" src={{ asset('img/gerente.png') }} class="mr-3" alt="Gerente"> 
-          <div class="media-body" style="height: 100%;" >
+        <div class="row mb-3">
+          <div class="col-4">
+            <img width="160px" class="border border-dark rounded-circle mr-3 flotante" src={{ asset('img/gerente.png') }} class="mr-3" alt="Gerente"> 
+          </div>
+          <div class="col-8">
+            <div class="media-body" style="height: 100%;" >
               <div class="card" style="height: 100%;">
                   <div class="card-header bg-dark text-white">
                     <div class="d-flex justify-content-between">
@@ -30,11 +33,14 @@
                       </ul>
                   </div>
               </div>
+            </div>
           </div>
+         
+          
         </div>
 
         <hr>
-        <div class="row">
+        <div class="row mb-3">
           <div class="col">
             <div class="card" >
               <div class="card-header bg-danger font-weight-bolder text-white">
@@ -134,10 +140,16 @@
             </div>
 
           </div>
-          @include('layouts.comisiones')
+          
         </div>
-        
+        <div class="row">
+          <div class="col">
+            @livewire('admin.banner-controller')
+          </div>
+        </div>
       </div>
+      {{--END COLUMAN IZQ--}}
+      {{--START COLUMAN DER--}}
       <div class="col">
        
         <div class="row mb-3">
@@ -180,7 +192,8 @@
             <li class="list-group-item"><a href={{ route('Tienda.admin') }}>Configuracion tienda</a></li>
           </ul>
         </div>
-        
+
+        {{--BEGIN CARD INFORMACION--}}
         <div class="card mt-3">
           <div class="card-header bg-dark text-white font-weight-bolder">
             <div class="d-flex justify-content-between">
@@ -244,6 +257,8 @@
             </div>
           </div>
         </div>
+        {{--END CARD INFORMACION--}}
+        @include('layouts.comisiones')
       </div>
     </div>
 
