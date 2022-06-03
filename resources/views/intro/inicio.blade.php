@@ -44,7 +44,7 @@
             </div>
 
         </div>
-        <div class="collapse collapse-horizontal absolute" id="collapse-menu">
+        <div class="collapse collapse-horizontal absolute block md:hidden" id="collapse-menu">
             <div class="card card-body w-screen">
                 <div class="grid grid-cols-7">
                     
@@ -194,7 +194,7 @@
 
                 <div
                     class="col-span-2 lg:col-span-1 lg:visible sm:invisible bg-gradient-to-br  from-indigo-400 to-blue-300">
-                    <img src="{{ asset('img/inicio/banner-inicio.jpeg') }}" alt="">
+                    <img src="{{ asset('/storage/'.$banner??0) }}" alt="">
                 </div>
 
             </div>

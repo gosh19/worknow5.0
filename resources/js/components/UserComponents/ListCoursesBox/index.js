@@ -36,7 +36,7 @@ class ListCoursesBox extends React.Component {
 
     setCursos() {
 
-        fetch('/get-cursos')
+        fetch('/get-cursos-user')
             .then(response => response.json())
             .then(responseCursos => {
 

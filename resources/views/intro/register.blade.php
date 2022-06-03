@@ -1,6 +1,7 @@
 @extends('layouts.app-alt')
 
 @section('content')
+
     <div class="min-h-screen bg-gradient-to-tr from-blue-300 to-indigo-400">
 
 
@@ -14,14 +15,12 @@
             </div>
 
             <div class="md:col-start-6 col-span-2 md:col-span-1 justify-self-center">
-                <a  href="{{ route('Intro.Cursos') }}"
-                    class="text-white hover:text-blueGray-200 p-3 transform hover:scale-105 transition duration-500 focus:outline-none">
-                    Cursos
-                </a>
+                <a href={{ route('Intro.Cursos') }}
+                            class="no-underline hover:text-gray-400 text-white inline-block mt-3 transform hover:scale-105 transition duration-500">
+                            Cursos
+                        </a>
             </div>
-            <div class="col-span-2 md:col-span-1 justify-self-center">
-                @livewire('nav-bar.carrito')
-            </div>
+
         </div>
 
 
@@ -29,17 +28,16 @@
         <div>
             <div class="py-10">
                 <div class="grid grid-cols-1 rounded-xl shadow-md w-full md:w-10/12 mx-auto">
-                    <div class="col-span-1">
-                        @livewire('inscripcion.formulario-inscripcion')
+                    <div class="col-span-1">                        
+                       @livewire('inscripcion.formulario-inscripcion')
                     </div>
                 </div>
             </div>
         </div>
+        
 
 
-
-
-
-
+        
     </div>
+
 @endsection

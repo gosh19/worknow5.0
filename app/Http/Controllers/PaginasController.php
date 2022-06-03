@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use \App\Models\Banner;
 
 use App\Mail\AlumnosMail;
 
@@ -42,6 +43,9 @@ class PaginasController extends Controller
       }
       $courses = \App\Course::all();
       $categorias = \App\Categoria::orderBy('order','asc')->get();
+      $banner = Banner::where('selected',true)->first();
+      $banner = $banner->url??0;
+      
       //\App\User::getDataIp();
 
       session()->forget('country');
@@ -68,7 +72,7 @@ class PaginasController extends Controller
       session(['country'=>$country]);
       //return session('country');
       /**cambiamo0ps a la vista inicio q es el nuevo maquetado */
-      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country, 'masElegidos'=> $masElegidos]);
+      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country, 'masElegidos'=> $masElegidos,'banner'=> $banner]);
     }
     public function coursesView()
     {
