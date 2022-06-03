@@ -41,8 +41,6 @@ Route::view('login', 'PaginasController@index')->middleware('redireccion');
 
 Route::get('/back-mp/{id}/{precio?}', 'PaymentController@backMp');
 
-Route::post('/process_payment', 'PaymentController@processPayment');
-
 Route::middleware('rol')->group(function(){
 
   //SUPERVISOR
