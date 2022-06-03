@@ -11,24 +11,55 @@ class BannerController extends Component
     use WithFileUploads;
  
     public $photo;
-    public $banner;
+    public $banners;
     public $bannerId;
+    public $selectedBanner;
+    public $debug;
 
     public function mount()
     {
-        $this->banner = Banner::orderBy('id','desc')->first();
+        $this->banners = Banner::orderBy('id','desc')->orderBy('selected','desc')->take(6)->get();
 
-        $this->bannerId = $this->banner == null? 0:$this->banner->id;
+
+        $this->bannerId = count($this->banners) == 0? 0:$this->banners[0]['id'];
+        $this->selectedBanner = count($this->banners) == 0? 0:$this->banners[0]['url'];
 
     }
  
     public function save()
     {
- 
-        $this->photo->storeAs('banners', 'banner-'.($this->bannerId+1),'public');
+        $path = $this->photo->store(
+            'banners', 'public'
+        );
         $ban = new Banner;
+        $ban->url = $path;
+        $ban->selected = 1;
         $ban->save();
+
+        $this->selectedBanner = $ban->url;
+        
+        $banner = Banner::find($this->bannerId);
+        if ($banner != null) {
+            $banner->selected = false;
+            $banner->save();
+        }
         $this->bannerId = $ban->id;
+
+        $this->banners = Banner::orderBy('id','desc')->take(6)->get();
+    }
+
+    public function updateBanner($key)
+    {
+        $ban = Banner::find($this->bannerId);
+        $ban->selected = 0;
+        $ban->save();
+
+        $ban = Banner::find($this->banners[$key]['id']);
+        $ban->selected = 1;
+        $ban->save();
+
+        $this->bannerId = $ban->id;
+        $this->selectedBanner = $ban->url;
     }
 
     public function render()

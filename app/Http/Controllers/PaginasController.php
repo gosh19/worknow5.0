@@ -43,7 +43,9 @@ class PaginasController extends Controller
       }
       $courses = \App\Course::all();
       $categorias = \App\Categoria::orderBy('order','asc')->get();
-      $banner = Banner::orderBy('id','desc')->first();
+      $banner = Banner::where('selected',true)->first();
+      $banner = $banner->url??0;
+      
       //\App\User::getDataIp();
 
       session()->forget('country');
@@ -70,7 +72,7 @@ class PaginasController extends Controller
       session(['country'=>$country]);
       //return session('country');
       /**cambiamo0ps a la vista inicio q es el nuevo maquetado */
-      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country, 'masElegidos'=> $masElegidos,'bannerId'=> $banner->id]);
+      return view('intro.inicio',['courses'=> $courses, 'categorias'=> $categorias,'country'=>$country, 'masElegidos'=> $masElegidos,'banner'=> $banner]);
     }
     public function coursesView()
     {

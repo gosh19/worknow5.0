@@ -194,7 +194,7 @@
 
                 <div
                     class="col-span-2 lg:col-span-1 lg:visible sm:invisible bg-gradient-to-br  from-indigo-400 to-blue-300">
-                    <img src="{{ asset('/storage/banners/banner-'.$bannerId??0) }}" alt="">
+                    <img src="{{ asset('/storage/'.$banner??0) }}" alt="">
                 </div>
 
             </div>
